@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa826f29388698247b13bc9ce5a1e49e, type: 3}
+  m_Name: GruntIdle
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 9db5d5267fd2be94eb3d0ac21a894c4e, type: 2}
+  enterAction: {fileID: 11400000, guid: 972c6618d28ce104c812f5a99bff94bb, type: 2}
+  exitAction: {fileID: 0}
+  transitions:
+  - conditions:
+    - {fileID: 11400000, guid: 3f04ab70271f03147adeab668b36fb20, type: 2}
+    invert: 00
+    toState: {fileID: 11400000, guid: 1b29aad2324ed0d45b29bac8dcbfd096, type: 2}
+    cyclic: 0
+    weight: 1
+  - conditions:
+    - {fileID: 11400000, guid: 6785591a403cd67498c623c8068b6913, type: 2}
+    invert: 00
+    toState: {fileID: 11400000, guid: a830abb70b7e1884995dd1e932999f9f, type: 2}
+    cyclic: 0
+    weight: 1
+  - conditions:
+    - {fileID: 11400000, guid: 47d8d908768fc2544ac9df266a58e80b, type: 2}
+    invert: 00
+    toState: {fileID: 11400000, guid: daddf68626b4a34499d2d038d44e9023, type: 2}
+    cyclic: 0
+    weight: 0
+  cooldown: 10
+  requireCooldown: 0

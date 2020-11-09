@@ -1,0 +1,15 @@
+﻿using UnityEngine;
+
+public class DamageBoost : PassiveItem
+{
+    public float damageScale;
+    public DamageBoost() : base("Bigger Bullets", 1, "These bullets will make you do more damage. Bigger is better, right?", 30)
+    {
+        this.damageScale = 1.05f;
+    }
+    public override void ApplyBonus(Player p)
+    {
+        Debug.Log("applying bonus");
+        p.damageMultiplier *= this.damageScale;
+    }
+}

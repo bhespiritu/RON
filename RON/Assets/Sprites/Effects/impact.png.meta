@@ -1,0 +1,560 @@
+fileFormatVersion: 2
+guid: c07589a553bbd9a489b82899dafcd5a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3439832132484978033
+    second: impact_0
+  - first:
+      213: -9099884051927682378
+    second: impact_1
+  - first:
+      213: -6910925780044202809
+    second: impact_2
+  - first:
+      213: 5758815065893501872
+    second: impact_3
+  - first:
+      213: -6040761397719260378
+    second: impact_4
+  - first:
+      213: -6345558150114937132
+    second: impact_5
+  - first:
+      213: -504059800338534839
+    second: impact_6
+  - first:
+      213: -8292826066210186885
+    second: impact_7
+  - first:
+      213: 2152872603646267882
+    second: impact_8
+  - first:
+      213: 5459813306494883519
+    second: impact_9
+  - first:
+      213: 6488211180070142525
+    second: impact_10
+  - first:
+      213: -8159744635587141673
+    second: impact_11
+  - first:
+      213: -2019844964667244915
+    second: impact_12
+  - first:
+      213: -4323253982002273485
+    second: impact_13
+  - first:
+      213: 373265728796723338
+    second: impact_14
+  - first:
+      213: 1181998656720756281
+    second: impact_15
+  - first:
+      213: 8110866913652766179
+    second: impact_16
+  - first:
+      213: -3077261595380612275
+    second: impact_17
+  - first:
+      213: 6059054567498329762
+    second: impact_18
+  - first:
+      213: -7341416289996185437
+    second: impact_19
+  - first:
+      213: -2069178898883050013
+    second: impact_20
+  - first:
+      213: 8224812815399112803
+    second: impact_21
+  - first:
+      213: 333276307767407919
+    second: impact_22
+  - first:
+      213: -5104018385421055224
+    second: impact_23
+  - first:
+      213: -690224520393768894
+    second: impact_24
+  - first:
+      213: 5406602692431185338
+    second: impact_25
+  - first:
+      213: 7122587790572621062
+    second: impact_26
+  - first:
+      213: 8471263377078296979
+    second: impact_27
+  - first:
+      213: 6500499355940461924
+    second: impact_28
+  - first:
+      213: -3522903443952028664
+    second: impact_29
+  - first:
+      213: -7873060216744248041
+    second: impact_30
+  - first:
+      213: -7944078560142169473
+    second: impact_31
+  - first:
+      213: 8672316805018427572
+    second: impact_32
+  - first:
+      213: 5650699158908621661
+    second: impact_33
+  - first:
+      213: 7655969598245828095
+    second: impact_34
+  - first:
+      213: -6508274841287736458
+    second: impact_35
+  - first:
+      213: 3863480539180276390
+    second: impact_36
+  - first:
+      213: -8652656571340044968
+    second: impact_37
+  - first:
+      213: -4107890378408957078
+    second: impact_38
+  - first:
+      213: 3215565379857349347
+    second: impact_39
+  - first:
+      213: 8124544712961869440
+    second: impact_40
+  - first:
+      213: -814242593250440535
+    second: impact_41
+  - first:
+      213: -6861291245719922761
+    second: impact_42
+  - first:
+      213: -4110234989794400452
+    second: impact_43
+  - first:
+      213: 8813054942333464118
+    second: impact_44
+  - first:
+      213: 6377434447947121471
+    second: impact_45
+  - first:
+      213: 599911166401582959
+    second: impact_46
+  - first:
+      213: -1005310381298374049
+    second: impact_47
+  - first:
+      213: 5877466954695907565
+    second: impact_48
+  - first:
+      213: -1037578646992204510
+    second: impact_49
+  - first:
+      213: -6684704066851142963
+    second: impact_50
+  - first:
+      213: 7070781306823301456
+    second: impact_51
+  - first:
+      213: -6441679123074740223
+    second: impact_52
+  - first:
+      213: -2155748223425225897
+    second: impact_53
+  - first:
+      213: 8605286931302385959
+    second: impact_54
+  - first:
+      213: -912005790839200985
+    second: impact_55
+  - first:
+      213: 1484650401754181044
+    second: impact_56
+  - first:
+      213: -1000539641909290894
+    second: impact_57
+  - first:
+      213: -7191586979684271563
+    second: impact_58
+  - first:
+      213: 7404559759149204361
+    second: impact_59
+  - first:
+      213: -1194853231522539298
+    second: impact_60
+  - first:
+      213: -6469780077779871880
+    second: impact_61
+  - first:
+      213: -3383842948243044353
+    second: impact_62
+  - first:
+      213: -2605904208316086117
+    second: impact_63
+  - first:
+      213: 2980437185081991605
+    second: impact_64
+  - first:
+      213: 4429177890703664913
+    second: impact_65
+  - first:
+      213: 695901692444801260
+    second: impact_66
+  - first:
+      213: -1570509315856753406
+    second: impact_67
+  - first:
+      213: -5274346946321374682
+    second: impact_68
+  - first:
+      213: -8736924087300122784
+    second: impact_69
+  - first:
+      213: 2711173762636375502
+    second: impact_70
+  - first:
+      213: 7364295439655204266
+    second: impact_71
+  - first:
+      213: -710558585201514746
+    second: impact_72
+  - first:
+      213: -8823798714064175165
+    second: impact_73
+  - first:
+      213: 4556376631278855289
+    second: impact_74
+  - first:
+      213: -6950773612953366605
+    second: impact_75
+  - first:
+      213: 3561372783944250533
+    second: impact_76
+  - first:
+      213: -3826103201821949656
+    second: impact_77
+  - first:
+      213: 7803949025041566684
+    second: impact_78
+  - first:
+      213: -6493206798252678491
+    second: impact_79
+  - first:
+      213: 3187308241016325056
+    second: impact_80
+  - first:
+      213: -3753805925086565670
+    second: impact_81
+  - first:
+      213: 548674199245154586
+    second: impact_82
+  - first:
+      213: -775123812407063379
+    second: impact_83
+  - first:
+      213: 9084131673509508593
+    second: impact_84
+  - first:
+      213: -1712644187232200566
+    second: impact_85
+  - first:
+      213: 526874507646208394
+    second: impact_86
+  - first:
+      213: 3193803550451916104
+    second: impact_87
+  - first:
+      213: -7744510589265841992
+    second: impact_88
+  - first:
+      213: 7380909452790194787
+    second: impact_0
+  - first:
+      213: 630190563929518943
+    second: impact_1
+  - first:
+      213: 7762401639373290158
+    second: impact_2
+  - first:
+      213: 1940084975765956968
+    second: impact_3
+  - first:
+      213: -5284583384818941463
+    second: impact_4
+  - first:
+      213: 4042942617597011272
+    second: impact_5
+  - first:
+      213: -7451267216924737132
+    second: impact_6
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 15
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: impact_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362e1e4aa024e6660800000000000000
+      internalID: 7380909452790194787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: impact_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5372df9af2eeb800800000000000000
+      internalID: 630190563929518943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: impact_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaa31cef92799bb60800000000000000
+      internalID: 7762401639373290158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: impact_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8692a96a1019cea10800000000000000
+      internalID: 1940084975765956968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: impact_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e18fe1196369a6b0800000000000000
+      internalID: -5284583384818941463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: impact_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8456829e3ea6b1830800000000000000
+      internalID: 4042942617597011272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: impact_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49100b8d1f7c79890800000000000000
+      internalID: -7451267216924737132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: impact_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79117b41a6f9ec80800000000000000
+      internalID: -8292826066210186885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

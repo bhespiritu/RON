@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa826f29388698247b13bc9ce5a1e49e, type: 3}
+  m_Name: TIdle
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: a22e39ca84821ab46a0a5118b2d90273, type: 2}
+  enterAction: {fileID: 0}
+  exitAction: {fileID: 0}
+  transitions:
+  - conditions: []
+    invert: 
+    toState: {fileID: 11400000, guid: 801a8b9d2da8acc49b90ec14dafed0d1, type: 2}
+    cyclic: 0
+    weight: 1
+  cooldown: 6
+  requireCooldown: 1

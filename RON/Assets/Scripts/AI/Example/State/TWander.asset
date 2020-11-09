@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa826f29388698247b13bc9ce5a1e49e, type: 3}
+  m_Name: TWander
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 35c6c94f284af4948b5c4961c2ecb247, type: 2}
+  enterAction: {fileID: 0}
+  exitAction: {fileID: 0}
+  transitions:
+  - conditions:
+    - {fileID: 11400000, guid: 3f04ab70271f03147adeab668b36fb20, type: 2}
+    invert: 00
+    toState: {fileID: 11400000, guid: 1cd99480b13fffe4aac8f8b3a04d451d, type: 2}
+    cyclic: 0
+    weight: 1
+  - conditions:
+    - {fileID: 11400000, guid: 47d8d908768fc2544ac9df266a58e80b, type: 2}
+    invert: 00
+    toState: {fileID: 11400000, guid: bc1771cb691491545a8bf026dac92545, type: 2}
+    cyclic: 0
+    weight: 0
+  cooldown: 10
+  requireCooldown: 0
