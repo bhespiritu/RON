@@ -285,9 +285,12 @@ MonoBehaviour:
   defense: 0
   damageMultiplier: 0
   healMultiplier: 0
+  critChance: 0
   muzzleFlash: {fileID: 2935827913036468907}
   firePos: {fileID: 1774154271846645096}
   projectile: {fileID: 8899581201661684260, guid: b793a31dfe32ecd429bd221631fbf52f,
+    type: 3}
+  critProjectile: {fileID: 8899581201661684260, guid: c8d8a3d98bb2c634999d5b5a16f20371,
     type: 3}
   projSpeed: 100
   fallMultiplier: 0

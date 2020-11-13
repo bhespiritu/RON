@@ -6,6 +6,7 @@ public class PlayerBullet : MonoBehaviour
 {
     public int damage = 10;
     public GameObject dust;
+    public string effect = "";
 
     public void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerBullet : MonoBehaviour
             if (collision.collider.tag == "Enemy")
             {
                 collision.collider.GetComponent<EnemyInfo>().Hurt(damage);
+
             }
         }
 
