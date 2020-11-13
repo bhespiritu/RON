@@ -19,10 +19,13 @@ public class Player : MonoBehaviour
     public float defense;
     public float damageMultiplier;
     public float healMultiplier;
+    public float critChance;
+    public float blockChance;
 
     public MuzzleFlash muzzleFlash;
     public Transform firePos;
     public GameObject projectile;
+    public GameObject critProjectile;
     public float projSpeed = 100;
     
     private bool isGrounded = true;
@@ -34,6 +37,7 @@ public class Player : MonoBehaviour
     public static event PlayerEvent hChange;
 
     public float autofireDelay = 0f;
+    public System.Random rand = new System.Random();
 
 	public Player(float health=100, float maxHealth=100, int money=0, List<ActiveItem> activeItems=null, List<PassiveItem> passiveItems = null, float speed = 10, float jumpSpeed = 40, float attack = 10, float defense = 10, float damageMultiplier = 1f, float healMultiplier = 1f)
     {
@@ -68,8 +72,17 @@ public class Player : MonoBehaviour
 
 	public void TakeDamage(int damage)
     {
-		this.health -= (damage*this.damageMultiplier);
-        
+
+        if (this.rand.NextDouble() > this.blockChance)
+        {
+
+            this.health -= (damage * this.damageMultiplier) + this.defense;
+
+        } else
+        {
+            Debug.Log("blocked! :)");
+        }
+
         if (this.health <= 0)
         {
         	an.SetBool("ded", true);
@@ -119,12 +132,19 @@ public class Player : MonoBehaviour
             muzzleFlash.transform.right = direction;
             muzzleFlash.Replay();
 
-            var instance = Instantiate(projectile, (firePos.position + (Vector3) direction), Quaternion.identity);
-
-            instance.GetComponent<Rigidbody2D>().velocity = direction * this.activeItems[0].projectileSpeed;
-            instance.GetComponent<PlayerBullet>().damage = (int) (attack * damageMultiplier);
-            
-    		this.activeItems[0].Fire(transform.position, direction, this.damageMultiplier);
+            float crit = (float) this.rand.NextDouble();
+            if ( crit < this.critChance)
+            {
+                var instance = Instantiate(critProjectile, (firePos.position + (Vector3)direction), Quaternion.identity);
+                instance.GetComponent<Rigidbody2D>().velocity = direction * this.activeItems[0].projectileSpeed;
+                instance.GetComponent<PlayerBullet>().damage = (int)(this.activeItems[0].damage * damageMultiplier * 3);
+            }
+            else
+            {
+                var instance = Instantiate(projectile, (firePos.position + (Vector3)direction), Quaternion.identity);
+                instance.GetComponent<Rigidbody2D>().velocity = direction * this.activeItems[0].projectileSpeed;
+                instance.GetComponent<PlayerBullet>().damage = (int)(this.activeItems[0].damage * damageMultiplier);
+            }
     	}
 	}
 
@@ -152,7 +172,7 @@ public class Player : MonoBehaviour
         this.speed = 10f;
         this.jumpSpeed = 40f;
         this.attack = 10f;
-        this.defense = 10f;
+        this.defense = 0f;
         this.damageMultiplier = 1f;
         this.healMultiplier = 1f;
         this.activeItems = new List<ActiveItem>();
@@ -162,7 +182,9 @@ public class Player : MonoBehaviour
         this.rb.gravityScale = 9;
         this.activeItems.Add(new BaseGun());
         gameObject.tag = "Player";
-
+        this.rand = new System.Random();
+        this.critChance = 0.0f;
+        this.blockChance = 0f;
     }
 
     void Update()

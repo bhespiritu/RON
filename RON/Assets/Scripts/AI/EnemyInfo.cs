@@ -79,7 +79,6 @@ public class EnemyInfo : MonoBehaviour
 
         var iPrefab = itemPrefabs[Random.Range(0,itemPrefabs.Length)];
         var item = Instantiate(iPrefab, transform.position, Quaternion.identity);
-        item.GetComponent<PassiveItemSprite>().itemId = (Random.value < 0.5) ? 0 : 1; 
     }
 
     //NOTE FOR REVIEWER
