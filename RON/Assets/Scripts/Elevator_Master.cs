@@ -11,7 +11,7 @@ public class Elevator_Master : MonoBehaviour
 
     public Rigidbody2D player;
     private float iDist = 10f, lAcc;
-    public float dur = 30f, lWait = 5f;
+    public float dur = 30f, lWait = 2f;
     private bool leaving;
     private SpriteRenderer eSprite;
     public Sprite Init, Wait, Fin;
@@ -35,6 +35,9 @@ public class Elevator_Master : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(st == eState.Finished && !leaving && Input.GetKey(KeyCode.E)){
+            leaving = true;
+        }
         if(leaving){
             lAcc+=Time.deltaTime;
             if(lAcc >= lWait){
@@ -58,7 +61,7 @@ public class Elevator_Master : MonoBehaviour
                 //sCtrl.ElevatorSignal();
                 sChg();
                 eSprite.sprite = Fin;
-                leaving = true;
+                //leaving = true;
             }
         }
     }
