@@ -96,7 +96,7 @@ public class EnemyInfo : MonoBehaviour
     // a player touches something.
     public void OnCollisionEnter2D(Collision2D c)
     {
-        if(c.collider != null)
+        if(c.collider != null && !isDead)
         {
             if(c.gameObject.tag == "Player")
             {

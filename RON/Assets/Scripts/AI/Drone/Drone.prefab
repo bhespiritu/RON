@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: dca1276b7a0967147b1908bacaf242d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   laser: {fileID: 822535145077311542}
   groundMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
   muzzleFlash: {fileID: 8652501872581021937}
   shootForce: 50
   impact: {fileID: 3495572710876938338, guid: 2a4f443423b982349977cdac3a310b7c, type: 3}

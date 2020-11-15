@@ -84,18 +84,17 @@ public class DroneLogic : MonoBehaviour
         {
             RaycastHit2D shot = Physics2D.Raycast(turret.position, -turret.up);
             muzzleFlash.Replay();
+            rb.AddForceAtPosition(turret.up * shootForce, turret.position, ForceMode2D.Impulse);
             if (shot.collider != null)
             {
-
+                var dustEffect = Instantiate(impact, shot.point, Quaternion.identity);
+                dustEffect.transform.up = shot.normal;
+                Destroy(dustEffect, 1);
                 if (shot.transform.tag == "Player")
                 {
                     Player p = shot.transform.GetComponent<Player>();
-                    rb.AddForceAtPosition(turret.up * shootForce, turret.position, ForceMode2D.Impulse);
                     p.TakeDamage(info.attackDamage);
-                    Physics2D.IgnoreCollision(p.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-                    var dustEffect = Instantiate(impact, shot.point, Quaternion.identity);
-                    dustEffect.transform.up = shot.normal;
-                    Destroy(dustEffect, 1);
+                    
                 }
             }
             chargeUpTime = GameTimer.time + shotCooldown;
