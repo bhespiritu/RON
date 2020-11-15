@@ -37,7 +37,6 @@ public class GruntLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("start");
         attackCooldown = 1;
         swingCooldown = 1;
         info = GetComponent<EnemyInfo>();
