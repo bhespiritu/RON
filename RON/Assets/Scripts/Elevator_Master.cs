@@ -74,4 +74,10 @@ public class Elevator_Master : MonoBehaviour
         }
         
     }
+
+    public void setEFin(){
+        st = eState.Finished;
+        sChg();
+        eSprite.sprite = Fin;
+    }
 }
