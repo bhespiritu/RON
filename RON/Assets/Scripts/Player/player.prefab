@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2660955651894547527}
   - component: {fileID: 2935827913036468907}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: muzzlePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 6273242018009471607}
   - component: {fileID: 6273242018009471606}
   - component: {fileID: 7083996499965910055}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -288,12 +288,15 @@ MonoBehaviour:
   healMultiplier: 0
   critChance: 0
   blockChance: 0
+  canShoot: 0
+  invisible: 0
   muzzleFlash: {fileID: 2935827913036468907}
   firePos: {fileID: 1774154271846645096}
   projectile: {fileID: 8899581201661684260, guid: b793a31dfe32ecd429bd221631fbf52f,
     type: 3}
   critProjectile: {fileID: 8899581201661684260, guid: c8d8a3d98bb2c634999d5b5a16f20371,
     type: 3}
+  shield: {fileID: 0}
   projSpeed: 100
   fallMultiplier: 0
   lowJumpMultiplier: 0
