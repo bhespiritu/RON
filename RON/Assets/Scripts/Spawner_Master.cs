@@ -134,7 +134,7 @@ public class Spawner_Master : MonoBehaviour
 
     public void ElevatorSignal(){
         mode = eleCtrl.st;
-        Debug.Log("Spawner heard that EState changed");
+        //Debug.Log("Spawner heard that EState changed");
     }
 
     GameObject SpawnSpecific(GameObject toSpawn){ //method called by other objects if they want to spawn things

@@ -66,7 +66,6 @@ public class Elevator_Master : MonoBehaviour
     void Leave(){
         //put code to switch to item shop here
         if(leaving){
-            Debug.Log("Would exit scene here");
             leaving = false;
             GameTimer._instance.LoadItemShop();
         }
