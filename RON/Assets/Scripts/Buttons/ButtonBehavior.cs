@@ -8,8 +8,7 @@ public class ButtonBehavior : MonoBehaviour
 {
 	//public static SceneLoader singleton;
     // Start is called before the first frame update
-
-
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +26,7 @@ public class ButtonBehavior : MonoBehaviour
         DontDestroyOnLoad(gameObject);*/ // Allows this GameObject to persist through scene changes
     }
     void Update(){
-
+       
     }
 
     public void MainMenu()
@@ -41,10 +40,10 @@ public class ButtonBehavior : MonoBehaviour
     public void Play()
     {
         // Your code here
-        //GameObject.Find("Player").SetActive(true); 
         SceneManager.LoadScene(2);
     }
     public void Quit(){
     	Application.Quit(); 
-    }
+    } 
+    
 }
