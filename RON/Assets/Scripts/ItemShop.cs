@@ -25,44 +25,61 @@ public class ItemShop : MonoBehaviour
     { 
         Item purchase;
 
-        if (item >= 990)
+        switch (item)
         {
-            item -= 990;
-
-            switch (item)
-            {
-                case 0:
-                    purchase = new HealthBoost();
-                    break;
-                case 1:
-                    purchase = new DamageBoost();
-                    break;
-                default:
-                    purchase = new PassiveItem();
-                    break;
-            }
+            case 0:
+                purchase = new SlowGun();
+                break;
+            case 1:
+                purchase = new RandomGun();
+                break;
+            case 2:
+                purchase = new HandCannon();
+                break;
+            case 3:
+                purchase = new AssaultRifle();
+                break;
+            case 4:
+                purchase = new Dash(Player.playerInstance);
+                break;
+            case 5:
+                purchase = new Knockback(Player.playerInstance);
+                break;
+            case 6:
+                purchase = new Invisible(Player.playerInstance);
+                break;
+            case 7:
+                purchase = new Shield(Player.playerInstance);
+                break;
+            case 8:
+                purchase = new DamageBoost();
+                break;
+            case 9:
+                purchase = new HealthBoost();
+                break;
+            case 10:
+                purchase = new CritBoost();
+                break;
+            case 11:
+                purchase = new SpeedBoost();
+                break;
+            case 12:
+                purchase = new JumpBoost();
+                break;
+            case 13:
+                purchase = new DamageResistance();
+                break;
+            case 14:
+                purchase = new HealthRegen();
+                break;
+            case 15:
+                purchase = new TeddyBear();
+                break;
+            default:
+                purchase = new PassiveItem();
+                break;             
         }
-        else
-        {
-            switch (item)
-            {
-                case 0:
-                    purchase = new SlowGun();
-                    break;
-                case 1:
-                    purchase = new RandomGun();
-                    break;
-                case 2:
-                    purchase = new HandCannon();
-                    break;
-                case 3:
-                    purchase = new AssaultRifle();
-                    break;
-                default:
-                    purchase = new BaseGun();
-                    break;
-            }
-        }
+        
        
         itemName.gameObject.SetActive(true);
         itemName.text = purchase.itemName;
@@ -77,8 +94,6 @@ public class ItemShop : MonoBehaviour
 
     public void PurchaseItem()
     {
-
-        
         Item purchase;
 
         switch (this.selectedItem)
@@ -136,29 +151,159 @@ public class ItemShop : MonoBehaviour
                 }
                 break;
             case 4:
-                DamageBoost db = new DamageBoost();
-                if (db.cost <= Player.playerInstance.money)
+                purchase = new Dash(Player.playerInstance);
+                if (purchase.cost <= Player.playerInstance.money)
                 {
                     this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
-                    Player.playerInstance.money -= db.cost;
-                    db.ApplyBonus(Player.playerInstance);
+                    Player.playerInstance.money -= purchase.cost;
+                    Player.playerInstance.secondaryItem = (Dash)purchase;
                 }
                 break;
             case 5:
-                HealthBoost hb = new HealthBoost();
-                if (hb.cost <= Player.playerInstance.money)
+                purchase = new Knockback(Player.playerInstance);
+                if (purchase.cost <= Player.playerInstance.money)
                 {
                     this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
-                    Player.playerInstance.money -= hb.cost;
-                    hb.ApplyBonus(Player.playerInstance);
+                    Player.playerInstance.money -= purchase.cost;
+                    Player.playerInstance.secondaryItem = (Knockback) purchase;
+                }
+                break;
+            case 6:
+                purchase = new Invisible(Player.playerInstance);
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    Player.playerInstance.money -= purchase.cost;
+                    Player.playerInstance.secondaryItem = (Invisible)purchase;
+                }
+                break;
+            case 7:
+                purchase = new Shield(Player.playerInstance);
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    Player.playerInstance.money -= purchase.cost;
+                    Player.playerInstance.secondaryItem = (Shield)purchase;
+                }
+                break;
+            case 8:
+                purchase = new DamageBoost();
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    DamageBoost db = (DamageBoost) purchase;
+                    db.ApplyBonus(Player.playerInstance);
+                }
+                break;
+            case 9:
+                purchase = new HealthBoost();
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    HealthBoost item = (HealthBoost)purchase;
+                    item.ApplyBonus(Player.playerInstance);
+                }
+                break;
+            case 10:
+                purchase = new CritBoost();
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    CritBoost item = (CritBoost)purchase;
+                    item.ApplyBonus(Player.playerInstance);
+                }
+                break;
+            case 11:
+                purchase = new SpeedBoost();
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    SpeedBoost item = (SpeedBoost)purchase;
+                    item.ApplyBonus(Player.playerInstance);
+                }
+                break;
+            case 12:
+                purchase = new JumpBoost();
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    JumpBoost item = (JumpBoost)purchase;
+                    item.ApplyBonus(Player.playerInstance);
+                }
+                break;
+            case 13:
+                purchase = new DamageResistance();
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    DamageResistance item = (DamageResistance)purchase;
+                    item.ApplyBonus(Player.playerInstance);
+                }
+                break;
+            case 14:
+                purchase = new HealthRegen();
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    HealthRegen item = (HealthRegen)purchase;
+                    item.ApplyBonus(Player.playerInstance);
+                }
+                break;
+            case 15:
+                purchase = new TeddyBear();
+                if (purchase.cost <= Player.playerInstance.money)
+                {
+                    this.itemButtons[selectedItem].gameObject.SetActive(false);
+                    this.itemDescription.text = "Click on an item to get information about it and purchase it.";
+                    this.purchaseItem.gameObject.SetActive(false);
+                    this.itemName.gameObject.SetActive(false);
+                    this.itemCost.gameObject.SetActive(false);
+                    TeddyBear item = (TeddyBear)purchase;
+                    item.ApplyBonus(Player.playerInstance);
                 }
                 break;
             default:
