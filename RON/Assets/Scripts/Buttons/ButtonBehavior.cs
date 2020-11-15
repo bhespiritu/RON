@@ -41,6 +41,7 @@ public class ButtonBehavior : MonoBehaviour
     public void Play()
     {
         // Your code here
+        //GameObject.Find("Player").SetActive(true); 
         SceneManager.LoadScene(2);
     }
     public void Quit(){

@@ -110,8 +110,10 @@ public class Player : MonoBehaviour
 
 	public void Die()
     {
-    	an.SetBool("ded", true); 
-    	
+    	//an.SetBool("ded", true); 
+    	an.SetBool("ded", false);
+    	rb.velocity = new Vector2(0,0); 
+    	this.gameObject.SetActive(false); 
         SceneManager.LoadScene(3);
     }
 
@@ -258,5 +260,5 @@ public class Player : MonoBehaviour
         {
             this.isGrounded = true;
         }
-    }
+    }  
 }
