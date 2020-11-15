@@ -108,8 +108,10 @@ public class Player : MonoBehaviour
 
 	public void Die()
     {
-    	an.SetBool("ded", true); 
-    	
+    	//an.SetBool("ded", true); 
+    	an.SetBool("ded", false);
+    	rb.velocity = new Vector2(0,0); 
+    	//this.gameObject.SetActive(false); 
         SceneManager.LoadScene(3);
     }
 
@@ -191,6 +193,7 @@ public class Player : MonoBehaviour
         this.critChance = 0.0f;
         this.blockChance = 0f;
         this.canShoot = true;
+         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Update()
@@ -259,4 +262,9 @@ public class Player : MonoBehaviour
             this.isGrounded = true;
         }
     }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+    	rb.velocity = new Vector2(0,0); 
+        rb.position = new Vector3(15.91f,2.15f,-8.793485f); 
+        this.health = 100; 
+    }  
 }
