@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public int money;
     public List<ActiveItem> activeItems;
     public List<PassiveItem> passiveItems;
+    public SecondaryItem secondaryItem;
     public float jumpSpeed;
     public float speed;
     public float attack;
@@ -21,11 +22,14 @@ public class Player : MonoBehaviour
     public float healMultiplier;
     public float critChance;
     public float blockChance;
+    public bool canShoot = true;
+    public bool invisible;
 
     public MuzzleFlash muzzleFlash;
     public Transform firePos;
     public GameObject projectile;
     public GameObject critProjectile;
+    public GameObject shield;
     public float projSpeed = 100;
     
     private bool isGrounded = true;
@@ -177,6 +181,7 @@ public class Player : MonoBehaviour
         this.healMultiplier = 1f;
         this.activeItems = new List<ActiveItem>();
         this.passiveItems = new List<PassiveItem>();
+        this.secondaryItem = new Knockback(this);
         this.rb = GetComponent<Rigidbody2D>(); 
         this.an = GetComponent<Animator>(); 
         this.rb.gravityScale = 9;
@@ -185,10 +190,16 @@ public class Player : MonoBehaviour
         this.rand = new System.Random();
         this.critChance = 0.0f;
         this.blockChance = 0f;
+        this.canShoot = true;
     }
 
     void Update()
     {
+        if (this.health <= 0)
+        {
+            return;
+        }
+
         autofireDelay += Time.deltaTime;
         rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * this.speed, rb.velocity.y);
         an.SetFloat("Dir", Mathf.Abs(rb.velocity.x)); 
@@ -213,9 +224,14 @@ public class Player : MonoBehaviour
 
         }
 
-        if ((Input.GetMouseButton(0) && this.activeItems[0].autofire && this.autofireDelay >= 0.09) || Input.GetMouseButtonDown(0)){
+        if ((Input.GetMouseButton(0) && this.activeItems[0].autofire && this.autofireDelay >= 0.09 && canShoot) || (Input.GetMouseButtonDown(0) && canShoot)){
             this.autofireDelay = 0;
             Shoot((Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition)-transform.position).normalized); 
+        }
+
+        if (this.secondaryItem != null)
+        {
+            this.secondaryItem.Effect(Input.GetMouseButtonDown(1));
         }
     }
 

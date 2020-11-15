@@ -14,6 +14,7 @@ public class MiniBossLogic : MonoBehaviour
     private float swingCooldown = 0;
     private float alertCooldown = 0;
     private int attackCount = 0;
+    public Player player;
 
     public float wanderCooldown = 0;
 
@@ -35,11 +36,17 @@ public class MiniBossLogic : MonoBehaviour
     void Start()
     {
         info = GetComponent<EnemyInfo>();
+        this.player = this.info.target.GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (this.player == null)
+        {
+            this.player = this.info.target.GetComponent<Player>();
+        }
+
         if (info.health > 0)
         {
             foundTarget = (Vector2.Distance(info.target.position, transform.position) < detectionRadius);
@@ -53,7 +60,7 @@ public class MiniBossLogic : MonoBehaviour
             bool facing = (waypoint - transform.position).x > 0;
             info.sprite.flipX = facing;
 
-            if (foundTarget)
+            if (foundTarget && !this.player.invisible)
             {
                 waypoint = info.target.transform.position;
                 if (!sawPlayer)
