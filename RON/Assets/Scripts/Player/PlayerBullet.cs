@@ -28,7 +28,10 @@ public class PlayerBullet : MonoBehaviour
             if (collision.collider.tag == "Enemy")
             {
                 collision.collider.GetComponent<EnemyInfo>().Hurt(damage);
-
+                if (this.effect.Equals("slow"))
+                {
+                    collision.collider.GetComponent<EnemyInfo>().moveSpeed *= 0.99f;
+                }
             }
         }
 

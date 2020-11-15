@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -80,11 +78,11 @@ public class Player : MonoBehaviour
         if (this.rand.NextDouble() > this.blockChance)
         {
 
-            this.health -= (damage * this.damageMultiplier) + this.defense;
+            this.health -= (damage * this.damageMultiplier);
+            this.health += this.defense;
 
         } else
         {
-            Debug.Log("blocked! :)");
         }
 
         if (this.health <= 0)
@@ -142,12 +140,14 @@ public class Player : MonoBehaviour
                 var instance = Instantiate(critProjectile, (firePos.position + (Vector3)direction), Quaternion.identity);
                 instance.GetComponent<Rigidbody2D>().velocity = direction * this.activeItems[0].projectileSpeed;
                 instance.GetComponent<PlayerBullet>().damage = (int)(this.activeItems[0].damage * damageMultiplier * 3);
+                instance.GetComponent<PlayerBullet>().effect = this.activeItems[0].effect;
             }
             else
             {
                 var instance = Instantiate(projectile, (firePos.position + (Vector3)direction), Quaternion.identity);
                 instance.GetComponent<Rigidbody2D>().velocity = direction * this.activeItems[0].projectileSpeed;
                 instance.GetComponent<PlayerBullet>().damage = (int)(this.activeItems[0].damage * damageMultiplier);
+                instance.GetComponent<PlayerBullet>().effect = this.activeItems[0].effect;
             }
     	}
 	}
@@ -181,7 +181,7 @@ public class Player : MonoBehaviour
         this.healMultiplier = 1f;
         this.activeItems = new List<ActiveItem>();
         this.passiveItems = new List<PassiveItem>();
-        this.secondaryItem = new Knockback(this);
+        this.secondaryItem = null;
         this.rb = GetComponent<Rigidbody2D>(); 
         this.an = GetComponent<Animator>(); 
         this.rb.gravityScale = 9;
