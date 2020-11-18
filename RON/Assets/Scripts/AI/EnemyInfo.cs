@@ -10,7 +10,7 @@ public class EnemyInfo : MonoBehaviour
     public GameObject elevator;
     private Spawner_Master spawner;
 
-    public static float hurtDuration = 1/2f;
+    public static float hurtDuration = 1/8f;
 
     public bool isDead = false;
 
