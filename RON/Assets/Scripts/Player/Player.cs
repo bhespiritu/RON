@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +11,7 @@ public class Player : MonoBehaviour
     public int money;
     public List<ActiveItem> activeItems;
     public List<PassiveItem> passiveItems;
+    public SecondaryItem secondaryItem;
     public float jumpSpeed;
     public float speed;
     public float attack;
@@ -21,11 +20,14 @@ public class Player : MonoBehaviour
     public float healMultiplier;
     public float critChance;
     public float blockChance;
+    public bool canShoot = true;
+    public bool invisible;
 
     public MuzzleFlash muzzleFlash;
     public Transform firePos;
     public GameObject projectile;
     public GameObject critProjectile;
+    public GameObject shield;
     public float projSpeed = 100;
     
     private bool isGrounded = true;
@@ -76,11 +78,11 @@ public class Player : MonoBehaviour
         if (this.rand.NextDouble() > this.blockChance)
         {
 
-            this.health -= (damage * this.damageMultiplier) + this.defense;
+            this.health -= (damage * this.damageMultiplier);
+            this.health += this.defense;
 
         } else
         {
-            Debug.Log("blocked! :)");
         }
 
         if (this.health <= 0)
@@ -106,8 +108,10 @@ public class Player : MonoBehaviour
 
 	public void Die()
     {
-    	an.SetBool("ded", true); 
-    	
+    	//an.SetBool("ded", true); 
+    	an.SetBool("ded", false);
+    	rb.velocity = new Vector2(0,0); 
+    	//this.gameObject.SetActive(false); 
         SceneManager.LoadScene(3);
     }
 
@@ -138,12 +142,14 @@ public class Player : MonoBehaviour
                 var instance = Instantiate(critProjectile, (firePos.position + (Vector3)direction), Quaternion.identity);
                 instance.GetComponent<Rigidbody2D>().velocity = direction * this.activeItems[0].projectileSpeed;
                 instance.GetComponent<PlayerBullet>().damage = (int)(this.activeItems[0].damage * damageMultiplier * 3);
+                instance.GetComponent<PlayerBullet>().effect = this.activeItems[0].effect;
             }
             else
             {
                 var instance = Instantiate(projectile, (firePos.position + (Vector3)direction), Quaternion.identity);
                 instance.GetComponent<Rigidbody2D>().velocity = direction * this.activeItems[0].projectileSpeed;
                 instance.GetComponent<PlayerBullet>().damage = (int)(this.activeItems[0].damage * damageMultiplier);
+                instance.GetComponent<PlayerBullet>().effect = this.activeItems[0].effect;
             }
     	}
 	}
@@ -177,6 +183,7 @@ public class Player : MonoBehaviour
         this.healMultiplier = 1f;
         this.activeItems = new List<ActiveItem>();
         this.passiveItems = new List<PassiveItem>();
+        this.secondaryItem = null;
         this.rb = GetComponent<Rigidbody2D>(); 
         this.an = GetComponent<Animator>(); 
         this.rb.gravityScale = 9;
@@ -185,10 +192,17 @@ public class Player : MonoBehaviour
         this.rand = new System.Random();
         this.critChance = 0.0f;
         this.blockChance = 0f;
+        this.canShoot = true;
+         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Update()
     {
+        if (this.health <= 0)
+        {
+            return;
+        }
+
         autofireDelay += Time.deltaTime;
         rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * this.speed, rb.velocity.y);
         an.SetFloat("Dir", Mathf.Abs(rb.velocity.x)); 
@@ -213,9 +227,14 @@ public class Player : MonoBehaviour
 
         }
 
-        if ((Input.GetMouseButton(0) && this.activeItems[0].autofire && this.autofireDelay >= 0.09) || Input.GetMouseButtonDown(0)){
+        if ((Input.GetMouseButton(0) && this.activeItems[0].autofire && this.autofireDelay >= 0.09 && canShoot) || (Input.GetMouseButtonDown(0) && canShoot)){
             this.autofireDelay = 0;
             Shoot((Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition)-transform.position).normalized); 
+        }
+
+        if (this.secondaryItem != null)
+        {
+            this.secondaryItem.Effect(Input.GetMouseButtonDown(1));
         }
     }
 
@@ -243,4 +262,9 @@ public class Player : MonoBehaviour
             this.isGrounded = true;
         }
     }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+    	rb.velocity = new Vector2(0,0); 
+        rb.position = new Vector3(15.91f,2.15f,-8.793485f); 
+        this.health = 100; 
+    }  
 }

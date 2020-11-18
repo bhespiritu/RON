@@ -42,7 +42,7 @@ public class Interact_UI : MonoBehaviour
     }
 
     void ElStateChg(){
-        Debug.Log("Interact heard that EState Changed");
+        //Debug.Log("Interact heard that EState Changed");
         mode = eleCtrl.st;
     }
 }

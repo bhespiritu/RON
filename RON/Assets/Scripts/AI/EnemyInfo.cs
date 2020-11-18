@@ -18,6 +18,7 @@ public class EnemyInfo : MonoBehaviour
     public float hurtFor = 0;
     public float health = 100f;
     public float attackSpeed = 10;
+    public float moveSpeed = 5;
 
     public int difficulty = 0;
 
