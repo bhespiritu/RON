@@ -72,14 +72,15 @@ public class Player : MonoBehaviour
         }
     }
 
-	public void TakeDamage(int damage)
+	public void TakeDamage(float damage)
     {
 
         if (this.rand.NextDouble() > this.blockChance)
         {
-
-            this.health -= (damage * this.damageMultiplier);
-            this.health += this.defense;
+            float takenDamage = (damage * this.damageMultiplier);
+            this.health -= takenDamage;
+            if(takenDamage > this.defense)
+                this.health += this.defense;
 
         } else
         {
