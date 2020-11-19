@@ -112,7 +112,7 @@ public class Player : MonoBehaviour
     	//an.SetBool("ded", true); 
     	an.SetBool("ded", false);
     	rb.velocity = new Vector2(0,0); 
-    	//this.gameObject.SetActive(false); 
+    	this.gameObject.SetActive(false); 
         SceneManager.LoadScene(3);
     }
 

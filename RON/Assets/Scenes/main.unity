@@ -8355,7 +8355,7 @@ RectTransform:
   m_Children:
   - {fileID: 2126042653}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11218,6 +11218,7 @@ MonoBehaviour:
   Fin: {fileID: 21300000, guid: 97ed6434a6436794c9142e3e90e4dfdc, type: 3}
   sObj: {fileID: 1733433632}
   sCtrl: {fileID: 0}
+  nextStage: 5
 --- !u!212 &1733433635
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12638,7 +12639,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004777193 stripped
 GameObject:

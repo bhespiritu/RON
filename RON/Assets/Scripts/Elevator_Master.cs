@@ -20,6 +20,7 @@ public class Elevator_Master : MonoBehaviour
     public Spawner_Master sCtrl;
     public delegate void elEvent();
     public static event elEvent sChg;
+    public int nextStage;
     
     void Start()
     {
