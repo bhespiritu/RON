@@ -52,7 +52,8 @@ public class SideBurst : MonoBehaviour
             if (hit > 0)
             {
                 Player p = hitList[0].GetComponent<Player>();
-                p.TakeDamage(Mathf.CeilToInt(damageRate * Time.deltaTime));
+                if(p)
+                    p.TakeDamage(damageRate * Time.deltaTime);
             }
         }
     }

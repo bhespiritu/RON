@@ -22,11 +22,11 @@ TagManager:
   - Stage
   - Background
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyBullet
+  - EnemyBulletP
+  - PlayerBullet
+  - Player
+  - Enemy
   - 
   - 
   - 
