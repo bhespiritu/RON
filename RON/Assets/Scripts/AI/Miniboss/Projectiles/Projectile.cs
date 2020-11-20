@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public int damage = 10;
+    public LayerMask doHit;
 
     public void Start()
     {
@@ -14,11 +15,16 @@ public class Projectile : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        
         if (collision.collider != null)
         {
-            if(collision.collider.tag == "Player")
+            if(doHit == (doHit | (1 << collision.gameObject.layer)))
             {
+                Destroy(gameObject);
+            }
+            if (collision.collider.tag == "Player")
+            {
+                
                 collision.collider.GetComponent<Player>().TakeDamage(damage);
             }
         }

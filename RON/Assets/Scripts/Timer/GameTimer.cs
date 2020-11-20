@@ -22,6 +22,7 @@ public class GameTimer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        SceneManager.sceneLoaded += OnSceneLoad;
         if(_instance != null && _instance != this)
         {
             Destroy(gameObject);
@@ -36,11 +37,10 @@ public class GameTimer : MonoBehaviour
         playerObject = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private Vector3 spawnPoint;
+    private Vector2 spawnPoint;
 
     public void LoadItemShop(int next_stage = 2)
     {
-        spawnPoint = GameObject.Find("SpawnPoint").transform.position + Vector3.up * 3;
         Player.playerInstance.gameObject.SetActive(false);
         nextStage = next_stage;
         SceneManager.LoadScene(4);
@@ -56,9 +56,17 @@ public class GameTimer : MonoBehaviour
     public void LoadStage(int stage = 2)
     {
         Player.playerInstance.gameObject.SetActive(true);
-        Player.playerInstance.transform.position = spawnPoint;
         SceneManager.LoadScene(stage);
-        spawnPoint = GameObject.Find("SpawnPoint").transform.position + Vector3.up * 3;
+
+    }
+
+    public void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "ItemShop")
+        {
+            spawnPoint = GameObject.Find("SpawnPoint").transform.position + Vector3.up * 3;
+            Player.playerInstance.transform.position = spawnPoint;
+        }
     }
 
     public void LoadNextStage()
