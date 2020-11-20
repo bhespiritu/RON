@@ -227,7 +227,7 @@ public class Player : MonoBehaviour
         {
             if (delay >= timeBetweenSteps)
             {
-                this.footsteps.PlayOneShot(this.footstepClips[Random.Range(0, 6)], 0.5f);
+                this.footsteps.PlayOneShot(this.footstepClips[Random.Range(0, 6)], 0.5f*VolumeManager.sfxVal);
                 delay = 0;
             }
             else
@@ -252,7 +252,7 @@ public class Player : MonoBehaviour
 
         if ((Input.GetKeyDown("space") || Input.GetKeyDown("w") || Input.GetKeyDown("up")) && this.isGrounded && rb.velocity.y >= 0)
         {
-            this.footsteps.PlayOneShot(this.jump, 1f);
+            this.footsteps.PlayOneShot(this.jump, 1f * VolumeManager.sfxVal);
             rb.velocity = new Vector2(rb.velocity.x, this.jumpSpeed);
             isGrounded = false;
             an.SetBool("jumped", true);
@@ -267,7 +267,7 @@ public class Player : MonoBehaviour
         if ((Input.GetMouseButton(0) && this.activeItems[0].autofire && this.autofireDelay >= 0.09 && canShoot) || (Input.GetMouseButtonDown(0) && canShoot))
         {
             this.autofireDelay = 0;
-            this.footsteps.PlayOneShot(gunSounds[this.activeItems[0].id], 0.5f);
+            this.footsteps.PlayOneShot(gunSounds[this.activeItems[0].id], 0.5f * VolumeManager.sfxVal);
             Shoot((Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized);
         }
 
@@ -281,7 +281,7 @@ public class Player : MonoBehaviour
 
             if (this.secondaryItem.id == 2 && Input.GetMouseButtonDown(1) && this.secondaryItem.canUse)
             {
-                this.footsteps.PlayOneShot(this.invisIn, 1f);
+                this.footsteps.PlayOneShot(this.invisIn, 1f * VolumeManager.sfxVal);
             }
 
             if (this.secondaryItem.id ==2)
@@ -289,18 +289,18 @@ public class Player : MonoBehaviour
                 Invisible i = (Invisible) this.secondaryItem;
                 if (i.invisibleTimer >= i.invisibleDelay)
                 {
-                    this.footsteps.PlayOneShot(this.invisOut, 1f);
+                    this.footsteps.PlayOneShot(this.invisOut, 1f * VolumeManager.sfxVal);
                 }
             }
 
             if (this.secondaryItem.id == 0 && Input.GetMouseButtonDown(1) && this.secondaryItem.canUse)
             {
-                this.footsteps.PlayOneShot(this.dash, 0.5f);
+                this.footsteps.PlayOneShot(this.dash, 0.5f * VolumeManager.sfxVal);
             }
 
             if (this.secondaryItem.id == 3 && Input.GetMouseButtonDown(1) && this.secondaryItem.canUse)
             {
-                this.footsteps.PlayOneShot(this.knockback, 0.5f);
+                this.footsteps.PlayOneShot(this.knockback, 0.5f * VolumeManager.sfxVal);
             }
 
             this.secondaryItem.Effect(Input.GetMouseButtonDown(1));
