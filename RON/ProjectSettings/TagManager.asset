@@ -10,6 +10,7 @@ TagManager:
   - PassiveItem
   - Background
   - Elevator
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -22,12 +23,12 @@ TagManager:
   - Stage
   - Background
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - EnemyBullet
+  - EnemyBulletP
+  - PlayerBullet
+  - Player
+  - Enemy
+  - Shield
   - 
   - 
   - 

@@ -2,37 +2,35 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement; 
 
 public class ButtonBehavior : MonoBehaviour
 {
-	//public static SceneLoader singleton;
-    // Start is called before the first frame update
 
+    public Slider masterVolumeSlider;
+    public Slider sfxVolumeSlider;
+    public Slider musicVolumeSlider;
 
-    // Start is called before the first frame update
     void Start()
     {
-        //Ensure only one instance of scene loader exists at a time.
-        // This allows you to call functions in this script without needing to find a reference to it.
-       /* if (singleton == null)
-        {
-            singleton = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        masterVolumeSlider.onValueChanged.AddListener(delegate { UpdateMasterVolume(); });
+        sfxVolumeSlider.onValueChanged.AddListener(delegate { UpdateSFXVolume(); });
+        musicVolumeSlider.onValueChanged.AddListener(delegate { UpdateMusicVolume(); });
 
-        DontDestroyOnLoad(gameObject);*/ // Allows this GameObject to persist through scene changes
+
+        masterVolumeSlider.value = VolumeManager.masterVolume;
+        sfxVolumeSlider.value = VolumeManager.sfxVolume;
+        musicVolumeSlider.value = VolumeManager.musicVolume;
     }
     void Update(){
-
+       
     }
 
     public void MainMenu()
     {
         // Your code here
+        Destroy(Player.playerInstance);
         SceneManager.LoadScene(0);
     }
     public void Tutorial(){
@@ -46,4 +44,23 @@ public class ButtonBehavior : MonoBehaviour
     public void Quit(){
     	Application.Quit(); 
     }
+
+    
+
+    public void UpdateMasterVolume()
+    {
+        VolumeManager.masterVolume = masterVolumeSlider.value;
+    }
+
+    public void UpdateSFXVolume()
+    {
+        VolumeManager.sfxVolume = sfxVolumeSlider.value;
+    }
+
+    public void UpdateMusicVolume()
+    {
+        VolumeManager.musicVolume = musicVolumeSlider.value;
+    }
+
+
 }

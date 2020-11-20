@@ -16,6 +16,7 @@ public class GruntLogic : MonoBehaviour
     private float alertCooldown = 0;
     private int attackCount = 0;
     public int moveSpeed = 5;
+    public Player player;
 
     public float wanderCooldown = 0;
 
@@ -40,11 +41,18 @@ public class GruntLogic : MonoBehaviour
         swingCooldown = 1;
         info = GetComponent<EnemyInfo>();
         audio = GetComponent<AudioSource>();
+        audio.volume = VolumeManager.sfxVal;
+        this.player = Player.playerInstance;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (this.player == null)
+        {
+            this.player = this.info.target.GetComponent<Player>();
+        }
+
         if (info.health > 0)
         {
             foundTarget = (Vector2.Distance(info.target.position, transform.position) < detectionRadius);
@@ -58,7 +66,8 @@ public class GruntLogic : MonoBehaviour
             bool facing = (waypoint - transform.position).x > 0;
             info.sprite.flipX = !facing;
 
-            if (foundTarget)
+            //Debug.Log(!this.player.invisible);
+            if (foundTarget && !this.player.invisible)
             {
                 waypoint = info.target.transform.position;
 
@@ -117,4 +126,25 @@ public class GruntLogic : MonoBehaviour
             info.animator.SetTrigger("Die");
         }
     }
+
+    private void UpdateSFXVolume()
+    {
+        audio.volume = VolumeManager.sfxVal;
+    }
+
+    private void OnEnable()
+    {
+        VolumeManager.OnMusicVolumeChange += UpdateSFXVolume;
+    }
+
+    private void OnDisable()
+    {
+        VolumeManager.OnMusicVolumeChange -= UpdateSFXVolume;
+    }
+
+    private void OnDestroy()
+    {
+        VolumeManager.OnMusicVolumeChange -= UpdateSFXVolume;
+    }
+
 }

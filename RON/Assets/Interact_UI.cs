@@ -27,11 +27,11 @@ public class Interact_UI : MonoBehaviour
     {
         if(mode != Elevator_Master.eState.Event){
             //Debug.Log("Distance from player to elevator is " + Mathf.Abs(Vector3.Distance(player.transform.position,target.transform.position)));
-            if(!shown && Mathf.Abs(Vector3.Distance(player.transform.position,target.transform.position))<10f){
+            if(!shown && Mathf.Abs(Vector3.Distance(player.transform.position,target.transform.position))<3f){
                 shown = true;
                 tip.SetActive(true);
             }
-            if(shown && Mathf.Abs(Vector3.Distance(player.transform.position,target.transform.position))>10f){
+            if(shown && Mathf.Abs(Vector3.Distance(player.transform.position,target.transform.position))>3f){
                 shown = false;
                 tip.SetActive(false);
             }
@@ -42,7 +42,7 @@ public class Interact_UI : MonoBehaviour
     }
 
     void ElStateChg(){
-        Debug.Log("Interact heard that EState Changed");
+        //Debug.Log("Interact heard that EState Changed");
         mode = eleCtrl.st;
     }
 }

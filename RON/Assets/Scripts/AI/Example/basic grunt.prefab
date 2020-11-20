@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5272183904013428764}
   - component: {fileID: 617155175935864471}
   - component: {fileID: 6951759120933354634}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: basic grunt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4479007666786642138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.57, y: 2.08, z: -8.793485}
+  m_LocalPosition: {x: 4.57, y: 2.08, z: 0}
   m_LocalScale: {x: 0.5417154, y: 0.5417154, z: 0.5417154}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b07bc1c7c97ed7419397b4f8abae23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPhysicsBased: 0
   animator: {fileID: 0}
   sprite: {fileID: 0}
   elevator: {fileID: 0}
@@ -108,7 +109,8 @@ MonoBehaviour:
   hurtFor: 0
   health: 100
   attackSpeed: 10
-  difficulty: 15
+  moveSpeed: 5
+  difficulty: 10
   facing: 1
   attackDamage: 10
   difficultyScale:
@@ -137,7 +139,13 @@ MonoBehaviour:
     m_RotationOrder: 4
   target: {fileID: 0}
   itemPrefabs:
-  - {fileID: 423308079951381115, guid: 46b9b1e7f9568214cbbb9dcdf9cfdfc1, type: 3}
+  - {fileID: 2585084123710157230, guid: bb4b4861462ccca4f9b25b2d73ec4e49, type: 3}
+  - {fileID: 5244557435628846062, guid: 7428d792df98f1944a60cec01b76cb06, type: 3}
+  - {fileID: 1781040035746607314, guid: 42054a72a715b0549bc40ccbdbc67652, type: 3}
+  - {fileID: 3750140847310746592, guid: 65f88b50d7248864c8ed95395c3f89f9, type: 3}
+  - {fileID: 6816315602561029395, guid: 824887ebe1aa4924f9d543622af4d134, type: 3}
+  - {fileID: 3273649595278809051, guid: 0f1d3de6d74b46f478de63d4c045e1ed, type: 3}
+  - {fileID: 3868183875990484177, guid: ad64fc5c0ab1f6844ba3b8b1d02368d0, type: 3}
   - {fileID: 5729857272890466247, guid: e93cdb3e69e9e08428d1c7c316b1c018, type: 3}
 --- !u!95 &7291219779005422970
 Animator:
@@ -173,7 +181,7 @@ Rigidbody2D:
   m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 9
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -192,7 +200,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.037646055, y: -0.17690408}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -203,7 +211,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.4545455, y: 5.4545455}
+  m_Size: {x: 4.114324, y: 4.6638966}
   m_EdgeRadius: 0
 --- !u!114 &617155175935864471
 MonoBehaviour:
@@ -223,6 +231,7 @@ MonoBehaviour:
   foundTarget: 0
   attackMax: 3
   moveSpeed: 5
+  player: {fileID: 0}
   wanderCooldown: 0
   projectile: {fileID: 7132470720346114343, guid: 1179418f01425c4429fe7ee9608a14d6,
     type: 3}

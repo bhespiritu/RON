@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class EnemyInfo : MonoBehaviour
 {
-
+    public bool isPhysicsBased = false;
     public Animator animator;
     public SpriteRenderer sprite;
     public GameObject elevator;
     private Spawner_Master spawner;
 
-    public static float hurtDuration = 1/2f;
+    public static float hurtDuration = 1/8f;
 
     public bool isDead = false;
 
@@ -18,6 +18,7 @@ public class EnemyInfo : MonoBehaviour
     public float hurtFor = 0;
     public float health = 100f;
     public float attackSpeed = 10;
+    public float moveSpeed = 5;
 
     public int difficulty = 0;
 
@@ -43,12 +44,16 @@ public class EnemyInfo : MonoBehaviour
 
     public void Update()
     {
-        if(hurtFor > 0)
+        if (sprite)
         {
-            sprite.color = Color.red;
-        } else
-        {
-            sprite.color = Color.white;
+            if (hurtFor > 0)
+            {
+                sprite.color = Color.red;
+            }
+            else
+            {
+                sprite.color = Color.white;
+            }
         }
 
 
@@ -71,15 +76,18 @@ public class EnemyInfo : MonoBehaviour
         isDead = true;
         Destroy(gameObject, 3);
 
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<Rigidbody2D>().isKinematic = true;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        
+        if (!isPhysicsBased)
+        {
+            GetComponent<Collider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().isKinematic = true;
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
         target.GetComponent<Player>().AddMoney(10);
         spawner.kill(gameObject);
 
         var iPrefab = itemPrefabs[Random.Range(0,itemPrefabs.Length)];
         var item = Instantiate(iPrefab, transform.position, Quaternion.identity);
-        item.GetComponent<PassiveItemSprite>().itemId = (Random.value < 0.5) ? 0 : 1; 
     }
 
     //NOTE FOR REVIEWER
@@ -89,7 +97,7 @@ public class EnemyInfo : MonoBehaviour
     // a player touches something.
     public void OnCollisionEnter2D(Collision2D c)
     {
-        if(c.collider != null)
+        if(c.collider != null && !isDead)
         {
             if(c.gameObject.tag == "Player")
             {

@@ -9,7 +9,6 @@ public class DamageBoost : PassiveItem
     }
     public override void ApplyBonus(Player p)
     {
-        Debug.Log("applying bonus");
         p.damageMultiplier *= this.damageScale;
     }
 }

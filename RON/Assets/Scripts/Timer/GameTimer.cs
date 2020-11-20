@@ -9,6 +9,8 @@ public class GameTimer : MonoBehaviour
     private static float _accumTime;
     private static bool _isPaused = false;
 
+    public static int nextStage = 0;
+
     public static bool isPaused => _isPaused;
 
     public static float time => _accumTime + (!_isPaused ? (Time.time - _startTime) : 0);
@@ -20,6 +22,7 @@ public class GameTimer : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        SceneManager.sceneLoaded += OnSceneLoad;
         if(_instance != null && _instance != this)
         {
             Destroy(gameObject);
@@ -34,22 +37,43 @@ public class GameTimer : MonoBehaviour
         playerObject = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private Vector3 spawnPoint;
+    private Vector2 spawnPoint;
 
-    public void LoadItemShop()
+    public void LoadItemShop(int next_stage = 2)
     {
-        spawnPoint = GameObject.Find("SpawnPoint").transform.position + Vector3.up * 3;
         Player.playerInstance.gameObject.SetActive(false);
+        nextStage = next_stage;
         SceneManager.LoadScene(4);
         
     }
 
-    public void LoadMainScene()
+    public void LoadDeathScene()
+    {
+        Destroy(Player.playerInstance.gameObject);
+        SceneManager.LoadScene(3);
+    }
+
+    public void LoadStage(int stage = 2)
     {
         Player.playerInstance.gameObject.SetActive(true);
-        Player.playerInstance.transform.position = spawnPoint;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(stage);
 
+    }
+
+    public void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name != "ItemShop")
+        {
+            var gameObject = GameObject.Find("SpawnPoint");
+            print(gameObject.transform.position);
+            spawnPoint = GameObject.Find("SpawnPoint").transform.position + Vector3.up * 3;
+            Player.playerInstance.transform.position = spawnPoint;
+        }
+    }
+
+    public void LoadNextStage()
+    {
+        LoadStage(nextStage);
     }
 
     public static void ResetTimer()
