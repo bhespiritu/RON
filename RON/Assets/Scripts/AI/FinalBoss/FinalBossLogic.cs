@@ -59,6 +59,8 @@ public class FinalBossLogic : MonoBehaviour
     [Header("Effect Prefabs")]
     public GameObject impactEffect;
 
+    private Player player;
+
     public void Start()
     {
         nextState = currentState;
@@ -67,6 +69,7 @@ public class FinalBossLogic : MonoBehaviour
         info = GetComponent<EnemyInfo>();
         spawnPoints = GameObject.Find("BossSpawnPoints").GetComponentsInChildren<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        player = Player.playerInstance;
     }
 
     public void Update()
@@ -82,6 +85,8 @@ public class FinalBossLogic : MonoBehaviour
         StateUpdate();
 
     }
+
+    private Vector2 targetPos;
 
     public void StateUpdate()
     {
@@ -121,7 +126,8 @@ public class FinalBossLogic : MonoBehaviour
                     if(timeSinceShoot > shotPeriod)
                     {
                         timeShoot = GameTimer.time + shotPeriod;
-                        Vector2 targetPos = info.target.position;
+                        if(!this.player.invisible)
+                            targetPos = info.target.position;
                         Vector2 diff = targetPos - (Vector2)transform.position;
                         var bullet = Instantiate(projectile, transform.position, Quaternion.identity);
                         bullet.transform.localScale = Vector3.one * 0.75f;

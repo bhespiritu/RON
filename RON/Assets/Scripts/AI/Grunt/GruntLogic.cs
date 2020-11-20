@@ -41,6 +41,7 @@ public class GruntLogic : MonoBehaviour
         swingCooldown = 1;
         info = GetComponent<EnemyInfo>();
         audio = GetComponent<AudioSource>();
+        audio.volume = VolumeManager.sfxVal;
         this.player = Player.playerInstance;
     }
 
@@ -125,4 +126,25 @@ public class GruntLogic : MonoBehaviour
             info.animator.SetTrigger("Die");
         }
     }
+
+    private void UpdateSFXVolume()
+    {
+        audio.volume = VolumeManager.sfxVal;
+    }
+
+    private void OnEnable()
+    {
+        VolumeManager.OnMusicVolumeChange += UpdateSFXVolume;
+    }
+
+    private void OnDisable()
+    {
+        VolumeManager.OnMusicVolumeChange -= UpdateSFXVolume;
+    }
+
+    private void OnDestroy()
+    {
+        VolumeManager.OnMusicVolumeChange -= UpdateSFXVolume;
+    }
+
 }

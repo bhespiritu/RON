@@ -36,10 +36,13 @@ public class DroneLogic : MonoBehaviour
     public MuzzleFlash muzzleFlash;
     public float shootForce = 5;
     public GameObject impact;
+
+    private Player player;
     
 
     void Start()
     {
+        player = Player.playerInstance;
         rb = GetComponent<Rigidbody2D>();
         info = GetComponent<EnemyInfo>();
     }
@@ -67,7 +70,7 @@ public class DroneLogic : MonoBehaviour
             laser.gameObject.SetActive(foundTarget);
 
         
-        if (foundTarget && !isFlicker)
+        if (foundTarget && !isFlicker && !this.player.invisible)
         {
             targetPos = info.target.position;
             
