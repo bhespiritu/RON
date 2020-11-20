@@ -68,8 +68,8 @@ public class Spawner_Master : MonoBehaviour
             init = false;
         }
         //Debug.Log("Past init2...");
-
-        crAcc += (GameTimer.time/30f+1)*Time.deltaTime*(1-Mathf.Min(eCredSum/GameTimer.time, 1));
+        //Debug.Log("New creds = " +((GameTimer.time/30f+1)*Time.deltaTime*(1-Mathf.Min(eCredSum/GameTimer.time, 1))));
+        crAcc += (GameTimer.time/60f+1)*Time.deltaTime*(1-Mathf.Min(eCredSum/GameTimer.time, 1));
         if(mode == Elevator_Master.eState.Event){
             crAcc += eBonus * Time.deltaTime*(GameTimer.time/30f+1);
         }

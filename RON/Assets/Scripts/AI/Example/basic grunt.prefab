@@ -110,7 +110,7 @@ MonoBehaviour:
   health: 100
   attackSpeed: 10
   moveSpeed: 5
-  difficulty: 15
+  difficulty: 10
   facing: 1
   attackDamage: 10
   difficultyScale:
