@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5244557435628846059}
   - component: {fileID: 5244557435628846056}
   - component: {fileID: 5244557435628846057}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: CritBoost
   m_TagString: PassiveItem
   m_Icon: {fileID: 0}

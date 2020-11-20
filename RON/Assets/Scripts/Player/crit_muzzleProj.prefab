@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1967271160235438302}
   - component: {fileID: -6398761874203280943}
   - component: {fileID: -4325805304396560987}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: crit_muzzleProj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
