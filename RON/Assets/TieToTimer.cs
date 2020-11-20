@@ -10,9 +10,14 @@ public class TieToTimer : MonoBehaviour
         timer = GameTimer._instance;
     }
 
-    public void LoadMain()
+    public void LoadStage(int stage = 2)
     {
-        timer.LoadMainScene();
+        timer.LoadStage(stage);
+    }
+
+    public void LoadNextStage()
+    {
+        timer.LoadNextStage();
     }
 
 }

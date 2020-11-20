@@ -3600,7 +3600,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1741185583}
-        m_MethodName: LoadMain
+        m_MethodName: LoadNextStage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
