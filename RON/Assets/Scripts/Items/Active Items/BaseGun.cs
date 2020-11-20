@@ -2,7 +2,7 @@
 
 public class BaseGun : ActiveItem
 {
-    public BaseGun(string name = "Base Gun") : base(10, false, name, -1)
+    public BaseGun(string name = "Base Gun") : base(10, false, name, 4)
     {
     }
 
