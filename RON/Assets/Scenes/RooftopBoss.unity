@@ -1786,6 +1786,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 881320565}
   m_CullTransparentMesh: 0
+--- !u!1 &913616986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1470927835744262654, guid: 9ca7f3fff5e90bb47a88484242d4c5ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 1470927835325313955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &957954069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3630,6 +3636,7 @@ MonoBehaviour:
   Fin: {fileID: 21300000, guid: 97ed6434a6436794c9142e3e90e4dfdc, type: 3}
   sObj: {fileID: 1733433632}
   sCtrl: {fileID: 0}
+  nextStage: 0
 --- !u!212 &1733433635
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3832,7 +3839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1856257826
 Transform:
   m_ObjectHideFlags: 0
@@ -3859,8 +3866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a308f170fcf28947a7f85a20e30bc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossPF: {fileID: 899351221873136252, guid: d2d3be1dcec01b546b5d351fe0444e94, type: 3}
-  bossReal: {fileID: 0}
+  bossPF: {fileID: 913616986}
+  bossReal: {fileID: 913616986}
   elevator: {fileID: 1733433632}
   wMessage: {fileID: 116836709}
   qButton: {fileID: 1246657011}
@@ -4062,7 +4069,17 @@ PrefabInstance:
     - target: {fileID: 1470927835744262654, guid: 9ca7f3fff5e90bb47a88484242d4c5ee,
         type: 3}
       propertyPath: m_Name
-      value: Miniboss
+      value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470927835744262654, guid: 9ca7f3fff5e90bb47a88484242d4c5ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470927835744262654, guid: 9ca7f3fff5e90bb47a88484242d4c5ee,
+        type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ca7f3fff5e90bb47a88484242d4c5ee, type: 3}
