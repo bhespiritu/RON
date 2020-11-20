@@ -64,6 +64,8 @@ public class GameTimer : MonoBehaviour
     {
         if (scene.name != "ItemShop")
         {
+            var gameObject = GameObject.Find("SpawnPoint");
+            print(gameObject.transform.position);
             spawnPoint = GameObject.Find("SpawnPoint").transform.position + Vector3.up * 3;
             Player.playerInstance.transform.position = spawnPoint;
         }
