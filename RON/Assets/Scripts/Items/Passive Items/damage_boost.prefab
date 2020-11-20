@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2585084123710157200}
   - component: {fileID: 2585084123710157201}
   - component: {fileID: 2585084123710157205}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: damage_boost
   m_TagString: PassiveItem
   m_Icon: {fileID: 0}

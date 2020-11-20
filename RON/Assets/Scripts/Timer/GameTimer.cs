@@ -69,6 +69,10 @@ public class GameTimer : MonoBehaviour
             spawnPoint = GameObject.Find("SpawnPoint").transform.position + Vector3.up * 3;
             Player.playerInstance.transform.position = spawnPoint;
         }
+        if(scene.name == "StartScreen")
+        {
+            Player.playerInstance.gameObject.SetActive(false);
+        }
     }
 
     public void LoadNextStage()
