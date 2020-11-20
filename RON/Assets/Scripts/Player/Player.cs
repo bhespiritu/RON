@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
     public AudioSource footsteps;
     public AudioClip[] footstepClips;
     public AudioClip[] gunSounds;
+    public AudioClip[] hurtSounds;
     public AudioClip jump;
     public AudioClip dash;
     public AudioClip knockback;
@@ -54,6 +55,7 @@ public class Player : MonoBehaviour
     public AudioClip shieldHum;
     public AudioClip invisIn;
     public AudioClip invisOut;
+    public AudioClip dead;
 
     public Player(float health = 100, float maxHealth = 100, int money = 0, List<ActiveItem> activeItems = null, List<PassiveItem> passiveItems = null, float speed = 10, float jumpSpeed = 40, float attack = 10, float defense = 10, float damageMultiplier = 1f, float healMultiplier = 1f)
     {
@@ -89,13 +91,12 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damage)
     {
 
+        float oldHealth = this.health / this.maxHealth;
+        
+
         if (this.rand.NextDouble() > this.blockChance)
         {
-            float takenDamage = (damage * this.damageMultiplier);
-            this.health -= takenDamage;
-            if (takenDamage > this.defense)
-                this.health += this.defense;
-
+            this.health -= damage * defense;
         }
         else
         {
@@ -104,7 +105,24 @@ public class Player : MonoBehaviour
         if (this.health <= 0)
         {
             an.SetBool("ded", true);
+            this.footsteps.PlayOneShot(this.dead, 1f);
+        }
 
+        float newHealth = this.health / this.maxHealth;
+
+        if (oldHealth >= 0.75f && newHealth < 0.75f)
+        {
+            this.footsteps.PlayOneShot(this.hurtSounds[Random.Range(0, 5)], 0.25f);
+        }
+
+        if (oldHealth >= 0.35f && newHealth < 0.35f)
+        {
+            this.footsteps.PlayOneShot(this.hurtSounds[Random.Range(0, 5)], 0.5f);
+        }
+
+        if (oldHealth >= 0.1f && newHealth < 0.1f)
+        {
+            this.footsteps.PlayOneShot(this.hurtSounds[Random.Range(0, 5)], 1f);
         }
 
         hChange?.Invoke(this.health / this.maxHealth);
@@ -195,7 +213,7 @@ public class Player : MonoBehaviour
         this.speed = 10f;
         this.jumpSpeed = 40f;
         this.attack = 10f;
-        this.defense = 0f;
+        this.defense = 1f;
         this.damageMultiplier = 1f;
         this.healMultiplier = 1f;
         this.activeItems = new List<ActiveItem>();
