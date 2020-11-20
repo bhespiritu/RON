@@ -10,6 +10,7 @@ TagManager:
   - PassiveItem
   - Background
   - Elevator
+  - Boss
   layers:
   - Default
   - TransparentFX

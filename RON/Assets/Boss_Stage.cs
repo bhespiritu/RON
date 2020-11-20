@@ -12,7 +12,7 @@ public class Boss_Stage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bossReal = Instantiate(bossPF, new Vector3(0,5,0), Quaternion.identity);
+        //bossReal = GameObject.FindGameObjectWithTag("Boss"); //Instantiate(bossPF, new Vector3(0,5,0), Quaternion.identity);
         bAlive = true;
         elevator.SetActive(false);
         wMessage.SetActive(false);
