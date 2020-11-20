@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3750140847310746607}
   - component: {fileID: 3750140847310746606}
   - component: {fileID: 3750140847310746593}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: jump boost
   m_TagString: PassiveItem
   m_Icon: {fileID: 0}

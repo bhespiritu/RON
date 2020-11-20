@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3868183875990484178}
   - component: {fileID: 3868183875990484179}
   - component: {fileID: 3868183875990484176}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: damage resistance
   m_TagString: PassiveItem
   m_Icon: {fileID: 0}

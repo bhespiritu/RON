@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6816315602561029868}
   - component: {fileID: 6816315602561029869}
   - component: {fileID: 6816315602561029394}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: speed boost
   m_TagString: PassiveItem
   m_Icon: {fileID: 0}
