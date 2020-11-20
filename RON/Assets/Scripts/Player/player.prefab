@@ -318,6 +318,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b0ef26a5a24361b40b070f42efb4de3a, type: 3}
   - {fileID: 8300000, guid: e6d256013d2c77f42a79cc0695787003, type: 3}
   - {fileID: 8300000, guid: e6d256013d2c77f42a79cc0695787003, type: 3}
+  hurtSounds:
+  - {fileID: 8300000, guid: 8abed58c9f2775349af7ee63f20aeea8, type: 3}
+  - {fileID: 8300000, guid: aa074a6e5acd1ff48b8c3f8e92139e2e, type: 3}
+  - {fileID: 8300000, guid: 53b0131d46c5c2c4bbed9ed8fef6f53d, type: 3}
+  - {fileID: 8300000, guid: 6f28a6f81a59c3f4cb1390bedfd2579d, type: 3}
   jump: {fileID: 8300000, guid: 1639b8cb39705ff4eb777fe87b52bc25, type: 3}
   dash: {fileID: 8300000, guid: d739e52d43a9388439ecfbef5994924a, type: 3}
   knockback: {fileID: 8300000, guid: eb4f2ea225ad1d04ca18ce0906e4fcf9, type: 3}
@@ -325,6 +330,7 @@ MonoBehaviour:
   shieldHum: {fileID: 8300000, guid: ee1c5d669281a9848bbd8f7c2109404a, type: 3}
   invisIn: {fileID: 8300000, guid: 77504be116538bf4e9082332a876e9bf, type: 3}
   invisOut: {fileID: 8300000, guid: bc611ff5763d69a4287c3a0875f631ff, type: 3}
+  dead: {fileID: 8300000, guid: b0bd0aa75d859864dbcf03cceb6da4dd, type: 3}
 --- !u!95 &7083996499965910055
 Animator:
   serializedVersion: 3

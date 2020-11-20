@@ -212,6 +212,7 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     DamageBoost db = (DamageBoost) purchase;
+                    Player.playerInstance.money -= purchase.cost;
                     db.ApplyBonus(Player.playerInstance);
                 }
                 break;
@@ -225,6 +226,7 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     HealthBoost item = (HealthBoost)purchase;
+                    Player.playerInstance.money -= purchase.cost;
                     item.ApplyBonus(Player.playerInstance);
                 }
                 break;
@@ -238,6 +240,7 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     CritBoost item = (CritBoost)purchase;
+                    Player.playerInstance.money -= purchase.cost;
                     item.ApplyBonus(Player.playerInstance);
                 }
                 break;
@@ -251,6 +254,7 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     SpeedBoost item = (SpeedBoost)purchase;
+                    Player.playerInstance.money -= purchase.cost;
                     item.ApplyBonus(Player.playerInstance);
                 }
                 break;
@@ -264,6 +268,7 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     JumpBoost item = (JumpBoost)purchase;
+                    Player.playerInstance.money -= purchase.cost;
                     item.ApplyBonus(Player.playerInstance);
                 }
                 break;
@@ -277,6 +282,7 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     DamageResistance item = (DamageResistance)purchase;
+                    Player.playerInstance.money -= purchase.cost;
                     item.ApplyBonus(Player.playerInstance);
                 }
                 break;
@@ -290,6 +296,7 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     HealthRegen item = (HealthRegen)purchase;
+                    Player.playerInstance.money -= purchase.cost;
                     item.ApplyBonus(Player.playerInstance);
                 }
                 break;
@@ -303,6 +310,7 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     TeddyBear item = (TeddyBear)purchase;
+                    Player.playerInstance.money -= purchase.cost;
                     item.ApplyBonus(Player.playerInstance);
                 }
                 break;

@@ -36,7 +36,7 @@ public class Elevator_Master : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("State is " + st + ", E pressed: " + Input.GetKey(KeyCode.E) + ", Distance is " + Mathf.Abs(Vector2.Distance(new Vector2(player.transform.position.x,player.transform.position.y), new Vector2(transform.position.x, transform.position.y))) + "\nPlayer pos is " + player.transform.position + ", Elevator pos is " + transform.position);
+        //Debug.Log("State is " + st + ", E pressed: " + Input.GetKey(KeyCode.E) + ", Distance is " + Mathf.Abs(Vector2.Distance(new Vector2(player.transform.position.x,player.transform.position.y), new Vector2(transform.position.x, transform.position.y))) + "\nPlayer pos is " + player.transform.position + ", Elevator pos is " + transform.position);
         if(st == eState.Finished && !leaving && Input.GetKey(KeyCode.E)){
             leaving = true;
         }
