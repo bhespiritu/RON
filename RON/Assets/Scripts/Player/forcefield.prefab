@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2577275234623802004}
   - component: {fileID: 9191772402733794920}
   - component: {fileID: 6411861898451000973}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: forcefield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
