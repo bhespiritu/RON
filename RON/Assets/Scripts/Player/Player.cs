@@ -111,8 +111,9 @@ public class Player : MonoBehaviour
     {
     	//an.SetBool("ded", true); 
     	an.SetBool("ded", false);
-    	rb.velocity = new Vector2(0,0); 
-    	this.gameObject.SetActive(false); 
+    	rb.velocity = new Vector2(0,0);
+        Destroy(gameObject);
+        Destroy(GameTimer._instance.gameObject);
         SceneManager.LoadScene(3);
     }
 

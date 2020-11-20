@@ -47,6 +47,12 @@ public class GameTimer : MonoBehaviour
         
     }
 
+    public void LoadDeathScene()
+    {
+        Destroy(Player.playerInstance.gameObject);
+        SceneManager.LoadScene(3);
+    }
+
     public void LoadStage(int stage = 2)
     {
         Player.playerInstance.gameObject.SetActive(true);

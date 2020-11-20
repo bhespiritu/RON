@@ -28,7 +28,7 @@ public class Elevator_Master : MonoBehaviour
         eSprite = GetComponent<SpriteRenderer>();
         eSprite.sprite = Init;
         sCtrl = sObj.GetComponent<Spawner_Master>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        player = Player.playerInstance.GetComponent<Rigidbody2D>();
         leaving = false;
         lAcc = 0f;
     }
@@ -71,7 +71,7 @@ public class Elevator_Master : MonoBehaviour
         //put code to switch to item shop here
         if(leaving){
             leaving = false;
-            GameTimer._instance.LoadItemShop();
+            GameTimer._instance.LoadItemShop(nextStage);
         }
         
     }

@@ -41,7 +41,7 @@ public class GruntLogic : MonoBehaviour
         swingCooldown = 1;
         info = GetComponent<EnemyInfo>();
         audio = GetComponent<AudioSource>();
-        this.player = this.info.target.GetComponent<Player>();
+        this.player = Player.playerInstance;
     }
 
     // Update is called once per frame
