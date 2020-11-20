@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5272183904013428764}
   - component: {fileID: 617155175935864471}
   - component: {fileID: 6951759120933354634}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: basic grunt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b07bc1c7c97ed7419397b4f8abae23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPhysicsBased: 0
   animator: {fileID: 0}
   sprite: {fileID: 0}
   elevator: {fileID: 0}
@@ -108,6 +109,7 @@ MonoBehaviour:
   hurtFor: 0
   health: 100
   attackSpeed: 10
+  moveSpeed: 5
   difficulty: 15
   facing: 1
   attackDamage: 10
@@ -229,6 +231,7 @@ MonoBehaviour:
   foundTarget: 0
   attackMax: 3
   moveSpeed: 5
+  player: {fileID: 0}
   wanderCooldown: 0
   projectile: {fileID: 7132470720346114343, guid: 1179418f01425c4429fe7ee9608a14d6,
     type: 3}
