@@ -218,7 +218,7 @@ public class Player : MonoBehaviour
         this.healMultiplier = 1f;
         this.activeItems = new List<ActiveItem>();
         this.passiveItems = new List<PassiveItem>();
-        this.secondaryItem = new Invisible(this);
+        this.secondaryItem = null;
         this.rb = GetComponent<Rigidbody2D>();
         this.an = GetComponent<Animator>();
         this.rb.gravityScale = 9;
