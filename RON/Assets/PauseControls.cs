@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseControls : MonoBehaviour
 {
 	[SerializeField] private GameObject PauseScreen; 
 	[SerializeField] private Player p; 
 	[SerializeField] public Text t; 
-    [SerializeField] private bool isPaused;
+    [SerializeField] public bool isPaused;
     // Start is called before the first frame update
     void Start()
     {
         p = GameObject.Find("player").GetComponent<Player>(); 
         t = GameObject.Find("StatsText").GetComponent<Text>(); 
-        t.text = "Your Stats: Health = " + p.health + ", Money = " + p.money + ", Speed = " + p.speed;
+        t.text = "Your Stats: Health = " + (int)p.health + ", Money = " + p.money + ", Speed = " + p.speed;
         
     }
 
@@ -38,6 +39,11 @@ public class PauseControls : MonoBehaviour
     public void Pause(){ 
         ActivatePause(); 
     }
+    public void ToMain(){
+        DeactivatePause(); 
+        Destroy(Player.playerInstance);
+    	SceneManager.LoadScene(0);
+    }
     public void DeactivatePause(){
         Time.timeScale = 1f; 
         PauseScreen.SetActive(false); 
@@ -45,7 +51,6 @@ public class PauseControls : MonoBehaviour
     public void ActivatePause(){
         Time.timeScale = 0f; 
         PauseScreen.SetActive(true); 
-        Debug.Log("I get here"); 
-        t.text = "Your Stats:\nHealth= " + p.health + "/" +p.maxHealth+ ",   Money= $" + p.money + ",   Speed= " + p.speed + ",   CritChance= " + p.critChance;
+        t.text = "Your Stats:\nHealth= " + (int)p.health + "/" +p.maxHealth+ ",   Money= $" + p.money + ",   Speed= " + p.speed + ",   CritChance= " + p.critChance;
     }
 }

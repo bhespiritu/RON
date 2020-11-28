@@ -336,7 +336,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.00091553, y: 0.0022278}
-  m_SizeDelta: {x: 1110.998, y: 625.00446}
+  m_SizeDelta: {x: 1233, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411367238
 MonoBehaviour:
@@ -350,6 +350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d75fd537cbf54ad58fb80a02e868c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolumeSlider: {fileID: 0}
+  sfxVolumeSlider: {fileID: 0}
+  musicVolumeSlider: {fileID: 0}
 --- !u!1 &475794193
 GameObject:
   m_ObjectHideFlags: 0
