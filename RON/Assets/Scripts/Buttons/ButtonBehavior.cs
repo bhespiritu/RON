@@ -39,7 +39,7 @@ public class ButtonBehavior : MonoBehaviour
     public void Play()
     {
         // Your code here
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(5);
     }
     public void Quit(){
     	Application.Quit(); 

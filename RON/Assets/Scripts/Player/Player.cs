@@ -233,6 +233,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if(PauseControls.isPaused){
+            this.canShoot = false; 
+        }
+        else 
+            this.canShoot = true; 
         if (this.health <= 0)
         {
             return;

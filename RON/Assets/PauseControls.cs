@@ -9,10 +9,12 @@ public class PauseControls : MonoBehaviour
 	[SerializeField] private GameObject PauseScreen; 
 	[SerializeField] private Player p; 
 	[SerializeField] public Text t; 
-    [SerializeField] public bool isPaused;
+    [SerializeField] public static bool isPaused;
+    public static bool sceneChange; 
     // Start is called before the first frame update
     void Start()
     {
+        sceneChange = false; 
         p = GameObject.Find("player").GetComponent<Player>(); 
         t = GameObject.Find("StatsText").GetComponent<Text>(); 
         t.text = "Your Stats: Health = " + (int)p.health + ", Money = " + p.money + ", Speed = " + p.speed;
@@ -22,7 +24,12 @@ public class PauseControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	 if(Input.GetKeyDown(KeyCode.Escape)){
+        if(sceneChange){
+            sceneChange = false; 
+            p = GameObject.Find("player").GetComponent<Player>(); 
+            t = GameObject.Find("StatsText").GetComponent<Text>(); 
+        }
+    	if(Input.GetKeyDown(KeyCode.Escape)){
             isPaused = !isPaused; 
         
         	if(isPaused){
@@ -42,6 +49,7 @@ public class PauseControls : MonoBehaviour
     public void ToMain(){
         DeactivatePause(); 
         Destroy(Player.playerInstance);
+        sceneChange = true; 
     	SceneManager.LoadScene(0);
     }
     public void DeactivatePause(){
