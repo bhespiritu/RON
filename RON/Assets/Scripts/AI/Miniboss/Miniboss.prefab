@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 899351221873136243}
   m_Layer: 0
   m_Name: Miniboss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b07bc1c7c97ed7419397b4f8abae23c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPhysicsBased: 0
   animator: {fileID: 0}
   sprite: {fileID: 0}
   elevator: {fileID: 0}
@@ -173,8 +174,10 @@ MonoBehaviour:
   hurtFor: 0
   health: 1000
   attackSpeed: 10
+  moveSpeed: 5
   difficulty: 3
   facing: 1
+  initialHealth: 0
   attackDamage: 10
   difficultyScale:
     serializedVersion: 2
@@ -220,6 +223,7 @@ MonoBehaviour:
   detectionRadius: 50
   foundTarget: 0
   attackMax: 3
+  player: {fileID: 0}
   wanderCooldown: 0
   projectile: {fileID: 8211645832892135505, guid: 04c5979e76effae40bba6293a9c2c70d,
     type: 3}
