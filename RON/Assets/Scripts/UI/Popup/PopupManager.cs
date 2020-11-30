@@ -44,6 +44,10 @@ public class PopupManager : MonoBehaviour
     {
         initialWidth = PopupParent.rectTransform.rect.width;
         popupQueue = new Queue<Popup>();
+        PopupParent.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
+        PopupDesc.gameObject.SetActive(false);
+        PopupTitle.gameObject.SetActive(false);
+        PopupIcon.gameObject.SetActive(false);
         //Sample Usage:
         //queuePopup(5,"Sample Title", "This is a test message", testSprite);
         //queuePopup(5, "Sample Title", "This is a test message", testSprite);
