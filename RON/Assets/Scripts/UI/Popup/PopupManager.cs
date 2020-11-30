@@ -46,9 +46,9 @@ public class PopupManager : MonoBehaviour
         popupQueue = new Queue<Popup>();
         //Sample Usage:
         //queuePopup(5,"Sample Title", "This is a test message", testSprite);
-        queuePopup(5, "Sample Title", "This is a test message", testSprite);
-        queuePopup(2, "Sample Title2", "This is a test message2");
-        queuePopup(5, "Sample Title3", "This is a test message3", testSprite);
+        //queuePopup(5, "Sample Title", "This is a test message", testSprite);
+        //queuePopup(2, "Sample Title2", "This is a test message2");
+        //queuePopup(5, "Sample Title3", "This is a test message3", testSprite);
     }
 
     private void Update()

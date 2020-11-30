@@ -49,6 +49,7 @@ public class PassiveItemSprite : MonoBehaviour
     }
     public PassiveItem PickUpItem()
     {
+        PopupManager.instance.queuePopup(2f, "Item Picked Up", this.item.shortDescription);
     	return this.item;
     }
 }
