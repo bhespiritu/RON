@@ -308,11 +308,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 63507577}
-    - target: {fileID: 2655229743343754801, guid: 715cbc64f1280524f9f979e3924d2b43,
-        type: 3}
-      propertyPath: m_Padding.m_Left
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 2655229743343754802, guid: 715cbc64f1280524f9f979e3924d2b43,
         type: 3}
       propertyPath: m_SizeDelta.x
