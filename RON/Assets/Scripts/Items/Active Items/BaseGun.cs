@@ -4,6 +4,7 @@ public class BaseGun : ActiveItem
 {
     public BaseGun(string name = "Base Gun") : base(10, false, name, 4)
     {
+        this.shortDescription = this.itemName + ": This simple gun shoots at a decent rate doing basic damage."
     }
 
     public override void Fire(Vector3 position, Vector2 direction, float damageMultiplier)

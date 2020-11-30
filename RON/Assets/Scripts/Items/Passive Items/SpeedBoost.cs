@@ -3,6 +3,7 @@
     public float speedBoost;
     public SpeedBoost() : base("Knee Grease", 5, "Your robotic legs sometimes need to get slicked up. This grease will speed you up.", 30)
     {
+        this.shortDescription = this.itemName + ": Increases speed."
         this.speedBoost = 2f;
     }
     public override void ApplyBonus(Player p)
