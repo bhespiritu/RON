@@ -3,6 +3,7 @@
     public float healthBoost;
     public HealthRegen() : base("Nanobots", 2, "State of the art nanobots rapidly rearrange to reapir your wounds, increasing your healing.", 30)
     {
+        this.shortDescription = this.itemName + ": Increases the speed health regenerates.";
         this.healthBoost = 1.2f;
     }
     public override void ApplyBonus(Player p)
