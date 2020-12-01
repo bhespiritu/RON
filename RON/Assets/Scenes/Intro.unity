@@ -554,8 +554,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1354025422}
-        m_MethodName: Tutorial
+      - m_Target: {fileID: 1931005289}
+        m_MethodName: NextDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -969,5 +969,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac197e8fd2874bcba6af587924f7c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t: {fileID: 0}
-  toNextScene: {fileID: 716255237}
+  t: {fileID: 1931005287}

@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
     public float knockBackStrength = 1;
 
     private float moveInfluence = 1;
+    public ItemUI thingy;
 
     public Player(float health = 100, float maxHealth = 100, int money = 0, List<ActiveItem> activeItems = null, List<PassiveItem> passiveItems = null, float speed = 10, float jumpSpeed = 40, float attack = 10, float defense = 10, float damageMultiplier = 1f, float healMultiplier = 1f)
     {
@@ -273,6 +274,9 @@ public class Player : MonoBehaviour
         this.canShoot = true;
         this.moveInfluence = 1;
         SceneManager.sceneLoaded += OnSceneLoaded;
+        thingy = GameObject.Find("ActiveImage").GetComponent<ItemUI>();
+
+
     }
 
     void Update()
@@ -359,6 +363,7 @@ public class Player : MonoBehaviour
             this.autofireDelay = 0;
             this.footsteps.PlayOneShot(gunSounds[this.activeItems[0].id], 0.5f * VolumeManager.sfxVal);
             Shoot((Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized);
+            thingy.LeftHit(); 
         }
 
         if (this.secondaryItem != null)
@@ -367,11 +372,14 @@ public class Player : MonoBehaviour
             {
                 this.footsteps.PlayOneShot(this.shieldUp, 1f);
                 this.footsteps.PlayOneShot(this.shieldHum, 0.5f);
+                thingy.RightHit(this.secondaryItem.coolDownAmount); 
             }
 
             if (this.secondaryItem.id == 2 && Input.GetMouseButtonDown(1) && this.secondaryItem.canUse)
             {
                 this.footsteps.PlayOneShot(this.invisIn, 1f * VolumeManager.sfxVal);
+
+                thingy.RightHit(this.secondaryItem.coolDownAmount);
             }
 
             if (this.secondaryItem.id ==2)
@@ -386,11 +394,15 @@ public class Player : MonoBehaviour
             if (this.secondaryItem.id == 0 && Input.GetMouseButtonDown(1) && this.secondaryItem.canUse)
             {
                 this.footsteps.PlayOneShot(this.dash, 0.5f * VolumeManager.sfxVal);
+
+                thingy.RightHit(this.secondaryItem.coolDownAmount);
             }
 
             if (this.secondaryItem.id == 3 && Input.GetMouseButtonDown(1) && this.secondaryItem.canUse)
             {
                 this.footsteps.PlayOneShot(this.knockback, 0.5f * VolumeManager.sfxVal);
+                
+                thingy.RightHit(this.secondaryItem.coolDownAmount);
             }
 
             this.secondaryItem.Effect(Input.GetMouseButtonDown(1));
