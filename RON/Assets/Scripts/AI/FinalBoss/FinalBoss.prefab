@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1470927835744262592}
   m_Layer: 15
   m_Name: Miniboss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,6 +59,7 @@ MonoBehaviour:
   moveSpeed: 5
   difficulty: 0
   facing: 1
+  initialHealth: 0
   attackDamage: 10
   difficultyScale:
     serializedVersion: 2

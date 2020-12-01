@@ -70,6 +70,8 @@ public class FinalBossLogic : MonoBehaviour
         spawnPoints = GameObject.Find("BossSpawnPoints").GetComponentsInChildren<Transform>();
         rb = GetComponent<Rigidbody2D>();
         player = Player.playerInstance;
+        BossUI.instance.trackedEnemy = info;
+        BossUI.instance.ShowUI(false);
     }
 
     public void Update()

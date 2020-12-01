@@ -37,6 +37,7 @@ public class MiniBossLogic : MonoBehaviour
     {
         info = GetComponent<EnemyInfo>();
         this.player = this.info.target.GetComponent<Player>();
+        BossUI.instance.trackedEnemy = info;
     }
 
     // Update is called once per frame

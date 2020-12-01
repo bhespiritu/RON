@@ -24,6 +24,8 @@ public class EnemyInfo : MonoBehaviour
 
     public bool facing = true;
 
+    [HideInInspector]
+    public float initialHealth;
 
     public int attackDamage = 10;
     public AnimationCurve difficultyScale;
@@ -34,6 +36,7 @@ public class EnemyInfo : MonoBehaviour
     
     public void Start()
     {
+        initialHealth = health;
         gameObject.tag = "Enemy";
         animator = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
