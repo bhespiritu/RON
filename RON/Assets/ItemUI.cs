@@ -32,7 +32,7 @@ public class ItemUI : MonoBehaviour
     	activeOverlay.GetComponent<Image>().color = new Color(142,142,142,213);
     	StartCoroutine(NoWait()); 
     }
-    public void RightHit( float timer){
+    public void RightHit(float timer){
     	secondaryOverlay.GetComponent<Image>().color = new Color(142,142,142,213); 
         //this.amt = amt;
         this.timer = timer; 
@@ -61,8 +61,5 @@ public class ItemUI : MonoBehaviour
         
         if(runs < 10 && fillTotal>0)
         	StartCoroutine(ActuallyWait()); 
-      
-        
-        
     }
 }

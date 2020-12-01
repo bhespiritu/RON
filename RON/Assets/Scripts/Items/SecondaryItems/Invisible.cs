@@ -36,6 +36,10 @@ public class Invisible : SecondaryItem
         }
         else
         {
+            if (this.player.invisible)
+            {
+                this.thingy.RightHit(this.coolDownAmount);
+            }
             this.invisibleTimer = 0f;
             this.player.invisible = false;
             this.playerSprite.color = new Color(this.playerSprite.color.r, this.playerSprite.color.g, this.playerSprite.color.b, 255);
