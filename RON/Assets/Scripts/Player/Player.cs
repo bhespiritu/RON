@@ -23,6 +23,17 @@ public class Player : MonoBehaviour
     public bool canShoot = true;
     public bool invisible;
 
+    public float baseHealth;
+    public float baseMaxHealth;
+    public float baseJumpSpeed;
+    public float baseSpeed;
+    public float baseAttack;
+    public float baseDefense;
+    public float baseDamageMultiplier;
+    public float baseHealMultiplier;
+    public float baseCritChance;
+    public float baseBlockChance;
+
     public MuzzleFlash muzzleFlash;
     public Transform firePos;
     public GameObject projectile;
@@ -90,9 +101,12 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (rand.NextDouble() < this.critChance)
+        {
+            return;
+        }
 
         float oldHealth = this.health / this.maxHealth;
-        
 
         if (this.rand.NextDouble() > this.blockChance)
         {
@@ -207,15 +221,26 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        this.health = 100;
-        this.maxHealth = 100;
+        this.baseHealth = 100f;
+        this.baseMaxHealth = 100f;
+        this.baseSpeed = 10f;
+        this.baseJumpSpeed = 40f;
+        this.baseAttack = 10f;
+        this.baseDefense = 1f;
+        this.baseDamageMultiplier = 1f;
+        this.baseHealMultiplier = 1f;
+        this.baseCritChance = 0.0f;
+        this.baseBlockChance = 0.0f;
+
+        this.health = this.baseHealth;
+        this.maxHealth = this.baseMaxHealth;
         this.money = 0;
-        this.speed = 10f;
-        this.jumpSpeed = 40f;
-        this.attack = 10f;
-        this.defense = 1f;
-        this.damageMultiplier = 1f;
-        this.healMultiplier = 1f;
+        this.speed = this.baseSpeed;
+        this.jumpSpeed = this.baseJumpSpeed;
+        this.attack = this.baseAttack;
+        this.defense = this.baseDefense;
+        this.damageMultiplier = this.baseDamageMultiplier;
+        this.healMultiplier = this.baseHealMultiplier;
         this.activeItems = new List<ActiveItem>();
         this.passiveItems = new List<PassiveItem>();
         this.secondaryItem = null;
@@ -225,8 +250,8 @@ public class Player : MonoBehaviour
         this.activeItems.Add(new BaseGun());
         gameObject.tag = "Player";
         this.rand = new System.Random();
-        this.critChance = 0.0f;
-        this.blockChance = 0f;
+        this.critChance = this.baseCritChance;
+        this.blockChance = this.baseBlockChance;
         this.canShoot = true;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
