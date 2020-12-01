@@ -7,6 +7,7 @@ public class PlayerBullet : MonoBehaviour
     public int damage = 10;
     public GameObject dust;
     public string effect = "";
+    public float maxBounces = 0;
 
     public void Start()
     {
@@ -16,8 +17,14 @@ public class PlayerBullet : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-
+        
+        if(maxBounces <= 0)
+            Destroy(gameObject);
+        else
+        {
+            maxBounces -= 1;
+        }
+        
         Vector2 pos = collision.contacts[0].point;
         var dustEffect = Instantiate(dust, pos, Quaternion.identity);
         dustEffect.transform.up = collision.contacts[0].normal;
