@@ -39,12 +39,14 @@ public class ButtonBehavior : MonoBehaviour
     public void Play()
     {
         // Your code here
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(2);
     }
     public void Quit(){
     	Application.Quit(); 
     }
-
+    public void StoryTime(){
+        SceneManager.LoadScene(7);
+    }
     
 
     public void UpdateMasterVolume()

@@ -376,9 +376,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: -3560.948}
   m_LocalScale: {x: 62.5, y: 62.5, z: 62.5}
   m_Children:
+  - {fileID: 1635678144}
   - {fileID: 1692967578}
   m_Father: {fileID: 2010183006}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -397,6 +398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d75fd537cbf54ad58fb80a02e868c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolumeSlider: {fileID: 0}
+  sfxVolumeSlider: {fileID: 0}
+  musicVolumeSlider: {fileID: 0}
 --- !u!1 &1635678143
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,17 +426,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635678143}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 56.97517}
+  m_LocalScale: {x: 0.015999999, y: 0.015999999, z: 0.015999999}
   m_Children: []
-  m_Father: {fileID: 2010183006}
+  m_Father: {fileID: 1480781827}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000039100647, y: 0.00003528595}
+  m_SizeDelta: {x: 1215.5575, y: 590.00006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1635678145
 MonoBehaviour:
@@ -453,7 +457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 317ff9560e37c41bc9bd9826e3a49f30, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93d624b8fb7a644cd84fb0d8209e833a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -503,7 +507,7 @@ RectTransform:
   m_Children:
   - {fileID: 464142568}
   m_Father: {fileID: 1480781827}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -692,7 +696,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1635678144}
   - {fileID: 1480781827}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -714,3 +717,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d75fd537cbf54ad58fb80a02e868c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolumeSlider: {fileID: 0}
+  sfxVolumeSlider: {fileID: 0}
+  musicVolumeSlider: {fileID: 0}
