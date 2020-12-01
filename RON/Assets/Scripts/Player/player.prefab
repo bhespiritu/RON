@@ -278,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   an: {fileID: 0}
+  collider: {fileID: 0}
   health: 0
   maxHealth: 0
   money: 0
@@ -331,6 +332,9 @@ MonoBehaviour:
   invisIn: {fileID: 8300000, guid: 77504be116538bf4e9082332a876e9bf, type: 3}
   invisOut: {fileID: 8300000, guid: bc611ff5763d69a4287c3a0875f631ff, type: 3}
   dead: {fileID: 8300000, guid: b0bd0aa75d859864dbcf03cceb6da4dd, type: 3}
+  dazedFor: 0
+  hitDazeDuration: 1
+  knockBackStrength: 15
 --- !u!95 &7083996499965910055
 Animator:
   serializedVersion: 3

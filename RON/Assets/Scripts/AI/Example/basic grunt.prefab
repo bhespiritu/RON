@@ -236,6 +236,8 @@ MonoBehaviour:
   projectile: {fileID: 7132470720346114343, guid: 1179418f01425c4429fe7ee9608a14d6,
     type: 3}
   waypoint: {x: 0, y: 0, z: 0}
+  alertSoundChance: 0.25
+  alertPitchVariance: 0.1
   attackCooldownMax: 5
   swingCooldownMax: 1
   attackDelay: 0.25
@@ -251,7 +253,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 860232c8a7bc4bb46904a6b20d653e19, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.46
+  m_Volume: 0.082
   m_Pitch: 1
   Loop: 0
   Mute: 0
