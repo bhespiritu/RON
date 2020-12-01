@@ -3,6 +3,7 @@ public class Item
 	public readonly string itemName;
 	public readonly int id;
 	public string description;
+	public string shortDescription;
 	public int cost;
 
 	public Item(string itemName = "", int id = 0, string description="An item.", int cost = 1)
@@ -11,5 +12,6 @@ public class Item
 		this.id = id;
 		this.description = description;
 		this.cost = cost;
+		this.shortDescription = this.itemName + ": Does nothing.";
 	}
 }

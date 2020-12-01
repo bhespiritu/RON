@@ -30,7 +30,7 @@ TagManager:
   - Enemy
   - Shield
   - Item
-  - 
+  - PlayerStun
   - 
   - 
   - 
@@ -47,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Fog
+    uniqueID: 1299269735
     locked: 0

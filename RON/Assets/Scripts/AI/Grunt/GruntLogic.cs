@@ -16,6 +16,7 @@ public class GruntLogic : MonoBehaviour
     private float alertCooldown = 0;
     private int attackCount = 0;
     public int moveSpeed = 5;
+    
     public Player player;
 
     public float wanderCooldown = 0;
@@ -24,6 +25,12 @@ public class GruntLogic : MonoBehaviour
 
     public Vector3 waypoint;
 
+    [Header("Sound Settings")]
+    [Range(0, 1)]
+    public float alertSoundChance = 0.25f;
+    public float alertPitchVariance = .1f;
+
+    [Header("Attack Settings")]
     [SerializeField]
     private float attackCooldownMax = 15;
     [SerializeField]
@@ -43,6 +50,15 @@ public class GruntLogic : MonoBehaviour
         audio = GetComponent<AudioSource>();
         audio.volume = VolumeManager.sfxVal;
         this.player = Player.playerInstance;
+    }
+
+    void PlayerAlertSound()
+    {
+        if (Random.value < alertSoundChance)
+        {
+            audio.pitch = Random.Range(1 - alertPitchVariance, 1.25f + alertPitchVariance);
+            audio.Play();
+        }
     }
 
     // Update is called once per frame
@@ -75,7 +91,7 @@ public class GruntLogic : MonoBehaviour
                 {
                     facing = (waypoint - transform.position).x > 0;
                     info.sprite.flipX = facing;
-                    audio.Play();
+                    PlayerAlertSound();
                     sawPlayer = true;
                     alertCooldown = attackDelay;
                 }

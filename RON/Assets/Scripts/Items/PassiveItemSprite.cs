@@ -49,6 +49,8 @@ public class PassiveItemSprite : MonoBehaviour
     }
     public PassiveItem PickUpItem()
     {
+        Sprite itemIcon = GetComponent<SpriteRenderer>().sprite;
+        PopupManager.instance.queuePopup(4f, "Item Picked Up", this.item.shortDescription, itemIcon);
     	return this.item;
     }
 }

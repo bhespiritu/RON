@@ -4,14 +4,20 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    [Header("Components")]
     public Rigidbody2D rb;
     public Animator an;
+    public SpriteRenderer sprite;
+
+    [Header("Important Values")]
     public float health;
     public float maxHealth;
     public int money;
+    [Header("Items")]
     public List<ActiveItem> activeItems;
     public List<PassiveItem> passiveItems;
     public SecondaryItem secondaryItem;
+    [Header("Player Stats")]
     public float jumpSpeed;
     public float speed;
     public float attack;
@@ -22,6 +28,18 @@ public class Player : MonoBehaviour
     public float blockChance;
     public bool canShoot = true;
     public bool invisible;
+
+    [Header("GameObject References")]
+    public float baseHealth;
+    public float baseMaxHealth;
+    public float baseJumpSpeed;
+    public float baseSpeed;
+    public float baseAttack;
+    public float baseDefense;
+    public float baseDamageMultiplier;
+    public float baseHealMultiplier;
+    public float baseCritChance;
+    public float baseBlockChance;
 
     public MuzzleFlash muzzleFlash;
     public Transform firePos;
@@ -42,6 +60,7 @@ public class Player : MonoBehaviour
     public System.Random rand = new System.Random();
 
     // fucky sounds :)
+    [Header("Sounds")]
     public float delay = 0f;
     public float timeBetweenSteps = 0.2f;
     public AudioSource footsteps;
@@ -56,6 +75,13 @@ public class Player : MonoBehaviour
     public AudioClip invisIn;
     public AudioClip invisOut;
     public AudioClip dead;
+
+    [Header("Daze Settings")]
+    public float dazedFor = 0f;
+    public float hitDazeDuration = 1f;
+    public float knockBackStrength = 1;
+
+    private float moveInfluence = 1;
 
     public Player(float health = 100, float maxHealth = 100, int money = 0, List<ActiveItem> activeItems = null, List<PassiveItem> passiveItems = null, float speed = 10, float jumpSpeed = 40, float attack = 10, float defense = 10, float damageMultiplier = 1f, float healMultiplier = 1f)
     {
@@ -90,13 +116,18 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (rand.NextDouble() < this.critChance)
+        {
+            return;
+        }
 
         float oldHealth = this.health / this.maxHealth;
-        
 
         if (this.rand.NextDouble() > this.blockChance)
         {
             this.health -= damage * defense;
+            dazedFor = hitDazeDuration;
+            rb.velocity = Vector2.up * knockBackStrength + Vector2.right * knockBackStrength * (Random.value < 0.5f ? -1 : 1);
         }
         else
         {
@@ -207,27 +238,40 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        this.health = 100;
-        this.maxHealth = 100;
+        this.baseHealth = 100f;
+        this.baseMaxHealth = 100f;
+        this.baseSpeed = 10f;
+        this.baseJumpSpeed = 40f;
+        this.baseAttack = 10f;
+        this.baseDefense = 1f;
+        this.baseDamageMultiplier = 1f;
+        this.baseHealMultiplier = 1f;
+        this.baseCritChance = 0.0f;
+        this.baseBlockChance = 0.0f;
+
+        this.health = this.baseHealth;
+        this.maxHealth = this.baseMaxHealth;
         this.money = 0;
-        this.speed = 10f;
-        this.jumpSpeed = 40f;
-        this.attack = 10f;
-        this.defense = 1f;
-        this.damageMultiplier = 1f;
-        this.healMultiplier = 1f;
+        this.speed = this.baseSpeed;
+        this.jumpSpeed = this.baseJumpSpeed;
+        this.attack = this.baseAttack;
+        this.defense = this.baseDefense;
+        this.damageMultiplier = this.baseDamageMultiplier;
+        this.healMultiplier = this.baseHealMultiplier;
         this.activeItems = new List<ActiveItem>();
         this.passiveItems = new List<PassiveItem>();
         this.secondaryItem = null;
         this.rb = GetComponent<Rigidbody2D>();
         this.an = GetComponent<Animator>();
+        this.sprite = GetComponent<SpriteRenderer>();
         this.rb.gravityScale = 9;
         this.activeItems.Add(new BaseGun());
         gameObject.tag = "Player";
         this.rand = new System.Random();
-        this.critChance = 0.0f;
-        this.blockChance = 0f;
+        this.critChance = this.baseCritChance;
+        this.blockChance = this.baseBlockChance;
         this.canShoot = true;
+        this.moveInfluence = 1;
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -238,13 +282,36 @@ public class Player : MonoBehaviour
         }
         else 
             this.canShoot = true; 
+
+        dazedFor -= Time.deltaTime;
+
         if (this.health <= 0)
         {
+            rb.velocity = Vector2.zero;
             return;
         }
 
+        if (dazedFor > 0)
+        {
+            int dazeFlash = (int)(dazedFor * 100);
+            sprite.enabled = (dazeFlash % 2 == 0);
+            gameObject.layer = 18;
+            moveInfluence = 0.25f;
+        }
+        else
+        {
+            sprite.enabled = true;
+            gameObject.layer = 14;
+            moveInfluence = 1;
+        }
+
+
         autofireDelay += Time.deltaTime;
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * this.speed, rb.velocity.y);
+        float desiredVelocityX = Input.GetAxisRaw("Horizontal") * this.speed;
+        float deltaVel = desiredVelocityX - rb.velocity.x;
+        Vector2 oldVel = rb.velocity;
+        oldVel.x += Mathf.Lerp(0,deltaVel, moveInfluence);
+        rb.velocity = oldVel;
 
         if (rb.velocity.x != 0 && this.isGrounded)
         {

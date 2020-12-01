@@ -5,7 +5,8 @@ using UnityEngine;
 public class Elevator_Master : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float started;
+    [HideInInspector]
+    public float started;
     public enum eState {Initial, Event, Finished};
     public eState st;
 
@@ -50,10 +51,11 @@ public class Elevator_Master : MonoBehaviour
             if(st == eState.Initial && Input.GetKey(KeyCode.E) && Mathf.Abs(Vector2.Distance(new Vector2(player.transform.position.x,player.transform.position.y), new Vector2(transform.position.x, transform.position.y))) < iDist){
                 st = eState.Event;
                 //sCtrl.ElevatorSignal();
-                sChg();
+                
                 started = GameTimer.time;
                 eSprite.sprite = Wait;
                 sCtrl.SpawnMiniboss();
+                sChg();
             }
 
             //if(st==eState.Event){Debug.Log("Time Elapsed since elevator: " + (GameTimer.time - started) + ", dur = " + dur);}
