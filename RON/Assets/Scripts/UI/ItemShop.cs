@@ -9,21 +9,32 @@ public class ItemShop : MonoBehaviour
     public Text itemCost;
     public Button purchaseItem;
 
-    public Button[] itemButtons;
+    public Button[] displayButtons;
+    public Button[] activeItemButtons;
+    public Button[] secondaryItemButtons;
+    public Button[] passiveItemButtons;
+
     public int selectedItem = 0;
+    public int selectedButton = 0;
 
     public void Start()
     {
         this.money.text = "$" + Player.playerInstance.money;
     }
 
-    public void SetSelected(int selection)
+    public void SetItemSelected(int selection)
     {
         this.selectedItem = selection;
+    }
+
+    public void SetButtonSelected(int selection)
+    {
+        this.selectedButton = selection;
     }
     public void DisplayItem(int item)
     { 
         Item purchase;
+        this.selectedItem = item;
 
         switch (item)
         {
@@ -102,7 +113,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new SlowGun();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -115,7 +125,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new RandomGun();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -128,7 +137,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new HandCannon();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -141,7 +149,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new AssaultRifle();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -154,7 +161,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new Dash(Player.playerInstance);
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -167,7 +173,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new Knockback(Player.playerInstance);
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -180,7 +185,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new Invisible(Player.playerInstance);
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -193,7 +197,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new Shield(Player.playerInstance);
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -206,7 +209,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new DamageBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -220,7 +222,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new HealthBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -234,7 +235,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new CritBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -248,7 +248,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new SpeedBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -262,7 +261,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new JumpBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -276,7 +274,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new DamageResistance();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -290,7 +287,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new HealthRegen();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -304,7 +300,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new TeddyBear();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
