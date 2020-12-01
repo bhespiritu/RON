@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RooftopBoss.unity
     guid: a4a4781c68b51d0429786367a49b2613
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: d12abd0c4cdba4e458744c3315ee959a
   m_configObjects: {}

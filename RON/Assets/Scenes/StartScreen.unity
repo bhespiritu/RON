@@ -1134,7 +1134,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 465985607}
-        m_MethodName: Tutorial
+        m_MethodName: StoryTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
