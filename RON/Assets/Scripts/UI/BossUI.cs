@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossUI : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class BossUI : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        SceneManager.sceneLoaded += HideOnLoad;
     }
 
     // Start is called before the first frame update
@@ -48,10 +50,12 @@ public class BossUI : MonoBehaviour
         if(elevator.st == Elevator_Master.eState.Event)
         {
             ShowUI(true);
-        } else
-        {
-            HideUI();
-        }
+        } 
+    }
+
+    public void HideOnLoad(Scene scene, LoadSceneMode mode)
+    {
+        HideUI();
     }
 
     public void ShowUI(bool withTimer)
@@ -82,7 +86,10 @@ public class BossUI : MonoBehaviour
         {
             float timeLeft = elevator.dur - (GameTimer.time - elevator.started);
             if (timeLeft < 0) timeLeft = 0;
-            TimerDisplay.text = timeLeft.ToString("F") + "s";
+            if(timeLeft != 0)
+                TimerDisplay.text = timeLeft.ToString("F") + "s";
+            else
+                TimerDisplay.text = "Arrived!";
         }
     }
 }
