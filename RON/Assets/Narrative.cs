@@ -13,7 +13,7 @@ public class Narrative : MonoBehaviour
     void Start()
     {
         story = new string[32] {
-        				  "Around 2310, a company called Biotech International began developing complicated cyborg body enhancements beginning with advanced cybernetic organs, primarily lungs and kidneys.\n\n",
+        				  "In 2310, a company called Biotech International began developing complicated cyborg body enhancements beginning with advanced cybernetic organs, primarily lungs and kidneys.\n\n",
         				  "They expanded their operations to include exterior body parts, netting them huge amounts of the global market.\n\n",
         				  "They quickly began to exploit workers in developing countries to cheap out on parts and lower operation costs.\n\n",
         				  "This proved massively successful, leading to a boost in their market share which pushed them towards monopoly status.\n\n",
@@ -63,7 +63,7 @@ public class Narrative : MonoBehaviour
         if(i >= 29){
         	SceneManager.LoadScene(1);
         }
-        i++;
+        i+=4;
     }
 
 }
