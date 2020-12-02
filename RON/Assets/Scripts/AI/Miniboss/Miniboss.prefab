@@ -176,6 +176,7 @@ MonoBehaviour:
   health: 1000
   attackSpeed: 10
   moveSpeed: 5
+  bounty: 50
   difficulty: 3
   facing: 1
   initialHealth: 0

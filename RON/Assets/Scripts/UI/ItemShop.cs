@@ -14,9 +14,12 @@ public class ItemShop : MonoBehaviour
 
     public Image[] buttonImages;
     public Sprite[] itemSprites;
+    public Button[] itemButtons;
+
     public int[] buttonChoices;
 
     public int selectedItem = 0;
+    public int selectedButton = 0;
 
     public System.Random rand = new System.Random();
     public List<int> itemShopOptions = new List<int>();
@@ -66,7 +69,8 @@ public class ItemShop : MonoBehaviour
     public void DisplayItem(int button)
     { 
         Item purchase;
-        this.selectedItem = button;
+        this.selectedButton = button;
+        this.selectedItem = buttonChoices[this.selectedButton];
 
         switch (this.buttonChoices[button])
         {
@@ -150,7 +154,8 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
-                    Player.playerInstance.activeItems[0] = (SlowGun) purchase;
+                    Player.playerInstance.activeItems[0] = (SlowGun)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 1:
@@ -163,6 +168,7 @@ public class ItemShop : MonoBehaviour
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.activeItems[0] = (RandomGun)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 2:
@@ -175,6 +181,7 @@ public class ItemShop : MonoBehaviour
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.activeItems[0] = (HandCannon)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 3:
@@ -187,6 +194,7 @@ public class ItemShop : MonoBehaviour
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.activeItems[0] = (AssaultRifle)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 4:
@@ -199,6 +207,7 @@ public class ItemShop : MonoBehaviour
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.secondaryItem = (Dash)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 5:
@@ -211,6 +220,7 @@ public class ItemShop : MonoBehaviour
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.secondaryItem = (Knockback) purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 6:
@@ -223,6 +233,7 @@ public class ItemShop : MonoBehaviour
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.secondaryItem = (Invisible)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 7:
@@ -235,6 +246,7 @@ public class ItemShop : MonoBehaviour
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.secondaryItem = (Shield)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 8:
