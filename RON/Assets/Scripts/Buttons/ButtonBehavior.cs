@@ -30,7 +30,7 @@ public class ButtonBehavior : MonoBehaviour
     public void MainMenu()
     {
         // Your code here
-        Destroy(Player.playerInstance);
+        Destroy(Player.playerInstance.gameObject);
         SceneManager.LoadScene(0);
     }
     public void Tutorial(){

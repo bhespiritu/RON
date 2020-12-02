@@ -224,10 +224,9 @@ public class Player : MonoBehaviour
     public static Player playerInstance;
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-
         if (playerInstance == null)
         {
+            DontDestroyOnLoad(gameObject);
             playerInstance = this;
             GameTimer.playerObject = gameObject;
         }

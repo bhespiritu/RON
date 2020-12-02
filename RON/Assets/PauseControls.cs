@@ -48,15 +48,17 @@ public class PauseControls : MonoBehaviour
     }
     public void ToMain(){
         DeactivatePause(); 
-        Destroy(Player.playerInstance);
+        Destroy(Player.playerInstance.gameObject);
         sceneChange = true; 
     	SceneManager.LoadScene(0);
     }
     public void DeactivatePause(){
         Time.timeScale = 1f; 
-        PauseScreen.SetActive(false); 
+        PauseScreen.SetActive(false);
+        isPaused = false;
     }
     public void ActivatePause(){
+        isPaused = true;
         Time.timeScale = 0f; 
         PauseScreen.SetActive(true); 
         t.text = "Your Stats:\nHealth= " + (int)p.health + "/" +p.maxHealth+ ",   Money= $" + p.money + ",   Speed= " + p.speed + ",   CritChance= " + p.critChance;
