@@ -26,7 +26,7 @@ public class ItemShop : MonoBehaviour
 
     public void Start()
     {
-        //this.money.text = "$" + Player.playerInstance.money;
+        this.money.text = "$" + Player.playerInstance.money;
         this.PopulateItemShop();
     }
 
