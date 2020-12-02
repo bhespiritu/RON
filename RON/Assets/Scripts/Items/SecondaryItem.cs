@@ -21,7 +21,7 @@ public class SecondaryItem : Item
 
     public void CoolDown()
     {
-        
+        Debug.Log(this.coolDownTimer);
     
         if (this.coolDownTimer < this.coolDownAmount)
         {

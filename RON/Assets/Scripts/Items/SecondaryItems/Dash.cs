@@ -16,6 +16,7 @@ public class Dash : SecondaryItem
     {
         if (!dashing && click && this.canUse)
         {
+            this.thingy.RightHit(this.coolDownAmount);
             this.canUse = false;
             this.dashing = true;
         } 

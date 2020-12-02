@@ -12,6 +12,7 @@ public class Knockback : SecondaryItem
     {
         if (this.canUse && click)
         {
+            this.thingy.RightHit(this.coolDownAmount);
             Vector2 direction = (Vector2) (Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.player.gameObject.transform.position).normalized;
 
             RaycastHit2D[] collisions = Physics2D.BoxCastAll(this.player.transform.position, new Vector2(6, 12), 0f, direction, 10f);

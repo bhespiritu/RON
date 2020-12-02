@@ -261,7 +261,7 @@ public class Player : MonoBehaviour
         this.healMultiplier = this.baseHealMultiplier;
         this.activeItems = new List<ActiveItem>();
         this.passiveItems = new List<PassiveItem>();
-        this.secondaryItem = null;
+        this.secondaryItem = new Dash(this);
         this.rb = GetComponent<Rigidbody2D>();
         this.an = GetComponent<Animator>();
         this.sprite = GetComponent<SpriteRenderer>();
@@ -372,14 +372,14 @@ public class Player : MonoBehaviour
             {
                 this.footsteps.PlayOneShot(this.shieldUp, 1f);
                 this.footsteps.PlayOneShot(this.shieldHum, 0.5f);
-                thingy.RightHit(this.secondaryItem.coolDownAmount); 
+                //thingy.RightHit(this.secondaryItem.coolDownAmount); 
             }
 
             if (this.secondaryItem.id == 2 && Input.GetMouseButtonDown(1) && this.secondaryItem.canUse)
             {
                 this.footsteps.PlayOneShot(this.invisIn, 1f * VolumeManager.sfxVal);
 
-                thingy.RightHit(this.secondaryItem.coolDownAmount);
+                //thingy.RightHit(this.secondaryItem.coolDownAmount);
             }
 
             if (this.secondaryItem.id ==2)
@@ -395,14 +395,14 @@ public class Player : MonoBehaviour
             {
                 this.footsteps.PlayOneShot(this.dash, 0.5f * VolumeManager.sfxVal);
 
-                thingy.RightHit(this.secondaryItem.coolDownAmount);
+                //thingy.RightHit(this.secondaryItem.coolDownAmount);
             }
 
             if (this.secondaryItem.id == 3 && Input.GetMouseButtonDown(1) && this.secondaryItem.canUse)
             {
                 this.footsteps.PlayOneShot(this.knockback, 0.5f * VolumeManager.sfxVal);
                 
-                thingy.RightHit(this.secondaryItem.coolDownAmount);
+                //thingy.RightHit(this.secondaryItem.coolDownAmount);
             }
 
             this.secondaryItem.Effect(Input.GetMouseButtonDown(1));

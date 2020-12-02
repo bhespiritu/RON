@@ -38,6 +38,11 @@ public class Shield : SecondaryItem
         }
         else
         {
+            if (this.shieldUp)
+            {
+                this.thingy.RightHit(this.coolDownAmount);
+            }
+
             this.shieldTimer = 0f;
             this.shieldUp = false;
             this.player.shield.SetActive(false);
