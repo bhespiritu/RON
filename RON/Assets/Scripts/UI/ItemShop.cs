@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
+using System.Collections.Generic;
 
 public class ItemShop : MonoBehaviour
 {
@@ -7,19 +9,53 @@ public class ItemShop : MonoBehaviour
     public Text itemName;
     public Text itemDescription;
     public Text itemCost;
+
     public Button purchaseItem;
 
-    public Button[] displayButtons;
-    public Button[] activeItemButtons;
-    public Button[] secondaryItemButtons;
-    public Button[] passiveItemButtons;
+    public Image[] buttonImages;
+    public Sprite[] itemSprites;
+    public int[] buttonChoices;
 
     public int selectedItem = 0;
-    public int selectedButton = 0;
+
+    public System.Random rand = new System.Random();
+    public List<int> itemShopOptions = new List<int>();
 
     public void Start()
     {
-        this.money.text = "$" + Player.playerInstance.money;
+        //this.money.text = "$" + Player.playerInstance.money;
+        this.PopulateItemShop();
+    }
+
+    public void PopulateItemShop()
+    {
+        this.AssignItem(0, this.GetUniqueRandom(0, 4));
+        this.AssignItem(1, this.GetUniqueRandom(0, 4));
+        this.AssignItem(2, this.GetUniqueRandom(4, 8));
+        this.AssignItem(3, this.GetUniqueRandom(4, 8));
+        this.AssignItem(4, this.GetUniqueRandom(8, 16));
+        this.AssignItem(5, this.GetUniqueRandom(8, 16));
+        this.AssignItem(6, this.GetUniqueRandom(8, 16));
+        this.AssignItem(7, this.GetUniqueRandom(8, 16));
+    }
+
+    public int GetUniqueRandom(int min, int max)
+    {
+        int possibleUnique = this.rand.Next(min, max);
+
+        while (this.itemShopOptions.Contains(possibleUnique))
+        {
+            possibleUnique = this.rand.Next(min, max);
+        }
+
+        this.itemShopOptions.Add(possibleUnique);
+        return possibleUnique;
+    }
+
+    public void AssignItem(int button, int item)
+    {
+        this.buttonImages[button].sprite = this.itemSprites[item];
+        this.buttonChoices[button] = item;
     }
 
     public void SetItemSelected(int selection)
@@ -27,16 +63,12 @@ public class ItemShop : MonoBehaviour
         this.selectedItem = selection;
     }
 
-    public void SetButtonSelected(int selection)
-    {
-        this.selectedButton = selection;
-    }
-    public void DisplayItem(int item)
+    public void DisplayItem(int button)
     { 
         Item purchase;
-        this.selectedItem = item;
+        this.selectedItem = button;
 
-        switch (item)
+        switch (this.buttonChoices[button])
         {
             case 0:
                 purchase = new SlowGun();
