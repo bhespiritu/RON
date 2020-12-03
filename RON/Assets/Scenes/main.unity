@@ -8167,6 +8167,16 @@ PrefabInstance:
       propertyPath: m_ChildForceExpandHeight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2655229743343754801, guid: 715cbc64f1280524f9f979e3924d2b43,
+        type: 3}
+      propertyPath: m_ChildAlignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655229743343754801, guid: 715cbc64f1280524f9f979e3924d2b43,
+        type: 3}
+      propertyPath: m_ChildControlHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2655229743343754802, guid: 715cbc64f1280524f9f979e3924d2b43,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -8212,10 +8222,15 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2655229743553677431, guid: 715cbc64f1280524f9f979e3924d2b43,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2655229743626429236, guid: 715cbc64f1280524f9f979e3924d2b43,
         type: 3}
       propertyPath: m_PreferredHeight
-      value: -1
+      value: 75.92
       objectReference: {fileID: 0}
     - target: {fileID: 2655229743626429240, guid: 715cbc64f1280524f9f979e3924d2b43,
         type: 3}
@@ -8255,7 +8270,7 @@ PrefabInstance:
     - target: {fileID: 2655229743626429241, guid: 715cbc64f1280524f9f979e3924d2b43,
         type: 3}
       propertyPath: m_FontData.m_MaxSize
-      value: 37
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2655229743626429241, guid: 715cbc64f1280524f9f979e3924d2b43,
         type: 3}
@@ -8285,6 +8300,11 @@ PrefabInstance:
     - target: {fileID: 2655229743663689998, guid: 715cbc64f1280524f9f979e3924d2b43,
         type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2655229743663689998, guid: 715cbc64f1280524f9f979e3924d2b43,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2655229743807830864, guid: 715cbc64f1280524f9f979e3924d2b43,
@@ -8392,8 +8412,7 @@ PrefabInstance:
       propertyPath: m_PreferredWidth
       value: 310.92
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2655229743626429236, guid: 715cbc64f1280524f9f979e3924d2b43, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 715cbc64f1280524f9f979e3924d2b43, type: 3}
 --- !u!1 &1292297252
 GameObject:
