@@ -11775,6 +11775,7 @@ MonoBehaviour:
   - {x: 31, y: 23, z: 0}
   - {x: 55, y: 10, z: 0}
   player: {fileID: 2004777193}
+  BossOffset: {x: 7, y: 3, z: 0}
 --- !u!114 &1733433634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11797,7 +11798,7 @@ MonoBehaviour:
   Fin: {fileID: 21300000, guid: 97ed6434a6436794c9142e3e90e4dfdc, type: 3}
   sObj: {fileID: 1733433632}
   sCtrl: {fileID: 0}
-  nextStage: 5
+  nextStage: 7
 --- !u!212 &1733433635
 SpriteRenderer:
   m_ObjectHideFlags: 0
