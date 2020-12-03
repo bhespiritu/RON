@@ -48,7 +48,7 @@ public class SideBurst : MonoBehaviour
         if(chargeProgress > 1)
         {
             var hit = Physics2D.OverlapBox(transform.position, transform.localScale, 0, filter, hitList);
-            Debug.Log(hit);
+            //Debug.Log(hit);
             if (hit > 0)
             {
                 Player p = hitList[0].GetComponent<Player>();
