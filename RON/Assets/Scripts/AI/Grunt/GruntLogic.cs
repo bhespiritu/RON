@@ -126,7 +126,7 @@ public class GruntLogic : MonoBehaviour
                 sawPlayer = false;
                 if (wanderCooldown <= 0)
                 {
-                    waypoint = transform.position + (Vector3.right * Random.Range(-3, 3)).normalized;
+                    waypoint = transform.position + (Vector3.right * Random.Range(-10, 10)).normalized;
                     wanderCooldown = 10;
                 }
             }

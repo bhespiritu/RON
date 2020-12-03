@@ -15,6 +15,7 @@ public class DroneLogic : MonoBehaviour
     public float laserWidth = 0.05f;
 
     public float shotCooldown = 6;
+    public float maxCharge = 6;
 
     public Vector2 targetPos;
     private Rigidbody2D rb;
@@ -29,14 +30,16 @@ public class DroneLogic : MonoBehaviour
     public LayerMask groundMask;
 
     private float chargeUpTime = 0;
-    private float maxCharge = 6;
+    
     private float flickerCharge = 0.8f;
     private float flickerFreq = 20;
 
     public MuzzleFlash muzzleFlash;
     public float shootForce = 5;
     public GameObject impact;
+    public ParticleSystem particles;
 
+    private bool hasSparked = false;
     private Player player;
     
 
@@ -104,15 +107,20 @@ public class DroneLogic : MonoBehaviour
         }
 
 
-        Vector2 diff = (targetPos - (Vector2) turret.transform.position);
-        Vector3 mid = (targetPos + (Vector2) turret.transform.position) / 2;
-        mid.z = 10;
+        if (!info.isDead)
+        {
+            Vector2 diff = (targetPos - (Vector2)turret.transform.position);
+            Vector3 mid = (targetPos + (Vector2)turret.transform.position) / 2;
+            mid.z = 10;
 
-        laser.position = mid;
-        laser.right = diff;
+            laser.position = mid;
+            laser.right = diff;
 
-        laser.localScale = new Vector3(diff.magnitude / transform.localScale.x, laserWidth / transform.localScale.y, 1);
-
+            laser.localScale = new Vector3(diff.magnitude / transform.localScale.x, laserWidth / transform.localScale.y, 1);
+        } else
+        {
+            laser.gameObject.SetActive(false);
+        }
         
 
         
@@ -151,6 +159,11 @@ public class DroneLogic : MonoBehaviour
         } else
         {
             rb.gravityScale = 1;
+            if (!hasSparked)
+            {
+                hasSparked = true;
+                particles.Play();
+            }
         }
         
 
