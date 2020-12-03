@@ -343,7 +343,7 @@ MonoBehaviour:
   invisOut: {fileID: 8300000, guid: bc611ff5763d69a4287c3a0875f631ff, type: 3}
   dead: {fileID: 8300000, guid: b0bd0aa75d859864dbcf03cceb6da4dd, type: 3}
   dazedFor: 0
-  hitDazeDuration: 0.25
+  hitDazeDuration: 0.45
   knockBackStrength: 15
   thingy: {fileID: 0}
 --- !u!95 &7083996499965910055
