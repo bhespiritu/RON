@@ -51,3 +51,9 @@ TagManager:
   - name: Fog
     uniqueID: 1299269735
     locked: 0
+  - name: Item
+    uniqueID: 966969687
+    locked: 0
+  - name: InfoPopups
+    uniqueID: 582930041
+    locked: 0

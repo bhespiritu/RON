@@ -35,6 +35,8 @@ public class EnemyInfo : MonoBehaviour
     public Transform target;
 
     public GameObject[] itemPrefabs;
+
+    public GameObject floaterPrefab;
     
     public void Start()
     {
@@ -73,6 +75,12 @@ public class EnemyInfo : MonoBehaviour
     {
         health -= damage;
         hurtFor = hurtDuration;
+
+        var floater = Instantiate(floaterPrefab, transform.position, Quaternion.identity);
+        var floaterData = floater.GetComponent<TextFloater>();
+        floaterData.color = Color.red;
+        floaterData.text = "-" + damage;
+
         if (health <= 0 && !isDead) Die();
     }
 
@@ -93,6 +101,11 @@ public class EnemyInfo : MonoBehaviour
 
         var iPrefab = itemPrefabs[Random.Range(0,itemPrefabs.Length)];
         var item = Instantiate(iPrefab, transform.position, Quaternion.identity);
+
+        var floater = Instantiate(floaterPrefab, transform.position - Vector3.up, Quaternion.identity);
+        var floaterData = floater.GetComponent<TextFloater>();
+        floaterData.color = Color.yellow;
+        floaterData.text = ("+" + this.bounty);
     }
 
     //NOTE FOR REVIEWER

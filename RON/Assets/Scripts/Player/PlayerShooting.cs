@@ -11,20 +11,22 @@ public class PlayerShooting : MonoBehaviour
 
     private GameObject getProjectile(int id)
     {
-        switch(id)
-        {
-            case 4:
-                return projectiles[1];
-            case 0:
-                return projectiles[0];
-            case 1:
-                return projectiles[1];
-            case 2:
-                return projectiles[2];
-            case 3:
-                return projectiles[1];
-        }
-        return null;
+        return projectiles[id];
+        
+        //switch(id)
+        //{
+        //    case 4:
+        //        return projectiles[0];
+        //    case 0:
+        //        return projectiles[0];
+        //    case 1:
+        //        return projectiles[1];
+        //    case 2:
+        //        return projectiles[2];
+        //    case 3:
+        //        return projectiles[1];
+        //}
+        //return null;
     }
 
     private void Start()
@@ -52,6 +54,11 @@ public class PlayerShooting : MonoBehaviour
         if(weapon.id == 2)//hand cannon special behaviour
         {
             player.rb.AddForce(-direction * 1000);
+        }
+        if (weapon.id == 0)
+        {
+            player.speed *= 0.85f;
+            player.activeItems[0].damage = (int) (player.activeItems[0].damage * 1.15);
         }
         
     }

@@ -294,6 +294,8 @@ MonoBehaviour:
   - {fileID: 3273649595278809051, guid: 0f1d3de6d74b46f478de63d4c045e1ed, type: 3}
   - {fileID: 3868183875990484177, guid: ad64fc5c0ab1f6844ba3b8b1d02368d0, type: 3}
   - {fileID: 5729857272890466247, guid: e93cdb3e69e9e08428d1c7c316b1c018, type: 3}
+  floaterPrefab: {fileID: 5420272362737174165, guid: e8581e0cf16e2fd44a1f6d3a247fcd6a,
+    type: 3}
 --- !u!50 &945323161098890310
 Rigidbody2D:
   serializedVersion: 4

@@ -6,5 +6,6 @@ public class HandCannon : ActiveItem
     {
         this.projectileSpeed = 20f;
         this.shortDescription = this.itemName + ": Shoots very powerful projectiles at a slow firerate.";
+        this.autofireAmount = 0.25f * 1.5f;
     }
 }
