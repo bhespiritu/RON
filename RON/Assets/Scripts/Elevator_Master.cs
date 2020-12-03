@@ -22,6 +22,8 @@ public class Elevator_Master : MonoBehaviour
     public delegate void elEvent();
     public static event elEvent sChg;
     public int nextStage;
+    public AudioClip DINGDINGDING;
+    private AudioSource source;
     
     void Start()
     {
@@ -32,6 +34,7 @@ public class Elevator_Master : MonoBehaviour
         player = Player.playerInstance.GetComponent<Rigidbody2D>();
         leaving = false;
         lAcc = 0f;
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -65,6 +68,7 @@ public class Elevator_Master : MonoBehaviour
                 //sCtrl.ElevatorSignal();
                 sChg();
                 eSprite.sprite = Fin;
+                source.PlayOneShot(DINGDINGDING, 0.5f * VolumeManager.sfxVal);
                 //leaving = true;
             }
         }
