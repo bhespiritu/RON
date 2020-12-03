@@ -85,6 +85,10 @@ public class Player : MonoBehaviour
     private float moveInfluence = 1;
     public ItemUI thingy;
 
+    public bool startedFiring = false;
+    public float oldSpeed = 0f;
+    public int oldDamage = 0;
+
     public Player(float health = 100, float maxHealth = 100, int money = 0, List<ActiveItem> activeItems = null, List<PassiveItem> passiveItems = null, float speed = 10, float jumpSpeed = 40, float attack = 10, float defense = 10, float damageMultiplier = 1f, float healMultiplier = 1f)
     {
         this.health = health;
@@ -244,7 +248,7 @@ public class Player : MonoBehaviour
         this.an = GetComponent<Animator>();
         this.sprite = GetComponent<SpriteRenderer>();
         this.rb.gravityScale = 9;
-        this.activeItems.Add(new HandCannon());
+        this.activeItems.Add(new SlowGun());
         gameObject.tag = "Player";
         this.rand = new System.Random();
         this.critChance = this.baseCritChance;
@@ -254,12 +258,14 @@ public class Player : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         thingy = GameObject.Find("ActiveImage").GetComponent<ItemUI>();
         this.playerShooting = GetComponent<PlayerShooting>();
-
-
+        this.startedFiring = false;
+        this.oldSpeed = speed;
+        this.oldDamage = this.activeItems[0].damage;
     }
 
     void Update()
     {
+        Debug.Log(this.activeItems[0].damage);
         if(PauseControls.isPaused){
             this.canShoot = false; 
         }
@@ -323,6 +329,13 @@ public class Player : MonoBehaviour
         // apply healing
         Heal(healMultiplier * Time.deltaTime);
 
+        if (!Input.GetMouseButton(0))
+        {
+            this.startedFiring = false;
+            this.speed = this.oldSpeed;
+            this.activeItems[0].damage = this.oldDamage;
+        }
+
         if ((Input.GetKeyDown("space") || Input.GetKeyDown("w") || Input.GetKeyDown("up")) && this.isGrounded && rb.velocity.y >= 0)
         {
             this.footsteps.PlayOneShot(this.jump, 1f * VolumeManager.sfxVal);
@@ -337,8 +350,14 @@ public class Player : MonoBehaviour
 
         }
 
-        if ((Input.GetMouseButton(0) && this.activeItems[0].autofire && this.autofireDelay >= 0.09 && canShoot) || (Input.GetMouseButtonDown(0) && canShoot))
+        if ((Input.GetMouseButton(0) && this.activeItems[0].autofire && this.autofireDelay >= this.activeItems[0].autofireAmount && canShoot) || (Input.GetMouseButtonDown(0) && canShoot && this.autofireDelay >= this.activeItems[0].autofireAmount))
         {
+            if (!this.startedFiring)
+            {
+                this.startedFiring = true;
+                this.oldSpeed = this.speed;
+                this.oldDamage = this.activeItems[0].damage;
+            }
             this.autofireDelay = 0;
             this.footsteps.PlayOneShot(gunSounds[this.activeItems[0].id], 0.5f * VolumeManager.sfxVal);
 

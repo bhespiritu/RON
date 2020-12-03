@@ -53,6 +53,11 @@ public class PlayerShooting : MonoBehaviour
         {
             player.rb.AddForce(-direction * 1000);
         }
+        if (weapon.id == 0)
+        {
+            player.speed *= 0.85f;
+            player.activeItems[0].damage = (int) (player.activeItems[0].damage * 1.25);
+        }
         
     }
 }
