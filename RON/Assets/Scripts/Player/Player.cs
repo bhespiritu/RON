@@ -249,6 +249,8 @@ public class Player : MonoBehaviour
         this.baseCritChance = 0.0f;
         this.baseBlockChance = 0.0f;
 
+        Debug.Log("running start method");
+
         this.health = this.baseHealth;
         this.maxHealth = this.baseMaxHealth;
         this.money = 0;
