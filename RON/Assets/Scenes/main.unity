@@ -5169,6 +5169,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 6273242018009471606, guid: 34bf204a8734f094a963752c2d77fe1a,
+        type: 3}
+      propertyPath: hitDazeDuration
+      value: 0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 6273242018009471607, guid: 34bf204a8734f094a963752c2d77fe1a,
         type: 3}
       propertyPath: m_Constraints
@@ -6219,7 +6224,7 @@ GameObject:
   - component: {fileID: 1071124859}
   - component: {fileID: 1071124858}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: right/left click canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
