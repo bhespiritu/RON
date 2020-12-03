@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public Animator an;
     public SpriteRenderer sprite;
+    private PlayerShooting playerShooting;
 
     [Header("Important Values")]
     public float health;
@@ -95,6 +96,7 @@ public class Player : MonoBehaviour
         this.defense = defense;
         this.damageMultiplier = damageMultiplier;
         this.healMultiplier = healMultiplier;
+        
 
         if (activeItems != null)
         {
@@ -194,32 +196,7 @@ public class Player : MonoBehaviour
         mChange(this.money);
     }
 
-    public void Shoot(Vector2 direction)
-    {
-        if (this.activeItems.Count >= 1)
-        {
-            direction = Vector3.Slerp(Random.onUnitSphere, direction, this.activeItems[0].accuracy);
-
-            muzzleFlash.transform.right = direction;
-            muzzleFlash.Replay();
-
-            float crit = (float)this.rand.NextDouble();
-            if (crit < this.critChance)
-            {
-                var instance = Instantiate(critProjectile, (firePos.position + (Vector3)direction), Quaternion.identity);
-                instance.GetComponent<Rigidbody2D>().velocity = direction * this.activeItems[0].projectileSpeed;
-                instance.GetComponent<PlayerBullet>().damage = (int)(this.activeItems[0].damage * damageMultiplier * 3);
-                instance.GetComponent<PlayerBullet>().effect = this.activeItems[0].effect;
-            }
-            else
-            {
-                var instance = Instantiate(projectile, (firePos.position + (Vector3)direction), Quaternion.identity);
-                instance.GetComponent<Rigidbody2D>().velocity = direction * this.activeItems[0].projectileSpeed;
-                instance.GetComponent<PlayerBullet>().damage = (int)(this.activeItems[0].damage * damageMultiplier);
-                instance.GetComponent<PlayerBullet>().effect = this.activeItems[0].effect;
-            }
-        }
-    }
+    
 
     public static Player playerInstance;
     void Awake()
@@ -265,7 +242,7 @@ public class Player : MonoBehaviour
         this.an = GetComponent<Animator>();
         this.sprite = GetComponent<SpriteRenderer>();
         this.rb.gravityScale = 9;
-        this.activeItems.Add(new BaseGun());
+        this.activeItems.Add(new HandCannon());
         gameObject.tag = "Player";
         this.rand = new System.Random();
         this.critChance = this.baseCritChance;
@@ -274,6 +251,7 @@ public class Player : MonoBehaviour
         this.moveInfluence = 1;
         SceneManager.sceneLoaded += OnSceneLoaded;
         thingy = GameObject.Find("ActiveImage").GetComponent<ItemUI>();
+        this.playerShooting = GetComponent<PlayerShooting>();
 
 
     }
@@ -361,7 +339,9 @@ public class Player : MonoBehaviour
         {
             this.autofireDelay = 0;
             this.footsteps.PlayOneShot(gunSounds[this.activeItems[0].id], 0.5f * VolumeManager.sfxVal);
-            Shoot((Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized);
+
+            
+            playerShooting.Shoot(this.activeItems[0],(Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized);
             thingy.LeftHit(); 
         }
 
