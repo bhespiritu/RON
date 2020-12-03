@@ -17,6 +17,7 @@ public class SpeedBoost : PassiveItem
         else
         {
             p.speed = p.baseSpeed + 5f * (float) Math.Log(SpeedBoost.count);
+            p.oldSpeed = p.baseSpeed + 5f * (float)Math.Log(SpeedBoost.count);
         }
     }
 }
