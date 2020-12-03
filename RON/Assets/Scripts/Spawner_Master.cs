@@ -19,6 +19,7 @@ public class Spawner_Master : MonoBehaviour
     public GameObject player;
     private bool init;
     private float crAcc;
+    public Vector3 BossOffset = new Vector3 (7,3,0);
     // Start is called before the first frame update
     void Start()
     {
@@ -149,7 +150,7 @@ public class Spawner_Master : MonoBehaviour
     public void SpawnMiniboss()
     {
         var boss = SpawnSpecific(miniBoss);
-        boss.transform.position = transform.position + Vector3.up * 5;
+        boss.transform.position = transform.position + BossOffset;
     }
 
     void diagnostic(){
