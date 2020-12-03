@@ -58,6 +58,7 @@ public class FinalBossLogic : MonoBehaviour
     public float maxMovementRange = 17;
     [Header("Effect Prefabs")]
     public GameObject impactEffect;
+    public Sprite talkIcon;
 
     private Player player;
 
@@ -72,6 +73,7 @@ public class FinalBossLogic : MonoBehaviour
         player = Player.playerInstance;
         BossUI.instance.trackedEnemy = info;
         BossUI.instance.ShowUI(false);
+        
     }
 
     public void Update()
@@ -105,18 +107,21 @@ public class FinalBossLogic : MonoBehaviour
             transform.position = newPos;
         }
 
+        if (info.health <= 0) currentState = FinalBossState.DEATH;
+
         float pulseProgress;
         switch (currentState)
         {
             case FinalBossState.INTRO:
+                if(!doneEntry)
+                {
+                    PopupManager.instance.queuePopup(3, "Hans Crowe", "Prepare to meet your demise", talkIcon);
+                    doneEntry = true;
+                }
                 info.sprite.enabled = true;
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 break;
             case FinalBossState.SHOOT:
-                if(!doneEntry)
-                {
-
-                }
                 col.enabled = true;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                 info.sprite.enabled = true;

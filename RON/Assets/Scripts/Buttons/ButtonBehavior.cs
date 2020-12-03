@@ -34,18 +34,18 @@ public class ButtonBehavior : MonoBehaviour
         SceneManager.LoadScene(0);
     }
     public void Tutorial(){
-        SceneManager.LoadScene(1); 
+        SceneManager.LoadScene(2); 
     }
     public void Play()
     {
         // Your code here
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
     public void Quit(){
     	Application.Quit(); 
     }
     public void StoryTime(){
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(1);
     }
     
 

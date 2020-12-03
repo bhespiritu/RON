@@ -185,7 +185,7 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         Destroy(gameObject);
         Destroy(GameTimer._instance.gameObject);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(5);
     }
 
     public void AddMoney(int amt)
