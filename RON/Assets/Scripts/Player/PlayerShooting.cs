@@ -14,7 +14,7 @@ public class PlayerShooting : MonoBehaviour
         switch(id)
         {
             case 4:
-                return projectiles[1];
+                return projectiles[0];
             case 0:
                 return projectiles[0];
             case 1:

@@ -230,8 +230,6 @@ public class Player : MonoBehaviour
         this.baseCritChance = 0.0f;
         this.baseBlockChance = 0.0f;
 
-        Debug.Log("running start method");
-
         this.health = this.baseHealth;
         this.maxHealth = this.baseMaxHealth;
         this.money = 0;
@@ -248,7 +246,7 @@ public class Player : MonoBehaviour
         this.an = GetComponent<Animator>();
         this.sprite = GetComponent<SpriteRenderer>();
         this.rb.gravityScale = 9;
-        this.activeItems.Add(new SlowGun());
+        this.activeItems.Add(new RandomGun());
         gameObject.tag = "Player";
         this.rand = new System.Random();
         this.critChance = this.baseCritChance;
