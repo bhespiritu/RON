@@ -359,8 +359,10 @@ public class Player : MonoBehaviour
                 this.oldDamage = this.activeItems[0].damage;
             }
             this.autofireDelay = 0;
+            this.footsteps.pitch = Random.Range(1 - this.activeItems[0].pitchVariance, 1 + this.activeItems[0].pitchVariance);
+            Debug.Log(this.footsteps.pitch);
             this.footsteps.PlayOneShot(gunSounds[this.activeItems[0].id], 0.5f * VolumeManager.sfxVal);
-
+            
             
             playerShooting.Shoot(this.activeItems[0],(Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized);
             thingy.LeftHit(); 

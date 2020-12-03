@@ -7,6 +7,7 @@ public class SlowGun : ActiveItem
         this.shortDescription = this.itemName + ": Shoots slightly stronger bullets that slow enemies down.";
         this.autofire = true;
         this.autofireAmount = 0.3f;
+        this.pitchVariance = .1f;
     }
 
     public override void Fire(Vector3 position, Vector2 direction, float damageMultiplier)
