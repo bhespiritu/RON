@@ -696,8 +696,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143333795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1326492, y: -42, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 1}
+  m_LocalPosition: {x: 2.1326492, y: -51.11, z: 0}
+  m_LocalScale: {x: 100, y: 19.217638, z: 1}
   m_Children: []
   m_Father: {fileID: 31612086}
   m_RootOrder: 3
@@ -4571,8 +4571,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258005483}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.13265, y: 8, z: 0}
-  m_LocalScale: {x: 1, y: 101, z: 1}
+  m_LocalPosition: {x: 60.62, y: -1.11, z: 0}
+  m_LocalScale: {x: 17.971642, y: 119.22568, z: 1}
   m_Children: []
   m_Father: {fileID: 31612086}
   m_RootOrder: 2
@@ -7308,8 +7308,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729970004}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -59.2, y: 18, z: 0}
-  m_LocalScale: {x: 22.5, y: 1, z: 1}
+  m_LocalPosition: {x: -59.2, y: 12.018, z: 0}
+  m_LocalScale: {x: 22.5, y: 12.964008, z: 1}
   m_Children: []
   m_Father: {fileID: 31612086}
   m_RootOrder: 5
@@ -7399,6 +7399,7 @@ GameObject:
   - component: {fileID: 1733433635}
   - component: {fileID: 1733433634}
   - component: {fileID: 1733433633}
+  - component: {fileID: 1733433637}
   m_Layer: 0
   m_Name: Elevator_Base
   m_TagString: Elevator
@@ -7437,7 +7438,7 @@ MonoBehaviour:
   - {x: -43, y: -26.5, z: 0}
   - {x: 0, y: -26.5, z: 0}
   player: {fileID: 2004777193}
-  BossOffset: {x: 7, y: 3, z: 0}
+  BossOffset: {x: -7, y: 3, z: 0}
 --- !u!114 &1733433634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7461,6 +7462,7 @@ MonoBehaviour:
   sObj: {fileID: 1733433632}
   sCtrl: {fileID: 0}
   nextStage: 4
+  DINGDINGDING: {fileID: 8300000, guid: e1b96210fc05b56479d5aac014f20394, type: 3}
 --- !u!212 &1733433635
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7525,6 +7527,102 @@ Transform:
   m_Father: {fileID: 740285037}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1733433637
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733433632}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1734838006
 GameObject:
   m_ObjectHideFlags: 0
@@ -9322,8 +9420,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066712397}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.3, y: -12, z: 0}
-  m_LocalScale: {x: 1, y: 61, z: 1}
+  m_LocalPosition: {x: -52.738, y: -21.2, z: 0}
+  m_LocalScale: {x: 9.876522, y: 79.40435, z: 1}
   m_Children: []
   m_Father: {fileID: 31612086}
   m_RootOrder: 1
