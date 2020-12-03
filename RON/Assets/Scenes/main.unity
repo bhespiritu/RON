@@ -9916,7 +9916,7 @@ MonoBehaviour:
   Fin: {fileID: 21300000, guid: 97ed6434a6436794c9142e3e90e4dfdc, type: 3}
   sObj: {fileID: 1733433632}
   sCtrl: {fileID: 0}
-  nextStage: 5
+  nextStage: 7
   DINGDINGDING: {fileID: 8300000, guid: e1b96210fc05b56479d5aac014f20394, type: 3}
 --- !u!212 &1733433635
 SpriteRenderer:
