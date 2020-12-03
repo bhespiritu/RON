@@ -49,6 +49,10 @@ public class PlayerShooting : MonoBehaviour
         {
             bullet.GetComponent<SpriteRenderer>().color = Color.red;
         }
+        if(weapon.id == 2)//hand cannon special behaviour
+        {
+            player.rb.AddForce(-direction * 1000);
+        }
         
     }
 }
