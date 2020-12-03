@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
+using System.Collections.Generic;
 
 public class ItemShop : MonoBehaviour
 {
@@ -7,25 +9,70 @@ public class ItemShop : MonoBehaviour
     public Text itemName;
     public Text itemDescription;
     public Text itemCost;
+
     public Button purchaseItem;
 
+    public Image[] buttonImages;
+    public Sprite[] itemSprites;
     public Button[] itemButtons;
+
+    public int[] buttonChoices;
+
     public int selectedItem = 0;
+    public int selectedButton = 0;
+
+    public System.Random rand = new System.Random();
+    public List<int> itemShopOptions = new List<int>();
 
     public void Start()
     {
         this.money.text = "$" + Player.playerInstance.money;
+        this.PopulateItemShop();
     }
 
-    public void SetSelected(int selection)
+    public void PopulateItemShop()
+    {
+        this.AssignItem(0, this.GetUniqueRandom(0, 4));
+        this.AssignItem(1, this.GetUniqueRandom(0, 4));
+        this.AssignItem(2, this.GetUniqueRandom(4, 8));
+        this.AssignItem(3, this.GetUniqueRandom(4, 8));
+        this.AssignItem(4, this.GetUniqueRandom(8, 16));
+        this.AssignItem(5, this.GetUniqueRandom(8, 16));
+        this.AssignItem(6, this.GetUniqueRandom(8, 16));
+        this.AssignItem(7, this.GetUniqueRandom(8, 16));
+    }
+
+    public int GetUniqueRandom(int min, int max)
+    {
+        int possibleUnique = this.rand.Next(min, max);
+
+        while (this.itemShopOptions.Contains(possibleUnique))
+        {
+            possibleUnique = this.rand.Next(min, max);
+        }
+
+        this.itemShopOptions.Add(possibleUnique);
+        return possibleUnique;
+    }
+
+    public void AssignItem(int button, int item)
+    {
+        this.buttonImages[button].sprite = this.itemSprites[item];
+        this.buttonChoices[button] = item;
+    }
+
+    public void SetItemSelected(int selection)
     {
         this.selectedItem = selection;
     }
-    public void DisplayItem(int item)
+
+    public void DisplayItem(int button)
     { 
         Item purchase;
+        this.selectedButton = button;
+        this.selectedItem = buttonChoices[this.selectedButton];
 
-        switch (item)
+        switch (this.buttonChoices[button])
         {
             case 0:
                 purchase = new SlowGun();
@@ -102,111 +149,110 @@ public class ItemShop : MonoBehaviour
                 purchase = new SlowGun();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
-                    Player.playerInstance.activeItems[0] = (SlowGun) purchase;
+                    Player.playerInstance.activeItems[0] = (SlowGun)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 1:
                 purchase = new RandomGun();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.activeItems[0] = (RandomGun)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 2:
                 purchase = new HandCannon();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.activeItems[0] = (HandCannon)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 3:
                 purchase = new AssaultRifle();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.activeItems[0] = (AssaultRifle)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 4:
                 purchase = new Dash(Player.playerInstance);
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.secondaryItem = (Dash)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 5:
                 purchase = new Knockback(Player.playerInstance);
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.secondaryItem = (Knockback) purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 6:
                 purchase = new Invisible(Player.playerInstance);
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.secondaryItem = (Invisible)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 7:
                 purchase = new Shield(Player.playerInstance);
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
                     Player.playerInstance.secondaryItem = (Shield)purchase;
+                    this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;
             case 8:
                 purchase = new DamageBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -220,7 +266,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new HealthBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -234,7 +279,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new CritBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -248,7 +292,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new SpeedBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -262,7 +305,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new JumpBoost();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -276,7 +318,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new DamageResistance();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -290,7 +331,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new HealthRegen();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);
@@ -304,7 +344,6 @@ public class ItemShop : MonoBehaviour
                 purchase = new TeddyBear();
                 if (purchase.cost <= Player.playerInstance.money)
                 {
-                    this.itemButtons[selectedItem].gameObject.SetActive(false);
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
                     this.purchaseItem.gameObject.SetActive(false);
                     this.itemName.gameObject.SetActive(false);

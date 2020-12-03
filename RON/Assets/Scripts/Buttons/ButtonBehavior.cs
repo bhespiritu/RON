@@ -30,7 +30,7 @@ public class ButtonBehavior : MonoBehaviour
     public void MainMenu()
     {
         // Your code here
-        Destroy(Player.playerInstance);
+        Destroy(Player.playerInstance.gameObject);
         SceneManager.LoadScene(0);
     }
     public void Tutorial(){
@@ -44,7 +44,9 @@ public class ButtonBehavior : MonoBehaviour
     public void Quit(){
     	Application.Quit(); 
     }
-
+    public void StoryTime(){
+        SceneManager.LoadScene(7);
+    }
     
 
     public void UpdateMasterVolume()

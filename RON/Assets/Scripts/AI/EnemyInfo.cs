@@ -20,6 +20,8 @@ public class EnemyInfo : MonoBehaviour
     public float attackSpeed = 10;
     public float moveSpeed = 5;
 
+    public int bounty = 10;
+
     public int difficulty = 0;
 
     public bool facing = true;
@@ -86,7 +88,7 @@ public class EnemyInfo : MonoBehaviour
             GetComponent<Rigidbody2D>().isKinematic = true;
             GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
-        target.GetComponent<Player>().AddMoney(10);
+        target.GetComponent<Player>().AddMoney(this.bounty);
         spawner.kill(gameObject);
 
         var iPrefab = itemPrefabs[Random.Range(0,itemPrefabs.Length)];
