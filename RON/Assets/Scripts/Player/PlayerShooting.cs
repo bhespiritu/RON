@@ -11,20 +11,22 @@ public class PlayerShooting : MonoBehaviour
 
     private GameObject getProjectile(int id)
     {
-        switch(id)
-        {
-            case 4:
-                return projectiles[0];
-            case 0:
-                return projectiles[0];
-            case 1:
-                return projectiles[1];
-            case 2:
-                return projectiles[2];
-            case 3:
-                return projectiles[1];
-        }
-        return null;
+        return projectiles[id];
+        
+        //switch(id)
+        //{
+        //    case 4:
+        //        return projectiles[0];
+        //    case 0:
+        //        return projectiles[0];
+        //    case 1:
+        //        return projectiles[1];
+        //    case 2:
+        //        return projectiles[2];
+        //    case 3:
+        //        return projectiles[1];
+        //}
+        //return null;
     }
 
     private void Start()

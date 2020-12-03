@@ -431,6 +431,9 @@ MonoBehaviour:
   hitDazeDuration: 0.55
   knockBackStrength: 15
   thingy: {fileID: 0}
+  startedFiring: 0
+  oldSpeed: 0
+  oldDamage: 0
 --- !u!95 &7083996499965910055
 Animator:
   serializedVersion: 3
@@ -560,9 +563,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 6273242018009471606}
   projectiles:
-  - {fileID: 4139835644662871879, guid: 30fb0b475056a8e48b07f36bb7b43c0e, type: 3}
+  - {fileID: 4139835644662871879, guid: 7ea87f59ffdd0984393c58612bbac742, type: 3}
   - {fileID: 1695647743558621918, guid: 908cc5e584f39ae4d8a5fef96a2005d5, type: 3}
   - {fileID: 5546168411662456564, guid: 48a22c8e156bbf4428358a7b8c829ba7, type: 3}
+  - {fileID: 4139835644662871879, guid: ac909ee711e23a8499055ce24648f51e, type: 3}
+  - {fileID: 4139835644662871879, guid: 30fb0b475056a8e48b07f36bb7b43c0e, type: 3}
 --- !u!1001 &6421021609906860449
 PrefabInstance:
   m_ObjectHideFlags: 0
