@@ -24,7 +24,6 @@ public class DroneStrike : MonoBehaviour
         filter.layerMask = layerMask;
         filter.useLayerMask = true;
         var hit = Physics2D.OverlapCircle(transform.position,radius,filter,hitCol);
-        Debug.Log(hit);
         if(hit > 0)
         {
             hitCol[0].GetComponent<Player>().TakeDamage(damage);            

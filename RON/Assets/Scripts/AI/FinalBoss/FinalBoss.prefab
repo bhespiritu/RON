@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1470927835744262593}
   - component: {fileID: 1470927835744262592}
   m_Layer: 15
-  m_Name: Miniboss
+  m_Name: FinalBoss
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,7 @@ MonoBehaviour:
   health: 1000
   attackSpeed: 10
   moveSpeed: 5
+  bounty: 10
   difficulty: 0
   facing: 1
   initialHealth: 0
@@ -156,6 +157,7 @@ MonoBehaviour:
   spawnPoints: []
   maxMovementRange: 17
   impactEffect: {fileID: 0}
+  talkIcon: {fileID: 21300000, guid: fda099fbab073c248826469dd067e790, type: 3}
 --- !u!61 &1470927835744262593
 BoxCollider2D:
   m_ObjectHideFlags: 0
