@@ -418,8 +418,8 @@ Canvas:
   m_GameObject: {fileID: 413276199}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1870238958}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -910,3 +910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d75fd537cbf54ad58fb80a02e868c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterVolumeSlider: {fileID: 0}
+  sfxVolumeSlider: {fileID: 0}
+  musicVolumeSlider: {fileID: 0}
