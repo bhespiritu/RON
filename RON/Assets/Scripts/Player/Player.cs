@@ -438,7 +438,7 @@ public class Player : MonoBehaviour
     {
         rb.velocity = new Vector2(0, 0);
         //rb.position = new Vector3(15.91f, 2.15f, -8.793485f);
-        //Debug.Log(scene.buildIndex);
+        Debug.Log(scene.buildIndex);
         if(scene.buildIndex < 2)
             rb.position = new Vector3(0,0,0);
         else 
