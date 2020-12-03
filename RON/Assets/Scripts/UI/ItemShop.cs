@@ -26,8 +26,8 @@ public class ItemShop : MonoBehaviour
 
     public void Start()
     {
-        this.money.text = "$" + Player.playerInstance.money;
         this.PopulateItemShop();
+        this.money.text = "$" + Player.playerInstance.money;
     }
 
     public void PopulateItemShop()
@@ -87,7 +87,7 @@ public class ItemShop : MonoBehaviour
                 purchase = new AssaultRifle();
                 break;
             case 4:
-                purchase = new Dash(Player.playerInstance);
+                purchase = new Heal(Player.playerInstance);
                 break;
             case 5:
                 purchase = new Knockback(Player.playerInstance);
@@ -198,7 +198,7 @@ public class ItemShop : MonoBehaviour
                 }
                 break;
             case 4:
-                purchase = new Dash(Player.playerInstance);
+                purchase = new Heal(Player.playerInstance);
                 if (purchase.cost <= Player.playerInstance.money)
                 {
                     this.itemDescription.text = "Click on an item to get information about it and purchase it.";
@@ -206,7 +206,7 @@ public class ItemShop : MonoBehaviour
                     this.itemName.gameObject.SetActive(false);
                     this.itemCost.gameObject.SetActive(false);
                     Player.playerInstance.money -= purchase.cost;
-                    Player.playerInstance.secondaryItem = (Dash)purchase;
+                    Player.playerInstance.secondaryItem = (Heal)purchase;
                     this.itemButtons[this.selectedButton].gameObject.SetActive(false);
                 }
                 break;

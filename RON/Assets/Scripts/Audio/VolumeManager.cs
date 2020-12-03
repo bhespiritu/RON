@@ -24,7 +24,7 @@ public static class VolumeManager
         {
             OnVolumeChange?.Invoke();
             _masterVolume = value;
-            Debug.Log("New Master Volume:" + masterVolume);
+            //Debug.Log("New Master Volume:" + masterVolume);
         }
     }
     public static float sfxVolume
@@ -38,7 +38,7 @@ public static class VolumeManager
             
             OnSFXVolumeChange?.Invoke();
             _sfxVolume = value;
-            Debug.Log("New SFX Volume:" + sfxVolume);
+            //Debug.Log("New SFX Volume:" + sfxVolume);
         }
     }
     public static float musicVolume
@@ -52,7 +52,7 @@ public static class VolumeManager
             
             OnMusicVolumeChange?.Invoke();
             _musicVolume = value;
-            Debug.Log("New Music Volume:" + musicVolume);
+            //Debug.Log("New Music Volume:" + musicVolume);
         }
     }
 

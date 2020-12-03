@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   an: {fileID: 0}
-  collider: {fileID: 0}
+  sprite: {fileID: 0}
   health: 0
   maxHealth: 0
   money: 0
@@ -292,6 +292,16 @@ MonoBehaviour:
   blockChance: 0
   canShoot: 0
   invisible: 0
+  baseHealth: 0
+  baseMaxHealth: 0
+  baseJumpSpeed: 0
+  baseSpeed: 0
+  baseAttack: 0
+  baseDefense: 0
+  baseDamageMultiplier: 0
+  baseHealMultiplier: 0
+  baseCritChance: 0
+  baseBlockChance: 0
   muzzleFlash: {fileID: 2935827913036468907}
   firePos: {fileID: 1774154271846645096}
   projectile: {fileID: 8899581201661684260, guid: b793a31dfe32ecd429bd221631fbf52f,
@@ -333,8 +343,9 @@ MonoBehaviour:
   invisOut: {fileID: 8300000, guid: bc611ff5763d69a4287c3a0875f631ff, type: 3}
   dead: {fileID: 8300000, guid: b0bd0aa75d859864dbcf03cceb6da4dd, type: 3}
   dazedFor: 0
-  hitDazeDuration: 1
+  hitDazeDuration: 0.25
   knockBackStrength: 15
+  thingy: {fileID: 0}
 --- !u!95 &7083996499965910055
 Animator:
   serializedVersion: 3

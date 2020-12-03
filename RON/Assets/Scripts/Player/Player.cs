@@ -260,7 +260,7 @@ public class Player : MonoBehaviour
         this.healMultiplier = this.baseHealMultiplier;
         this.activeItems = new List<ActiveItem>();
         this.passiveItems = new List<PassiveItem>();
-        this.secondaryItem = new Heal(this);
+        this.secondaryItem = new Dash(this);
         this.rb = GetComponent<Rigidbody2D>();
         this.an = GetComponent<Animator>();
         this.sprite = GetComponent<SpriteRenderer>();
@@ -436,7 +436,7 @@ public class Player : MonoBehaviour
     {
         rb.velocity = new Vector2(0, 0);
         //rb.position = new Vector3(15.91f, 2.15f, -8.793485f);
-        Debug.Log(scene.buildIndex);
+        //Debug.Log(scene.buildIndex);
         if(scene.buildIndex < 2)
             rb.position = new Vector3(0,0,0);
         else 
