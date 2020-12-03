@@ -613,7 +613,7 @@ RectTransform:
   - {fileID: 1067168097}
   - {fileID: 1926878144}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -887,7 +887,7 @@ Transform:
   - {fileID: 988232961}
   - {fileID: 1315794241}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &271611813
 GameObject:
@@ -1578,7 +1578,7 @@ GameObject:
   - component: {fileID: 494876230}
   - component: {fileID: 494876229}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Measurement Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1652,7 +1652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 494876228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.5, y: -3.9, z: -102.9377}
+  m_LocalPosition: {x: 41.3, y: -7.1, z: -102.9377}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1701,12 +1701,12 @@ MonoBehaviour:
   - {x: 0, y: 2, z: 0}
   - {x: 45, y: 2, z: 0}
   - {x: -45, y: 2, z: 0}
-  - {x: 58, y: 22, z: 0}
+  - {x: 70, y: 9, z: 0}
   - {x: -20, y: 18, z: 0}
   - {x: -68, y: 7, z: 0}
   - {x: -45, y: 12, z: 0}
   - {x: 31, y: 23, z: 0}
-  - {x: 55, y: 10, z: 0}
+  - {x: 45, y: 20, z: 0}
   player: {fileID: 0}
   BossOffset: {x: 7, y: 3, z: 0}
 --- !u!114 &505601859
@@ -5927,7 +5927,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399194119
 GameObject:
@@ -7486,7 +7486,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1788397203
 GameObject:
