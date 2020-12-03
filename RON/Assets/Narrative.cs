@@ -61,7 +61,7 @@ public class Narrative : MonoBehaviour
         	t.text = story[i]+story[i+1]+story[i+2]+story[i+3];
         }
         if(i >= 29){
-        	SceneManager.LoadScene(1);
+        	SceneManager.LoadScene(2);
         }
         i+=4;
     }

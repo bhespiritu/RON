@@ -39,21 +39,21 @@ public class GameTimer : MonoBehaviour
 
     private Vector2 spawnPoint;
 
-    public void LoadItemShop(int next_stage = 2)
+    public void LoadItemShop(int next_stage = 3)
     {
         Player.playerInstance.gameObject.SetActive(false);
         nextStage = next_stage;
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(6);
         
     }
 
     public void LoadDeathScene()
     {
         Destroy(Player.playerInstance.gameObject);
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(5);
     }
 
-    public void LoadStage(int stage = 2)
+    public void LoadStage(int stage = 3)
     {
         Player.playerInstance.gameObject.SetActive(true);
         SceneManager.LoadScene(stage);
