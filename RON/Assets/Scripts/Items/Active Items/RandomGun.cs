@@ -9,6 +9,7 @@ public class RandomGun : ActiveItem
         this.shortDescription = this.itemName + ": Rapidly shoots projectiles in random directions.";
         this.autofire = true;
         this.autofireAmount = 0.15f;
+        this.pitchVariance = 0.1f;
     }
 
     public override void Fire(Vector3 position, Vector2 direction, float damageMultiplier)
