@@ -18,7 +18,7 @@ public class Launch_Pad : MonoBehaviour
     void Update()
     {
         float dist = Mathf.Abs(Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(player.transform.position.x, player.transform.position.y)));
-        Debug.Log("Distance is " + dist);
+        //Debug.Log("Distance is " + dist);
         pRB.velocity = new Vector2(pRB.velocity.x, pRB.velocity.y+(2f-Mathf.Min(dist, 2f))*Power);
     }
 }
