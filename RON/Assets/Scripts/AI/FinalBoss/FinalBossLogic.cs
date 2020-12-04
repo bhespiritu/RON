@@ -115,7 +115,7 @@ public class FinalBossLogic : MonoBehaviour
             case FinalBossState.INTRO:
                 if(!doneEntry)
                 {
-                    PopupManager.instance.queuePopup(3, "Hans Crowe", "You are a fool to have come here.", talkIcon);
+                    PopupManager.instance.queuePopup(3, "Hans Crowe", "You are a fool to have come here.", talkIcon, true);
                     PopupManager.instance.queuePopup(3, "Hans Crowe", "Prepare to meet your demise", talkIcon);
                     doneEntry = true;
                 }
@@ -126,7 +126,7 @@ public class FinalBossLogic : MonoBehaviour
                 if (!doneEntry)
                 {
                     doneEntry = true;
-                    PopupManager.instance.queuePopup(3, "Elizabeth", "There he is! Get Him!", GameTimer._instance.girlTalkSprite); ;
+                    PopupManager.instance.queuePopup(3, "Elizabeth", "There he is! Get Him!", GameTimer._instance.girlTalkSprite, true); ;
                 }
                 col.enabled = true;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -157,7 +157,7 @@ public class FinalBossLogic : MonoBehaviour
                 if (!doneEntry)
                 {
                     doneEntry = true;
-                    PopupManager.instance.queuePopup(3, "Hans Crowe", "Call In The Lasers!", talkIcon);
+                    PopupManager.instance.queuePopup(3, "Hans Crowe", "Call In The Lasers!", talkIcon, true);
                 }
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 col.enabled = false;
@@ -179,7 +179,7 @@ public class FinalBossLogic : MonoBehaviour
                 if (!doneEntry)
                 {
                     doneEntry = true;
-                    PopupManager.instance.queuePopup(3, "Elizabeth", "Darn it! He flew off and called a drone strike! Watch Out!", GameTimer._instance.girlTalkSprite); ;
+                    PopupManager.instance.queuePopup(3, "Elizabeth", "Darn it! He flew off and called a drone strike! Watch Out!", GameTimer._instance.girlTalkSprite, true); ;
                 }
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 col.enabled = false;
