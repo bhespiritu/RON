@@ -1989,7 +1989,7 @@ GameObject:
   - component: {fileID: 701869002}
   - component: {fileID: 701869001}
   m_Layer: 10
-  m_Name: Platform Right Wall 2 (2)
+  m_Name: DeadZoneRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5107,7 +5107,7 @@ GameObject:
   - component: {fileID: 1702903246}
   - component: {fileID: 1702903245}
   m_Layer: 10
-  m_Name: Platform Right Wall 2 (1)
+  m_Name: DeadZoneLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5784,8 +5784,10 @@ MonoBehaviour:
   activeOverlay: {fileID: 191753313}
   secondaryOverlay: {fileID: 1410614336}
   fillTotal: 1
-  timer: 0
-  runs: 0
+  timerA: 0
+  timerS: 0
+  runsA: 0
+  runsS: 0
 --- !u!114 &1910373061
 MonoBehaviour:
   m_ObjectHideFlags: 0
