@@ -13,7 +13,7 @@
             p.critChance += this.critBoost;
         } else
         {
-            p.critMultiplier += 0.3f;
+            p.critMultiplier += 0.2f;
         }
         
     }
