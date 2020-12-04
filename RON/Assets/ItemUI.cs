@@ -9,8 +9,10 @@ public class ItemUI : MonoBehaviour
 	[SerializeField] public Image secondaryOverlay; 
 	public float fillTotal = 1;  
 	//public float amt; 
-	public float timer;
-	public float runs; 
+	public float timerA;
+    public float timerS;
+	public float runsA; 
+    public float runsS; 
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,8 @@ public class ItemUI : MonoBehaviour
  		//trans.a = a value;
  		activeOverlay.GetComponent<Image>().color = new Color(142,142,142,0);
 		secondaryOverlay.GetComponent<Image>().color = new Color(142,142,142,0);
-		runs = 0; 
+		runsA = 0; 
+        runsS = 0; 
     }
 
     // Update is called once per frame
@@ -32,34 +35,42 @@ public class ItemUI : MonoBehaviour
     	activeOverlay.GetComponent<Image>().color = new Color(142,142,142,213);
     	StartCoroutine(NoWait()); 
     }
+    public void LeftHitC(float timer){
+        activeOverlay.GetComponent<Image>().color = new Color(142,142,142,213);
+        this.timerA = timerA; 
+        activeOverlay.GetComponent<Image>().fillAmount = 1; 
+        StartCoroutine(ActuallyWaitActive());
+        fillTotal = 1; 
+        runsA = 0;
+    }
     public void RightHit(float timer){
     	secondaryOverlay.GetComponent<Image>().color = new Color(142,142,142,213); 
-        //this.amt = amt;
-        this.timer = timer; 
+        this.timerS = timerS; 
 		secondaryOverlay.GetComponent<Image>().fillAmount = 1; 
         StartCoroutine(ActuallyWait());
         fillTotal = 1; 
-        runs = 0;
-		//secondaryOverlay.GetComponent<Image>().color = new Color(142,142,142,0);
-       /* fillTotal = (float) amt/timer;
-        secondaryOverlay.GetComponent<Image>().fillAmount = fillTotal;  
-        if(fillTotal <= 0){
-        	fillTotal = 1; 
-        	secondaryOverlay.GetComponent<Image>().fillAmount = fillTotal;  
-        }*/
+        runsS = 0;
     }
     IEnumerator NoWait(){
 		yield return new WaitForSeconds(.25f);
     	activeOverlay.GetComponent<Image>().color = new Color(142,142,142,0);
     }
     IEnumerator ActuallyWait(){
-    	runs++; 
+    	runsS++; 
         //yield on a new YieldInstruction that waits
-        yield return new WaitForSeconds((float)timer/10);
+        yield return new WaitForSeconds((float)timerS/10);
         fillTotal -= .1f;
         secondaryOverlay.GetComponent<Image>().fillAmount = fillTotal;  
-        
-        if(runs < 10 && fillTotal>0)
+        if(runsS < 10 && fillTotal>0)
         	StartCoroutine(ActuallyWait()); 
+    }
+    IEnumerator ActuallyWaitActive(){
+        runsA++; 
+        //yield on a new YieldInstruction that waits
+        yield return new WaitForSeconds((float)timerA/10);
+        fillTotal -= .1f;
+        activeOverlay.GetComponent<Image>().fillAmount = fillTotal;  
+        if(runsA < 10 && fillTotal>0)
+            StartCoroutine(ActuallyWait()); 
     }
 }
