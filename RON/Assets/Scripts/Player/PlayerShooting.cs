@@ -58,7 +58,12 @@ public class PlayerShooting : MonoBehaviour
         if (weapon.id == 0)
         {
             player.speed *= 0.85f;
-            player.activeItems[0].damage = (int) (player.activeItems[0].damage * 1.15);
+
+            if (player.activeItems[0].damage <= 100)
+            {
+                player.activeItems[0].damage = (int)(player.activeItems[0].damage * 1.15);
+            }
+            
         }
         
     }
