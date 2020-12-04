@@ -2990,7 +2990,7 @@ RectTransform:
   - {fileID: 130542529}
   - {fileID: 1903791462}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6308,7 +6308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555353538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33, y: -26.5, z: 0}
+  m_LocalPosition: {x: 32.74, y: -26.4, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 740285037}
@@ -6439,22 +6439,22 @@ PrefabInstance:
     - target: {fileID: 3256058055100714504, guid: c03bd4d4e970f6949b4205c3dacf7544,
         type: 3}
       propertyPath: Power
-      value: 35
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 3256058055100714505, guid: c03bd4d4e970f6949b4205c3dacf7544,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.955624
+      value: 32.78
       objectReference: {fileID: 0}
     - target: {fileID: 3256058055100714505, guid: c03bd4d4e970f6949b4205c3dacf7544,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -28.320295
+      value: -27.87
       objectReference: {fileID: 0}
     - target: {fileID: 3256058055100714505, guid: c03bd4d4e970f6949b4205c3dacf7544,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3256058055100714505, guid: c03bd4d4e970f6949b4205c3dacf7544,
         type: 3}
@@ -6495,6 +6495,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256058055100714505, guid: c03bd4d4e970f6949b4205c3dacf7544,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256058055100714505, guid: c03bd4d4e970f6949b4205c3dacf7544,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3256058055100714508, guid: c03bd4d4e970f6949b4205c3dacf7544,
         type: 3}
@@ -7643,7 +7653,7 @@ MonoBehaviour:
   elevator: {fileID: 1733433632}
   eBonus: 2
   catalogue:
-  - {fileID: 0}
+  - {fileID: 4479007666786642138, guid: 87a07484ab1ed8e489f1ad2785644204, type: 3}
   miniBoss: {fileID: 899351221873136252, guid: d2d3be1dcec01b546b5d351fe0444e94, type: 3}
   AddCred: 1
   spawnpoints:
