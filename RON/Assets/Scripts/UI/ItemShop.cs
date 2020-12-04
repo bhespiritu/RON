@@ -29,9 +29,21 @@ public class ItemShop : MonoBehaviour
         this.PopulateItemShop();
 
         //this.money.text = "$" + Player.playerInstance.money;
-        PopupManager.instance.queuePopup(8f,"Elizabeth", "Hey Peter, you made it to the elevator. Great. Let's get to work. These drones are only gonna get stronger the closer we get to Hans.", GameTimer._instance.girlTalkSprite);
-        PopupManager.instance.queuePopup(8f, "Elizabeth", "We're gonna need to improve your cybernetics. Using scrap you've collected I can guide you. What do you want to improve?", GameTimer._instance.girlTalkSprite);
     
+        if (GameTimer.nextStage == 4)
+        {
+            PopupManager.instance.queuePopup(8f, "Elizabeth", "Hey Peter, you made it to the elevator. Great. Let's get to work. These drones are only gonna get stronger the closer we get to Hans.", GameTimer._instance.girlTalkSprite);
+            PopupManager.instance.queuePopup(8f, "Elizabeth", "We're gonna need to improve your cybernetics. Using scrap you've collected I can guide you. What do you want to improve?", GameTimer._instance.girlTalkSprite);
+        }
+        else if (GameTimer.nextStage == 7)
+        {
+            PopupManager.instance.queuePopup(8f, "Elizabeth", "after workshop, next stage is lab", GameTimer._instance.girlTalkSprite);
+        }
+        else if (GameTimer.nextStage == 8)
+        {
+            PopupManager.instance.queuePopup(8f, "Elizabeth", "after lab, next is boss", GameTimer._instance.girlTalkSprite);
+        }
+
     }
 
     public void PopulateItemShop()
