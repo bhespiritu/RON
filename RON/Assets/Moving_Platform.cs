@@ -6,17 +6,19 @@ public class Moving_Platform : MonoBehaviour
 {
     // Start is called before the first frame update
     public Vector2[] targets;
-    public float travelTime, endTime;
+    public float travelTime, endTime, minHt;
     private int cTar, pTar;
     private bool travelling;
     private float cTime;
     public bool warehouse = false;
     public bool lobby = false;
     public float playerMove = 0f;
+    GameObject player;
     void Start()
     {
         cTar = 0; //NOTE: the first position is the initial location of the platform
         pTar = 1;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -51,6 +53,14 @@ public class Moving_Platform : MonoBehaviour
                 cTime = 0f;
             }
         }
+
+        if(transform.position.y < minHt && Mathf.Abs(player.transform.position.x-transform.position.x)<transform.lossyScale.x/2 && player.transform.position.y < transform.position.y){
+            //play hurtsound code:
+            player.GetComponent<Player>().footsteps.PlayOneShot(player.GetComponent<Player>().hurtSounds[Random.Range(0, 5)], 0.5f);
+            player.transform.position = player.transform.position + new Vector3(0,5,0);
+            player.GetComponent<Player>().TakeDamage(player.GetComponent<Player>().maxHealth*.1f);
+        }
+        
     }
 
     void OnCollisionStay2D(Collision2D collision)
