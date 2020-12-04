@@ -19,7 +19,7 @@ public class dead_fall : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Player>().TakeDamage(1000000);
+            collision.gameObject.GetComponent<Player>().Die();
         }
     }
 }
