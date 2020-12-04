@@ -11,7 +11,7 @@ public class Elevator_Master : MonoBehaviour
     public eState st;
 
     public Rigidbody2D player;
-    private float iDist = 2f, lAcc;
+    private float iDist = 3f, lAcc;
     public float dur = 30f, lWait = 2f;
     private bool leaving;
     private SpriteRenderer eSprite;
@@ -41,7 +41,7 @@ public class Elevator_Master : MonoBehaviour
     void Update()
     {
         //Debug.Log("State is " + st + ", E pressed: " + Input.GetKey(KeyCode.E) + ", Distance is " + Mathf.Abs(Vector2.Distance(new Vector2(player.transform.position.x,player.transform.position.y), new Vector2(transform.position.x, transform.position.y))) + "\nPlayer pos is " + player.transform.position + ", Elevator pos is " + transform.position);
-        if(st == eState.Finished && !leaving && Input.GetKey(KeyCode.E)){
+        if(st == eState.Finished && !leaving && Input.GetKey(KeyCode.E)&&Mathf.Abs(Vector2.Distance(new Vector2(player.transform.position.x,player.transform.position.y), new Vector2(transform.position.x, transform.position.y))) < iDist){
             leaving = true;
         }
         if(leaving){
