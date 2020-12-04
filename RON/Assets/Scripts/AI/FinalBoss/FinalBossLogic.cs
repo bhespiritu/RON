@@ -122,6 +122,7 @@ public class FinalBossLogic : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 break;
             case FinalBossState.SHOOT:
+                PopupManager.instance.queuePopup(3, "Elizabeth", "He's Back! Get Him!", GameTimer._instance.girlTalkSprite); ;
                 col.enabled = true;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
                 info.sprite.enabled = true;
@@ -148,6 +149,7 @@ public class FinalBossLogic : MonoBehaviour
                 }
                 break;
             case FinalBossState.SIDEATTACK:
+                PopupManager.instance.queuePopup(3, "Hans Crowe", "Call In The Lasers!", talkIcon);
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 col.enabled = false;
                 info.sprite.enabled = false;
@@ -165,6 +167,7 @@ public class FinalBossLogic : MonoBehaviour
                 else hasSidePulsed = false;
                 break;
             case FinalBossState.DRONESTRIKE:
+                PopupManager.instance.queuePopup(3, "Elizabeth", "Darn it! He flew off and called a drone strike!", GameTimer._instance.girlTalkSprite);;
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 col.enabled = false;
                 info.sprite.enabled = false;
