@@ -66,6 +66,11 @@ public class ItemShop : MonoBehaviour
         this.selectedItem = selection;
     }
 
+    public void healPlayer()
+    {
+        Player.playerInstance.Heal(Player.playerInstance.maxHealth);
+    }
+
     public void DisplayItem(int button)
     { 
         Item purchase;
