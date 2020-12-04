@@ -28,7 +28,7 @@ public class ItemShop : MonoBehaviour
     {
         this.PopulateItemShop();
 
-        //this.money.text = "$" + Player.playerInstance.money;
+        this.money.text = "$" + Player.playerInstance.money;
     
         if (GameTimer.nextStage == 4)
         {
@@ -86,9 +86,9 @@ public class ItemShop : MonoBehaviour
         this.selectedItem = selection;
     }
 
-    public void healPlayer()
+    public void HealPlayer()
     {
-        Player.playerInstance.Heal(Player.playerInstance.maxHealth);
+        Player.playerInstance.Heal(Player.playerInstance.maxHealth - Player.playerInstance.health);
     }
 
     public void DisplayItem(int button)

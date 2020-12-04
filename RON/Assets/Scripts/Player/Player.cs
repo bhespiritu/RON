@@ -229,7 +229,7 @@ public class Player : MonoBehaviour
         this.baseJumpSpeed = 40f;
         this.baseAttack = 10f;
         this.baseDefense = 1f;
-        this.baseDamageMultiplier = 1f;
+        this.baseDamageMultiplier = 2f;
         this.baseHealMultiplier = 1f;
         this.baseCritChance = 0.0f;
         this.baseBlockChance = 0.0f;
