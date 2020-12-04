@@ -8,6 +8,13 @@
     }
     public override void ApplyBonus(Player p)
     {
-        p.critChance += this.critBoost;
+        if (p.critChance <= 1)
+        {
+            p.critChance += this.critBoost;
+        } else
+        {
+            p.critMultiplier += 0.3f;
+        }
+        
     }
 }

@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     public float damageMultiplier;
     public float healMultiplier;
     public float critChance;
+    public float critMultiplier;
     public float blockChance;
     public bool canShoot = true;
     public bool invisible;
@@ -260,6 +261,7 @@ public class Player : MonoBehaviour
         this.startedFiring = false;
         this.oldSpeed = speed;
         this.oldDamage = this.activeItems[0].damage;
+        this.critMultiplier = 3f;
     }
 
     void Update()

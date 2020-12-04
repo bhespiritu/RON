@@ -45,7 +45,7 @@ public class PlayerShooting : MonoBehaviour
         float crit = Random.value;
         var bullet = Instantiate(getProjectile(weapon.id), (player.firePos.position + (Vector3)direction), Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = direction * weapon.projectileSpeed;
-        bullet.GetComponent<PlayerBullet>().damage = (int)(weapon.damage * player.damageMultiplier * (crit < player.critChance ? 3 : 1));
+        bullet.GetComponent<PlayerBullet>().damage = (int)(weapon.damage * player.damageMultiplier * (crit < player.critChance ? player.critMultiplier : 1));
         bullet.GetComponent<PlayerBullet>().effect = weapon.effect;
         if (crit < player.critChance)
         {
