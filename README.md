@@ -16,11 +16,11 @@ To improve the variability of the game, the player no longer has access to all o
 
 More dialogue / narrative.
 
-There is now an opening narration providing the game a basic story and objective. The player now has a motivation for fighting the various enemies throughout the stages. There is a reason for going through the game to ultimately beat the final boss. Throughout the game, we also added in dialogue pop-ups to better inform players what is happening.
+There is now an opening narration providing the game a basic story and objective. The player now has a motivation for fighting the various enemies throughout the stages. There is a reason for going through the game to ultimately beat the final boss. Throughout the game, we also added in dialogue pop-ups to better inform players of what is happening.
 
 ## 4. UI Overhaul
 
-dditional Animations.
+Additional Animations.
 
 We have added a series of UI elements to make the game more understandable and clear. One of the most important new UI elements is boss health bars. The mini bosses and the final boss now have a health bar, making it clear how much progress you have made in the fight. Additionally, there are now popups when you pick up an item, telling you its name and what it does. Finally, we added indicators for when the player can use their left and right click abilities, making it more clear that secondary right click abilities exist.
 
