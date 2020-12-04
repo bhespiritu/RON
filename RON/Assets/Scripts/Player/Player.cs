@@ -248,7 +248,7 @@ public class Player : MonoBehaviour
         this.an = GetComponent<Animator>();
         this.sprite = GetComponent<SpriteRenderer>();
         this.rb.gravityScale = 9;
-        this.activeItems.Add(new BaseGun());
+        this.activeItems.Add(new HandCannon());
         gameObject.tag = "Player";
         this.rand = new System.Random();
         this.critChance = this.baseCritChance;

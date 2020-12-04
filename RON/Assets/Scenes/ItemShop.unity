@@ -2438,7 +2438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8dbbf034e2a97b478028475f6bbe91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  girlTalkSprite: {fileID: 0}
+  girlTalkSprite: {fileID: 21300000, guid: 4221cc45e7b3d4c4a9104008ec9bb373, type: 3}
 --- !u!4 &1628425734
 Transform:
   m_ObjectHideFlags: 0
