@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Knockback : SecondaryItem
 {
+
+
     public Knockback(Player p) : base(p, "Sonic Boom", 3, "This loud portable speaker creates unique sounds that are difficult to hear for humans, but create a large force that can knock your enemies back.", 150)
     {
         this.coolDownAmount = 3f;
@@ -15,8 +17,10 @@ public class Knockback : SecondaryItem
             this.thingy.RightHit(this.coolDownAmount);
             Vector2 direction = (Vector2) (Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.player.gameObject.transform.position).normalized;
 
-            RaycastHit2D[] collisions = Physics2D.BoxCastAll(this.player.transform.position, new Vector2(6, 12), 0f, direction, 10f);
+            RaycastHit2D[] collisions = Physics2D.BoxCastAll(this.player.transform.position, new Vector2(1, 12), Mathf.Rad2Deg*Vector2.Angle(Vector2.right,direction), direction, 10f);
             
+
+
             for (int i = 0; i < collisions.Length; i++)
             {
                 RaycastHit2D collision = collisions[i];

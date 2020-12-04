@@ -458,6 +458,7 @@ MonoBehaviour:
   damageMultiplier: 0
   healMultiplier: 0
   critChance: 0
+  critMultiplier: 0
   blockChance: 0
   canShoot: 0
   invisible: 0
@@ -518,6 +519,8 @@ MonoBehaviour:
   startedFiring: 0
   oldSpeed: 0
   oldDamage: 0
+  shockwave: {fileID: 3851801134133432469, guid: 18eed5f2351f6d441af16ba225aae925,
+    type: 3}
 --- !u!95 &7083996499965910055
 Animator:
   serializedVersion: 3
