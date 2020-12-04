@@ -54,7 +54,7 @@ public class Moving_Platform : MonoBehaviour
             }
         }
 
-        if(transform.position.y < minHt && Mathf.Abs(player.transform.position.x-transform.position.x)<transform.lossyScale.x/2){
+        if(transform.position.y < minHt && Mathf.Abs(player.transform.position.x-transform.position.x)<transform.lossyScale.x/2 && player.transform.position.y < transform.position.y){
             //play hurtsound code:
             player.GetComponent<Player>().footsteps.PlayOneShot(player.GetComponent<Player>().hurtSounds[Random.Range(0, 5)], 0.5f);
             player.transform.position = player.transform.position + new Vector3(0,5,0);

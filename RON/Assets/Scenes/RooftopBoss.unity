@@ -1711,7 +1711,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542976609}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.59, y: 13.09, z: 0}
+  m_LocalPosition: {x: -14.03, y: 10.03, z: 0}
   m_LocalScale: {x: 3, y: 0.5, z: 0}
   m_Children: []
   m_Father: {fileID: 1022688184}
@@ -1734,6 +1734,7 @@ MonoBehaviour:
   - {x: -15, y: 13}
   travelTime: 2
   endTime: 1
+  minHt: 3.5
   warehouse: 0
   lobby: 0
   playerMove: 0
@@ -2473,7 +2474,7 @@ PrefabInstance:
     - target: {fileID: 6273242018009471602, guid: 34bf204a8734f094a963752c2d77fe1a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6273242018009471602, guid: 34bf204a8734f094a963752c2d77fe1a,
         type: 3}
@@ -2801,7 +2802,7 @@ PrefabInstance:
     - target: {fileID: 2780525409249798138, guid: e93cdb3e69e9e08428d1c7c316b1c018,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2780525409249798138, guid: e93cdb3e69e9e08428d1c7c316b1c018,
         type: 3}
