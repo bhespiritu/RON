@@ -32,7 +32,7 @@ public class ItemShop : MonoBehaviour
     
         if (GameTimer.nextStage == 4)
         {
-            PopupManager.instance.queuePopup(8f, "Elizabeth", "Hey Patrick, you made it to the elevator. Great. Let's get to work. These drones are only gonna get stronger the closer we get to Hans.", GameTimer._instance.girlTalkSprite, true);
+            PopupManager.instance.queuePopup(8f, "Elizabeth", "Hey Patrick, you made it to the elevator. Great. Let's get to work. These drones are only gonna get stronger the longer we're here.", GameTimer._instance.girlTalkSprite, true);
             PopupManager.instance.queuePopup(8f, "Elizabeth", "We're gonna need to improve your cybernetics. Using scrap you've collected I can guide you. What do you want to improve?", GameTimer._instance.girlTalkSprite);
         }
         else if (GameTimer.nextStage == 7)
