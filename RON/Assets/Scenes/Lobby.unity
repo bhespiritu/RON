@@ -8326,7 +8326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1752513448
 Transform:
   m_ObjectHideFlags: 0
@@ -10243,6 +10243,7 @@ MonoBehaviour:
   - {x: -27, y: -22}
   travelTime: 8
   endTime: 2
+  minHt: 0
   warehouse: 0
   lobby: 0
   playerMove: 0
