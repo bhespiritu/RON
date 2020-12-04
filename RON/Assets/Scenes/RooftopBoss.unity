@@ -2546,12 +2546,12 @@ PrefabInstance:
     - target: {fileID: 6273242018009471602, guid: 34bf204a8734f094a963752c2d77fe1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.24
+      value: -10.55
       objectReference: {fileID: 0}
     - target: {fileID: 6273242018009471602, guid: 34bf204a8734f094a963752c2d77fe1a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.15
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 6273242018009471602, guid: 34bf204a8734f094a963752c2d77fe1a,
         type: 3}
@@ -5678,6 +5678,7 @@ GameObject:
   - component: {fileID: 1856257826}
   - component: {fileID: 1856257827}
   - component: {fileID: 1856257828}
+  - component: {fileID: 1856257829}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -5731,6 +5732,19 @@ MonoBehaviour:
   masterVolumeSlider: {fileID: 0}
   sfxVolumeSlider: {fileID: 0}
   musicVolumeSlider: {fileID: 0}
+--- !u!114 &1856257829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856257825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a8231a5d3b4a149a1327503b473f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHt: -3
 --- !u!1 &1910373058
 GameObject:
   m_ObjectHideFlags: 0
@@ -5784,8 +5798,10 @@ MonoBehaviour:
   activeOverlay: {fileID: 191753313}
   secondaryOverlay: {fileID: 1410614336}
   fillTotal: 1
-  timer: 0
-  runs: 0
+  timerA: 0
+  timerS: 0
+  runsA: 0
+  runsS: 0
 --- !u!114 &1910373061
 MonoBehaviour:
   m_ObjectHideFlags: 0
