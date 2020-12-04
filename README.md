@@ -58,6 +58,6 @@ All of the passive items have been rebalanced to make the game feel more balance
 
 Add particle effects.
 
-We’ve added multiple visual effects to make various elements of the game more clear. Drones lasers now disappear when they’re dead, we’ve added hazard signs to make jump pads clearer, we’ve added new bullet sprites for each of the weapons, we’ve added money effects when you kill enemies, and we’ve given all items an outlined shader to help them stand out from the background. We added the a visual shockwave to knockback. We added some misc particle effects to things like enemy damage.
+We’ve added multiple visual effects to make various elements of the game more clear. Drones lasers now disappear when they’re dead, we’ve added hazard signs to make jump pads clearer, we’ve added new bullet sprites for each of the weapons, we’ve added money effects when you kill enemies, and we’ve given all items an outlined shader to help them stand out from the background. We added a visible shockwave to knockback. We added some misc particle effects to things like enemy damage.
 
 
