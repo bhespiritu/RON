@@ -59,8 +59,10 @@ public class PopupManager : MonoBehaviour
     {
         if (!popupActive)
         {
+            Debug.Log("there is no active popup");
             if (popupQueue.Count > 0)
             {
+                Debug.Log("There is something in the popup queue");
                 Popup pop = popupQueue.Dequeue();
 
                 PopupTitle.text = pop.title;
@@ -103,7 +105,6 @@ public class PopupManager : MonoBehaviour
     {
         Popup pop = new Popup(time, title, message, icon);
         popupQueue.Enqueue(pop);
-        
     }
 
     IEnumerator popUpFor(float time)
@@ -112,6 +113,7 @@ public class PopupManager : MonoBehaviour
         float t = 0.01f;
         while (t < openTime)
         {
+            Debug.Log(t);  
             PopupParent.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, EaseIn(t / openTime) * initialWidth);
             PopupDesc.color = Color.Lerp(Color.white, Color.black, EaseOut(t / openTime));
             t += Time.deltaTime;

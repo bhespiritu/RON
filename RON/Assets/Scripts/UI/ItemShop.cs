@@ -27,7 +27,10 @@ public class ItemShop : MonoBehaviour
     public void Start()
     {
         this.PopulateItemShop();
-        this.money.text = "$" + Player.playerInstance.money;
+
+        //this.money.text = "$" + Player.playerInstance.money;
+        //PopupManager.instance.queuePopup(4f, "Item Picked Up", GameTimer.nextStage + "");
+        
     }
 
     public void PopulateItemShop()
@@ -72,7 +75,9 @@ public class ItemShop : MonoBehaviour
     }
 
     public void DisplayItem(int button)
-    { 
+    {
+        PopupManager.instance.queuePopup(10f, "Item Picked Up", "hi");
+
         Item purchase;
         this.selectedButton = button;
         this.selectedItem = buttonChoices[this.selectedButton];
