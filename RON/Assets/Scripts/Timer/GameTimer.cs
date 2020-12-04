@@ -19,6 +19,8 @@ public class GameTimer : MonoBehaviour
 
     public static GameObject playerObject;
 
+    public Sprite girlTalkSprite;
+
     // Start is called before the first frame update
     void Awake()
     {

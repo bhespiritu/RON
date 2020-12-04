@@ -62,12 +62,6 @@ MonoBehaviour:
   facing: 1
   initialHealth: 0
   attackDamage: 10
-  difficultyScale:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   target: {fileID: 0}
   itemPrefabs: []
   floaterPrefab: {fileID: 5420272362737174165, guid: e8581e0cf16e2fd44a1f6d3a247fcd6a,
@@ -136,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   doneEntry: 0
-  introDuration: 3
+  introDuration: 10
   shootDuration: 5
   pulsePeriod: 2
   shotPeriod: 0.125
