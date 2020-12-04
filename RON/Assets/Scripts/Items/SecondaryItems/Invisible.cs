@@ -6,7 +6,7 @@ public class Invisible : SecondaryItem
     public float invisibleDelay = 3f;
     public SpriteRenderer playerSprite;
 
-    public Invisible(Player p) : base(p, "Anti-light Emitter", 2, "This complicated array scans surrounding lightwaves surrounding you and emits light at the opposite frequency, cloaking you from your enemies. This is a secondary item, which you use with right click.", 150)
+    public Invisible(Player p) : base(p, "Anti-light Emitter", 2, "This complicated array scans surrounding lightwaves surrounding you and emits light at the opposite frequency, cloaking you from your enemies.", 150)
     {
         this.coolDownAmount = 5f;
         this.playerSprite = this.player.GetComponent<SpriteRenderer>();

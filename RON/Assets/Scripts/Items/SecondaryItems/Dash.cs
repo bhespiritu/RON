@@ -7,7 +7,7 @@ public class Dash : SecondaryItem
     public float dashDelay = 0.1f;
     public bool dashing = false;
 
-    public Dash(Player p) : base(p, "Rocket Boots", 0, "These rockets you affix to your boots allow you to jump around with impressive speed. This is a secondary item, which you use with right click.", 150)
+    public Dash(Player p) : base(p, "Rocket Boots", 0, "These rockets you affix to your boots allow you to jump around with impressive speed.", 150)
     {
         this.coolDownAmount = 1f;
     }

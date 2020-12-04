@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Knockback : SecondaryItem
 {
-    public Knockback(Player p) : base(p, "Sonic Boom", 3, "This loud portable speaker creates unique sounds that are difficult to hear for humans, but create a large force that can knock your enemies back. This is a secondary item, which you use by right clicking.", 150)
+    public Knockback(Player p) : base(p, "Sonic Boom", 3, "This loud portable speaker creates unique sounds that are difficult to hear for humans, but create a large force that can knock your enemies back.", 150)
     {
         this.coolDownAmount = 3f;
     }
