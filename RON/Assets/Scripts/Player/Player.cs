@@ -246,7 +246,7 @@ public class Player : MonoBehaviour
         this.an = GetComponent<Animator>();
         this.sprite = GetComponent<SpriteRenderer>();
         this.rb.gravityScale = 9;
-        this.activeItems.Add(new RandomGun());
+        this.activeItems.Add(new BaseGun());
         gameObject.tag = "Player";
         this.rand = new System.Random();
         this.critChance = this.baseCritChance;
@@ -263,7 +263,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(this.activeItems[0].damage);
         if(PauseControls.isPaused){
             this.canShoot = false; 
         }
@@ -358,7 +357,7 @@ public class Player : MonoBehaviour
             }
             this.autofireDelay = 0;
             this.footsteps.pitch = Random.Range(1 - this.activeItems[0].pitchVariance, 1 + this.activeItems[0].pitchVariance);
-            Debug.Log(this.footsteps.pitch);
+            //Debug.Log(this.footsteps.pitch);
             this.footsteps.PlayOneShot(gunSounds[this.activeItems[0].id], 0.5f * VolumeManager.sfxVal);
             
             

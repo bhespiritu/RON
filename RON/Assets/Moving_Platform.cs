@@ -10,6 +10,9 @@ public class Moving_Platform : MonoBehaviour
     private int cTar, pTar;
     private bool travelling;
     private float cTime;
+    public bool warehouse = false;
+    public bool lobby = false;
+    public float playerMove = 0f;
     void Start()
     {
         cTar = 0; //NOTE: the first position is the initial location of the platform
@@ -48,7 +51,39 @@ public class Moving_Platform : MonoBehaviour
                 cTime = 0f;
             }
         }
+    }
 
-        
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 14 && this.travelling && this.warehouse)
+        {
+            if (this.cTar == 1)
+            {
+                Debug.Log("moving right");
+                Player.playerInstance.transform.position = new Vector2(Player.playerInstance.transform.position.x + this.playerMove, Player.playerInstance.transform.position.y);
+            }
+            if (this.cTar == 0)
+            {
+                Debug.Log("moving left collision stay");
+            }
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (this.cTar == 0 && this.warehouse)
+        {
+           Debug.Log("moving left collision enter");
+           Player.playerInstance.transform.position = new Vector2(Player.playerInstance.transform.position.x - this.playerMove, Player.playerInstance.transform.position.y);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (this.cTar == 0 && this.warehouse)
+        {
+            Debug.Log("moving left collision exit");
+            Player.playerInstance.transform.position = new Vector2(Player.playerInstance.transform.position.x - this.playerMove, Player.playerInstance.transform.position.y);
+        }
     }
 }
