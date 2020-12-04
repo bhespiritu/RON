@@ -63,7 +63,7 @@ public class PopupManager : MonoBehaviour
             if (popupQueue.Count > 0)
             {
                 Popup pop = popupQueue.Dequeue();
-
+                Debug.Log(popupQueue.Count + "Bdfsef");
                 PopupTitle.text = pop.title;
                 PopupDesc.text = pop.description;
                 if(pop.icon)
@@ -79,7 +79,6 @@ public class PopupManager : MonoBehaviour
                
                 PopupDesc.gameObject.SetActive(!string.IsNullOrEmpty(pop.description));
                 PopupTitle.gameObject.SetActive(!string.IsNullOrEmpty(pop.title));
-
                 currentPopup = StartCoroutine(popUpFor(pop.duration));
             }
         }
@@ -115,7 +114,9 @@ public class PopupManager : MonoBehaviour
             clearQueue();
         }
         Popup pop = new Popup(time, title, message, icon);
+        
         popupQueue.Enqueue(pop);
+        Debug.Log(popupQueue.Count + "BERWFWe");
     }
 
     public void clearQueue()
@@ -125,8 +126,8 @@ public class PopupManager : MonoBehaviour
 
     IEnumerator popUpFor(float time)
     {
-        yield return new WaitForEndOfFrame();
         popupActive = true;
+        yield return new WaitForEndOfFrame();
         float t = 0.01f;
         while (t < openTime)
         {
@@ -206,7 +207,7 @@ public class PopupManager : MonoBehaviour
         return 1 - invT * invT * invT;
     }
 
-    private struct Popup
+    private class Popup
     {
         public string title;
         public string description;
