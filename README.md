@@ -1,4 +1,4 @@
-Improvement List
+#Improvement List
 
 1. Bug Fixes
 Show stopping bug fixes and minor bug fixes.
@@ -16,7 +16,7 @@ There is now an opening narration providing the game a basic story and objective
 Additional Animations.
 We have added a series of UI elements to make the game more understandable and clear. One of the most important new UI elements is boss health bars. The mini bosses and the final boss now have a health bar, making it clear how much progress you have made in the fight. Additionally, there are now popups when you pick up an item, telling you its name and what it does. Finally, we added indicators for when the player can use their left and right click abilities, making it more clear that secondary right click abilities exist.
 
-5.Sound Tweaks
+5. Sound Tweaks
 Minor bug fixes.
 We addressed some concerns that were made about sound, primarily by tweaking the “enemy detected sound” so that it is less annoying. It plays less and plays at different pitches. We also made it so all player sounds play at different pitches, making things sound a bit more varied. We also added elevator dings to make it clear when the elevator arrives.
 
