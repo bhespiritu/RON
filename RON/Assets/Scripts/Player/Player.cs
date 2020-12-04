@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public float health;
     public float maxHealth;
     public int money;
+    public bool looping;
     [Header("Items")]
     public List<ActiveItem> activeItems;
     public List<PassiveItem> passiveItems;
@@ -90,6 +91,8 @@ public class Player : MonoBehaviour
     public float oldSpeed = 0f;
     public int oldDamage = 0;
 
+    public GameObject shockwave;
+
     public Player(float health = 100, float maxHealth = 100, int money = 0, List<ActiveItem> activeItems = null, List<PassiveItem> passiveItems = null, float speed = 10, float jumpSpeed = 40, float attack = 10, float defense = 10, float damageMultiplier = 1f, float healMultiplier = 1f)
     {
         this.health = health;
@@ -101,6 +104,7 @@ public class Player : MonoBehaviour
         this.defense = defense;
         this.damageMultiplier = damageMultiplier;
         this.healMultiplier = healMultiplier;
+        this.looping=false;
         
 
         if (activeItems != null)
@@ -231,6 +235,8 @@ public class Player : MonoBehaviour
         this.baseHealMultiplier = 1f;
         this.baseCritChance = 0.0f;
         this.baseBlockChance = 0.0f;
+        
+        this.looping = false;
 
         this.health = this.baseHealth;
         this.maxHealth = this.baseMaxHealth;
@@ -403,7 +409,11 @@ public class Player : MonoBehaviour
             if (this.secondaryItem.id == 3 && Input.GetMouseButtonDown(1) && this.secondaryItem.canUse)
             {
                 this.footsteps.PlayOneShot(this.knockback, 0.5f * VolumeManager.sfxVal);
-                
+                var shockWave = Instantiate(shockwave, transform.position, Quaternion.identity);
+                var dir = (Vector2)(Camera.main.ScreenToWorldPoint(Input.mousePosition) - gameObject.transform.position).normalized;
+                shockWave.GetComponent<Rigidbody2D>().velocity = dir * 75;
+                shockWave.transform.right = dir;
+                Destroy(shockWave, 1);
                 //thingy.RightHit(this.secondaryItem.coolDownAmount);
             }
 

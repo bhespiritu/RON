@@ -22,7 +22,7 @@ public class Fog_Reveal : MonoBehaviour
     void Update()
     {
         if(active){
-            float dist = Mathf.Abs(Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(player.transform.position.x, player.transform.position.y)));
+            float dist = Mathf.Abs(Vector2.Distance(new Vector2(transform.position.x, 0), new Vector2(player.transform.position.x, 0)));
             //Debug.Log("Fog checker " + fName + ", dist " + dist);
             if(dist < oDist){
                 fog.SetActive(false);
