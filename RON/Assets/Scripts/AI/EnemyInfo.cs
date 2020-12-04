@@ -30,7 +30,8 @@ public class EnemyInfo : MonoBehaviour
     public float initialHealth;
 
     public int attackDamage = 10;
-    public AnimationCurve difficultyScale;
+    public ExpoCurve difficultyScale = new ExpoCurve(1,1.00461579f);
+    public ExpoCurve healthScale = new ExpoCurve(1, 1.00461579f);
 
     public Transform target;
 
@@ -40,6 +41,7 @@ public class EnemyInfo : MonoBehaviour
     
     public void Start()
     {
+        health = health * healthScale.Evaluate(GameTimer.time);
         initialHealth = health;
         gameObject.tag = "Enemy";
         animator = GetComponent<Animator>();
@@ -124,4 +126,21 @@ public class EnemyInfo : MonoBehaviour
         }
     }
 
+}
+
+public class ExpoCurve
+{
+    public float coef = 1;
+    public float baseExp = 1;
+
+    public ExpoCurve(float c, float b)
+    {
+        coef = c;
+        baseExp = b;
+    }
+
+    public float Evaluate(float x)
+    {
+        return coef * Mathf.Pow(baseExp, x);
+    }
 }
