@@ -1836,7 +1836,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1299269735
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5c0eaa2e643dfe54a89c17935ede5b66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1913,7 +1913,7 @@ PrefabInstance:
     - target: {fileID: 4479007666786642141, guid: 87a07484ab1ed8e489f1ad2785644204,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4479007666786642141, guid: 87a07484ab1ed8e489f1ad2785644204,
         type: 3}
@@ -3812,7 +3812,7 @@ PrefabInstance:
     - target: {fileID: 2655229743807830865, guid: 715cbc64f1280524f9f979e3924d2b43,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2655229743807830865, guid: 715cbc64f1280524f9f979e3924d2b43,
         type: 3}
@@ -6760,7 +6760,7 @@ PrefabInstance:
     - target: {fileID: 7582492869251422747, guid: 760b1eeb033379e4aad98358f23a5627,
         type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7582492869251422747, guid: 760b1eeb033379e4aad98358f23a5627,
         type: 3}
@@ -8504,6 +8504,9 @@ MonoBehaviour:
   - {x: 25.5, y: 5.6}
   travelTime: 5
   endTime: 1.5
+  warehouse: 0
+  lobby: 0
+  playerMove: 0
 --- !u!61 &1869085270
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9195,7 +9198,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1299269735
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5c0eaa2e643dfe54a89c17935ede5b66, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -9370,52 +9373,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2000338881
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2000338883}
-  - component: {fileID: 2000338882}
-  m_Layer: 0
-  m_Name: PauseController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2000338882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000338881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a33dc8b9a59d64b7f855fb089723989b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PauseScreen: {fileID: 2126042651}
-  p: {fileID: 0}
-  t: {fileID: 0}
---- !u!4 &2000338883
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000338881}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 616.49084, y: 331.84512, z: -255.93127}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004777193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6273242018009471605, guid: 34bf204a8734f094a963752c2d77fe1a,
@@ -9956,7 +9913,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123435770
 GameObject:
@@ -10082,6 +10039,9 @@ MonoBehaviour:
   - {x: -27, y: -22}
   travelTime: 8
   endTime: 2
+  warehouse: 0
+  lobby: 0
+  playerMove: 0
 --- !u!1 &2126042651
 GameObject:
   m_ObjectHideFlags: 0
