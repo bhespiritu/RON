@@ -60,4 +60,16 @@ Add particle effects.
 
 We’ve added multiple visual effects to make various elements of the game more clear. Drones lasers now disappear when they’re dead, we’ve added hazard signs to make jump pads clearer, we’ve added new bullet sprites for each of the weapons, we’ve added money effects when you kill enemies, and we’ve given all items an outlined shader to help them stand out from the background. We added a visible shockwave to knockback. We added some misc particle effects to things like enemy damage.
 
+## Music Licenses
 
+Fearless First by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/3742-fearless-first
+License: http://creativecommons.org/licenses/by/4.0/
+
+Beauty Flow by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/5025-beauty-flow
+License: http://creativecommons.org/licenses/by/4.0/
+
+Clash Defiant by Kevin MacLeod
+Link: https://incompetech.filmmusic.io/song/3510-clash-defiant
+License: http://creativecommons.org/licenses/by/4.0/
