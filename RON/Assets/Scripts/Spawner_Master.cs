@@ -110,6 +110,7 @@ public class Spawner_Master : MonoBehaviour
         ct = creds/eCost;
         ct = Mathf.FloorToInt(UnityEngine.Random.Range(0f,Mathf.Min(ct,4)));
         for(int i = 0; i < ct; i ++){
+            sPos = sPos + new Vector3(UnityEngine.Random.Range(-3f, 3f),0,0);
             GameObject nEnemy = Instantiate(catalogue[indCat], sPos, Quaternion.identity);
             enemies.Add(nEnemy);
             eCredSum += catalogue[indCat].GetComponent<EnemyInfo>().difficulty;
