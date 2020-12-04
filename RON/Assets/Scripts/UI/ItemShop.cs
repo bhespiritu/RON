@@ -38,14 +38,14 @@ public class ItemShop : MonoBehaviour
         else if (GameTimer.nextStage == 7)
         {
             //PopupManager.instance.queuePopup(8f, "Elizabeth", "after workshop, next stage is lab", GameTimer._instance.girlTalkSprite);
-            PopupManager.instance.queuePopup(8f, "Elizabeth", "You're starting to get the hang of things. I've got some important info to pass on to you. Our scanners have detected something on the roof.", GameTimer._instance.girlTalkSprite);
+            PopupManager.instance.queuePopup(8f, "Elizabeth", "You're starting to get the hang of things. I've got some important info to pass on to you. Our scanners have detected something on the roof.", GameTimer._instance.girlTalkSprite, true);
             PopupManager.instance.queuePopup(8f, "Elizabeth", "It looks like there's some large cybernetic weapon on the rooftops... It may have flight capacity. Be careful.", GameTimer._instance.girlTalkSprite);
 
         }
         else if (GameTimer.nextStage == 8)
         {
             //PopupManager.instance.queuePopup(8f, "Elizabeth", "after lab, next is boss", GameTimer._instance.girlTalkSprite);
-            PopupManager.instance.queuePopup(8f, "Elizabeth", "This elevator should take you right up to the rooftops. Be careful, it looks like Crowe himself is in the machine... whatever it is.", GameTimer._instance.girlTalkSprite);
+            PopupManager.instance.queuePopup(8f, "Elizabeth", "This elevator should take you right up to the rooftops. Be careful, it looks like Crowe himself is in the machine... whatever it is.", GameTimer._instance.girlTalkSprite, true);
             PopupManager.instance.queuePopup(8f, "Elizabeth", "This is your chance to get revenge on that son of a bitch. Good luck.", GameTimer._instance.girlTalkSprite);
         }
     }
