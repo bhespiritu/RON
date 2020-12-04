@@ -3565,7 +3565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseScreen: {fileID: 1399194119}
   p: {fileID: 0}
-  t: {fileID: 2004486670}
+  t: {fileID: 0}
 --- !u!114 &782251016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6281,7 +6281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1399194120}
-  - component: {fileID: 1399194121}
+  - component: {fileID: 0}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -6300,7 +6300,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1322257270}
+  - {fileID: 0}
   m_Father: {fileID: 782251019}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
