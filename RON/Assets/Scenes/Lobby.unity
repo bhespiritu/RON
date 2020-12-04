@@ -1355,6 +1355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fog: {fileID: 1986382156}
   oDist: 3
+  yCares: 0
   fName: Stairs
 --- !u!212 &322639490
 SpriteRenderer:
@@ -2398,6 +2399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fog: {fileID: 459524615}
   oDist: 4
+  yCares: 1
   fName: Basement
 --- !u!1 &529777074
 GameObject:
@@ -5693,8 +5695,10 @@ MonoBehaviour:
   activeOverlay: {fileID: 130542530}
   secondaryOverlay: {fileID: 1903791463}
   fillTotal: 1
-  timer: 0
-  runs: 0
+  timerA: 0
+  timerS: 0
+  runsA: 0
+  runsS: 0
 --- !u!114 &1424842401
 MonoBehaviour:
   m_ObjectHideFlags: 0
