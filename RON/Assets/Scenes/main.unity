@@ -6284,8 +6284,8 @@ MonoBehaviour:
   - {x: -10, y: 20}
   travelTime: 5
   endTime: 1.5
-  warehouse: 0
-  lobby: 1
+  warehouse: 1
+  lobby: 0
   playerMove: 0.08
 --- !u!1 &1178668923
 GameObject:
