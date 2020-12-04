@@ -79,6 +79,7 @@ public class Elevator_Master : MonoBehaviour
         if(leaving){
             leaving = false;
             GameTimer._instance.LoadItemShop(nextStage);
+            BossUI.instance.HideUI();
         }
         
     }
