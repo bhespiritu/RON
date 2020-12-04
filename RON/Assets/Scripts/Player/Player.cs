@@ -186,6 +186,7 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
         Destroy(GameTimer._instance.gameObject);
         SceneManager.LoadScene(5);
+        BossUI.instance.HideUI();
     }
 
     public void AddMoney(int amt)
