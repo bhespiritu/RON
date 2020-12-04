@@ -78,10 +78,13 @@ public class EnemyInfo : MonoBehaviour
         health -= damage;
         hurtFor = hurtDuration;
 
-        var floater = Instantiate(floaterPrefab, transform.position, Quaternion.identity);
-        var floaterData = floater.GetComponent<TextFloater>();
-        floaterData.color = Color.red;
-        floaterData.text = "-" + damage;
+        if (!isDead)
+        {
+            var floater = Instantiate(floaterPrefab, transform.position, Quaternion.identity);
+            var floaterData = floater.GetComponent<TextFloater>();
+            floaterData.color = Color.red;
+            floaterData.text = "-" + damage;
+        }
 
         if (health <= 0 && !isDead) Die();
     }
