@@ -13,5 +13,7 @@ public class HardReset : MonoBehaviour
             Destroy(GameTimer._instance.gameObject);
         if(BossUI.instance != null)
             Destroy(BossUI.instance.gameObject);
+        if (CoolDown.instance != null)
+            Destroy(CoolDown.instance.gameObject);
     }
 }
