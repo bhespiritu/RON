@@ -79,7 +79,6 @@ public class PopupManager : MonoBehaviour
                
                 PopupDesc.gameObject.SetActive(!string.IsNullOrEmpty(pop.description));
                 PopupTitle.gameObject.SetActive(!string.IsNullOrEmpty(pop.title));
-                popupActive = true;
                 currentPopup = StartCoroutine(popUpFor(pop.duration));
             }
         }
@@ -127,8 +126,8 @@ public class PopupManager : MonoBehaviour
 
     IEnumerator popUpFor(float time)
     {
-        yield return new WaitForEndOfFrame();
         popupActive = true;
+        yield return new WaitForEndOfFrame();
         float t = 0.01f;
         while (t < openTime)
         {
