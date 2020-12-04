@@ -59,10 +59,8 @@ public class PopupManager : MonoBehaviour
     {
         if (!popupActive)
         {
-            Debug.Log("there is no active popup");
             if (popupQueue.Count > 0)
             {
-                Debug.Log("There is something in the popup queue");
                 Popup pop = popupQueue.Dequeue();
 
                 PopupTitle.text = pop.title;
@@ -109,11 +107,11 @@ public class PopupManager : MonoBehaviour
 
     IEnumerator popUpFor(float time)
     {
+        yield return new WaitForEndOfFrame();
         popupActive = true;
         float t = 0.01f;
         while (t < openTime)
         {
-            Debug.Log(t);  
             PopupParent.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, EaseIn(t / openTime) * initialWidth);
             PopupDesc.color = Color.Lerp(Color.white, Color.black, EaseOut(t / openTime));
             t += Time.deltaTime;
@@ -122,7 +120,6 @@ public class PopupManager : MonoBehaviour
         PopupParent.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, initialWidth);
 
         yield return new WaitForSeconds(time);
-
         t = 0.01f;
 
         while (t < closeTime)
@@ -136,7 +133,6 @@ public class PopupManager : MonoBehaviour
         PopupDesc.gameObject.SetActive(false);
         PopupTitle.gameObject.SetActive(false);
         PopupIcon.gameObject.SetActive(false);
-
         yield return new WaitForEndOfFrame();
         popupActive = false;
     }
