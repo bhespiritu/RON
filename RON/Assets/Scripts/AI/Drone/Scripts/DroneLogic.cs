@@ -88,7 +88,8 @@ public class DroneLogic : MonoBehaviour
 
         if (progress >= 1)
         {
-            RaycastHit2D shot = Physics2D.Raycast(turret.position, -turret.up);
+            int layerMask = ~(LayerMask.GetMask("Enemy") | LayerMask.GetMask("Shield"));
+            RaycastHit2D shot = Physics2D.Raycast(turret.position, -turret.up, detectionRadius, layerMask);
             muzzleFlash.Replay();
             rb.AddForceAtPosition(turret.up * shootForce, turret.position, ForceMode2D.Impulse);
             if (shot.collider != null)
