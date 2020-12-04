@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class DamageBoost : PassiveItem
 {
@@ -11,6 +12,6 @@ public class DamageBoost : PassiveItem
     public override void ApplyBonus(Player p)
     {
         DamageBoost.count++;
-        p.damageMultiplier = p.baseDamageMultiplier + DamageBoost.count / 7f;
+        p.damageMultiplier = p.baseDamageMultiplier + (float) Math.Pow(DamageBoost.count, 1.5) / 10f;
     }
 }
