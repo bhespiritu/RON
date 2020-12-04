@@ -28,6 +28,7 @@ public class Boss_Stage : MonoBehaviour
         if(bAlive && bossReal.GetComponent<EnemyInfo>().health <= 0){
             elevator.SetActive(true);
             wMessage.SetActive(true);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().looping = true;
             elevator.GetComponent<Elevator_Master>().setEFin();
             bAlive = false;
         }else if (!bAlive && mStage < 2){

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public float health;
     public float maxHealth;
     public int money;
+    public bool looping;
     [Header("Items")]
     public List<ActiveItem> activeItems;
     public List<PassiveItem> passiveItems;
@@ -103,6 +104,7 @@ public class Player : MonoBehaviour
         this.defense = defense;
         this.damageMultiplier = damageMultiplier;
         this.healMultiplier = healMultiplier;
+        this.looping=false;
         
 
         if (activeItems != null)
@@ -233,6 +235,8 @@ public class Player : MonoBehaviour
         this.baseHealMultiplier = 1f;
         this.baseCritChance = 0.0f;
         this.baseBlockChance = 0.0f;
+        
+        this.looping = false;
 
         this.health = this.baseHealth;
         this.maxHealth = this.baseMaxHealth;
