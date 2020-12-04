@@ -29,8 +29,8 @@ public class ItemShop : MonoBehaviour
         this.PopulateItemShop();
 
         //this.money.text = "$" + Player.playerInstance.money;
-        //PopupManager.instance.queuePopup(4f, "Item Picked Up", GameTimer.nextStage + "");
-        
+        PopupManager.instance.queuePopup(8f,"Elizabeth", "Hey Peter, you made it to the elevator. Great. Let's get to work. These drones are only gonna get stronger the closer we get to Hans.", GameTimer._instance.girlTalkSprite);
+        PopupManager.instance.queuePopup(8f, "Elizabeth", "We're gonna need to improve your cybernetics. Using scrap you've collected I can guide you. What do you want to improve?", GameTimer._instance.girlTalkSprite);
     }
 
     public void PopulateItemShop()
@@ -76,8 +76,6 @@ public class ItemShop : MonoBehaviour
 
     public void DisplayItem(int button)
     {
-        PopupManager.instance.queuePopup(10f, "Item Picked Up", "hi");
-
         Item purchase;
         this.selectedButton = button;
         this.selectedItem = buttonChoices[this.selectedButton];
