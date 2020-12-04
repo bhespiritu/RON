@@ -25,6 +25,7 @@ public class PopupManager : MonoBehaviour
     private float initialWidth;
     private Queue<Popup> popupQueue;
     private bool popupActive = false;
+    private Coroutine currentPopup;
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -79,7 +80,7 @@ public class PopupManager : MonoBehaviour
                 PopupDesc.gameObject.SetActive(!string.IsNullOrEmpty(pop.description));
                 PopupTitle.gameObject.SetActive(!string.IsNullOrEmpty(pop.title));
 
-                StartCoroutine(popUpFor(pop.duration));
+                currentPopup = StartCoroutine(popUpFor(pop.duration));
             }
         }
     }
@@ -99,10 +100,27 @@ public class PopupManager : MonoBehaviour
         StartCoroutine(popUpFor(time));
     }
 
-    public void queuePopup(float time, string title, string message, Sprite icon = null)
+    public void queuePopup(float time, string title, string message, Sprite icon = null, bool force = false)
     {
+        if(force)
+        {
+            if(currentPopup != null)
+                StopCoroutine(currentPopup);
+            PopupParent.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
+            PopupDesc.gameObject.SetActive(false);
+            PopupTitle.gameObject.SetActive(false);
+            PopupIcon.gameObject.SetActive(false);
+            popupActive = false;
+            
+            clearQueue();
+        }
         Popup pop = new Popup(time, title, message, icon);
         popupQueue.Enqueue(pop);
+    }
+
+    public void clearQueue()
+    {
+        popupQueue.Clear();
     }
 
     IEnumerator popUpFor(float time)
